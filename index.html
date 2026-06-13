@@ -3,103 +3,717 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>帽类潮流雷达 · 历史归档</title>
+<title>HAT TREND RADAR · WK24 / 2026</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
-  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
-  .accent { color: #C8553D; }
-  .accent-bg { background-color: #C8553D; }
+  body {
+    font-family: 'Inter', -apple-system, "PingFang SC", sans-serif;
+    background: #0a0a0a;
+    color: #fafafa;
+  }
+  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .serif { font-family: 'Noto Serif SC', serif; }
+  .grain::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+  }
+  .marquee {
+    animation: marquee 30s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .cap-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cap-card:hover {
+    transform: translateY(-8px);
+  }
+  .cap-card:hover .cap-overlay { opacity: 1; }
+  .cap-overlay {
+    transition: opacity 0.3s;
+  }
+  .color-swatch {
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .color-swatch:hover {
+    transform: scale(1.05);
+  }
+  .brand-tile {
+    transition: all 0.4s ease;
+  }
+  .brand-tile:hover {
+    background: #fafafa;
+    color: #0a0a0a;
+  }
+  .vline {
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.2), transparent);
+  }
+  .accent-c { color: #FF4B1F; }
+  .accent-bg { background: #FF4B1F; }
+  .glow {
+    box-shadow: 0 0 60px rgba(255,75,31,0.15);
+  }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
 </style>
 </head>
-<body class="bg-stone-50 min-h-screen">
+<body class="grain">
 
-<!-- Header -->
-<header class="border-b border-stone-200 bg-white">
-  <div class="max-w-5xl mx-auto px-6 py-8">
-    <div class="flex items-center gap-3 mb-2">
-      <span class="text-3xl">📡</span>
-      <h1 class="text-3xl font-bold text-stone-900">帽类潮流雷达</h1>
-    </div>
-    <p class="text-stone-500 text-sm">设计部每周潮流资讯仪表板 · by Rex</p>
+<!-- ═══════════ TICKER BAR ═══════════ -->
+<div class="bg-white text-black overflow-hidden border-b border-stone-300">
+  <div class="marquee py-2 text-xs tracking-widest font-bold uppercase flex gap-12">
+    <span>📡 HAT TREND RADAR</span>
+    <span>·</span>
+    <span>WEEK 24 / 2026</span>
+    <span>·</span>
+    <span>06.09 — 06.15</span>
+    <span>·</span>
+    <span>FOR DESIGN DEPT INTERNAL</span>
+    <span>·</span>
+    <span>DATA SOURCED FROM HYPEBEAST · PANTONE · BRAND OFFICIAL</span>
+    <span>·</span>
+    <span>📡 HAT TREND RADAR</span>
+    <span>·</span>
+    <span>WEEK 24 / 2026</span>
+    <span>·</span>
+    <span>06.09 — 06.15</span>
+    <span>·</span>
+    <span>FOR DESIGN DEPT INTERNAL</span>
+    <span>·</span>
+    <span>DATA SOURCED FROM HYPEBEAST · PANTONE · BRAND OFFICIAL</span>
+    <span>·</span>
   </div>
-</header>
+</div>
 
-<!-- Main -->
-<main class="max-w-5xl mx-auto px-6 py-12">
+<!-- ═══════════ HERO ═══════════ -->
+<section class="relative min-h-screen flex flex-col justify-between px-6 md:px-12 py-12 overflow-hidden">
 
-  <!-- Intro -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold text-stone-900 mb-4">关于本仪表板</h2>
-    <div class="prose prose-stone text-stone-700 leading-relaxed">
-      <p>每周自动收集全球帽类潮流资讯，监测大牌新品、街拍、电商爆款、流行色等多个维度，整理成可视化周报。</p>
-      <p>资料来源真实、可溯源，每条信息均附原始链接。</p>
+  <!-- Top Meta -->
+  <div class="flex justify-between items-start text-xs tracking-widest uppercase text-stone-500">
+    <div>
+      <div>ISSUE №.001</div>
+      <div class="mt-1">2026 / 06 / 13</div>
     </div>
-  </section>
-
-  <!-- Sources -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold text-stone-900 mb-4">监测站点</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">HYPEBEAST</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Highsnobiety</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Hatclub</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Lids</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Supreme</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">'47 Brand</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Carhartt WIP</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">New Era</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Stussy</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Kangol</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Pantone</div>
-      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Amazon BS</div>
+    <div class="text-right">
+      <div>BY REX · DESIGNER AGENT</div>
+      <div class="mt-1">FOR HAT FACTORY</div>
     </div>
-  </section>
+  </div>
 
-  <!-- Archive -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold text-stone-900 mb-4">历史周报</h2>
-
-    <!-- Coming soon placeholder -->
-    <div class="bg-white border border-stone-200 rounded-lg p-8 text-center">
-      <div class="text-5xl mb-3">🚀</div>
-      <h3 class="text-lg font-semibold text-stone-900 mb-2">系统已上线，正在采集数据</h3>
-      <p class="text-stone-500 text-sm mb-4">第一份正式周报将于 <strong class="accent">2026 年 6 月 22 日（周日）</strong> 发布</p>
-      <p class="text-stone-400 text-xs">数据采集自 2026-06-14 起，连续 7 天积累后生成首期</p>
+  <!-- Center Title -->
+  <div class="my-12 md:my-0 flex-1 flex flex-col justify-center">
+    <div class="text-xs tracking-[0.4em] text-stone-500 mb-6 uppercase">Weekly Trend Intelligence</div>
+    <h1 class="display text-7xl md:text-[12rem] leading-none font-bold">
+      HAT<br>TREND<br><span class="accent-c">RADAR</span>
+    </h1>
+    <div class="mt-8 max-w-xl">
+      <p class="serif text-lg md:text-xl leading-relaxed text-stone-300">
+        本周帽类世界正在发生什么<br>
+        <span class="text-stone-500 text-base">A weekly intelligence report on global headwear movements</span>
+      </p>
     </div>
+  </div>
 
-    <!-- 未来周报列表会自动追加在这里 -->
-    <!-- WEEKLY_REPORTS_START -->
-    <!-- WEEKLY_REPORTS_END -->
-  </section>
-
-  <!-- How it works -->
-  <section class="mb-12">
-    <h2 class="text-xl font-semibold text-stone-900 mb-4">工作原理</h2>
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="bg-white border border-stone-200 rounded-lg p-5">
-        <div class="text-2xl mb-2">🔍</div>
-        <h3 class="font-semibold text-stone-900 mb-1">每日采集</h3>
-        <p class="text-sm text-stone-600">每天 9:00 自动抓取 12 个潮流站点</p>
+  <!-- Bottom Meta -->
+  <div class="flex justify-between items-end text-xs tracking-widest uppercase text-stone-500">
+    <div class="flex gap-8">
+      <div>
+        <div class="text-stone-700">Sources</div>
+        <div class="text-white font-bold mt-1">12+</div>
       </div>
-      <div class="bg-white border border-stone-200 rounded-lg p-5">
-        <div class="text-2xl mb-2">🧠</div>
-        <h3 class="font-semibold text-stone-900 mb-1">AI 聚合分析</h3>
-        <p class="text-sm text-stone-600">每周日 20:00 用 AI 提炼趋势 + 风格对照</p>
+      <div>
+        <div class="text-stone-700">Items Tracked</div>
+        <div class="text-white font-bold mt-1">REAL DATA</div>
       </div>
-      <div class="bg-white border border-stone-200 rounded-lg p-5">
-        <div class="text-2xl mb-2">📡</div>
-        <h3 class="font-semibold text-stone-900 mb-1">自动发布</h3>
-        <p class="text-sm text-stone-600">周一 8:30 推送 WeCom + 邮件 + 公网</p>
+      <div>
+        <div class="text-stone-700">Color of Year</div>
+        <div class="text-white font-bold mt-1">CLOUD DANCER</div>
       </div>
     </div>
-  </section>
+    <div>↓ SCROLL</div>
+  </div>
 
-</main>
+</section>
 
-<!-- Footer -->
-<footer class="border-t border-stone-200 bg-white mt-12">
-  <div class="max-w-5xl mx-auto px-6 py-6 text-center text-sm text-stone-400">
-    Powered by Rex · Designer Agent | 数据来源真实可溯源 | <span id="last-updated">2026-06-13</span>
+<!-- ═══════════ THIS WEEK IN ONE LINE ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">01 / The Headline</div>
+    <h2 class="display text-5xl md:text-8xl font-bold leading-tight">
+      复古运动 <span class="accent-c">×</span><br>
+      工装重构 <span class="accent-c">×</span><br>
+      老英文字体 <span class="accent-c">回归</span>
+    </h2>
+    <p class="serif text-lg md:text-2xl text-stone-400 mt-12 max-w-3xl leading-relaxed">
+      6 月第二周，街头与运动两条主线交叠：Supreme 联手百年马球品牌做奢华运动，
+      WACKO MARIA 用三维刺绣 Old English 字体重塑 New Era 经典版型，
+      Barbour 把户外功能性带进 9TWENTY。同时 Pantone 公布年度色 Cloud Dancer，整个时尚圈在追白。
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ TOP DROPS ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">02 / Top Drops</div>
+        <h2 class="display text-6xl md:text-8xl font-bold">本周重磅发售</h2>
+      </div>
+      <div class="text-stone-500 text-sm hidden md:block">CLICK CARD → SOURCE</div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-stone-800">
+
+      <!-- Drop 1: WACKO MARIA × New Era -->
+      <a href="https://hypebeast.com/2026/4/wacko-maria-new-era-spring-summer-ss-2026-collaboration-collection-release-info" target="_blank" class="cap-card relative bg-black p-8 md:p-12 group">
+        <div class="flex items-start justify-between mb-8">
+          <span class="display text-7xl accent-c">01</span>
+          <div class="text-right text-xs tracking-widest uppercase text-stone-500">
+            <div>RELEASE</div>
+            <div class="text-white mt-1">MAY 02 · 2026</div>
+          </div>
+        </div>
+        <div class="aspect-[4/3] bg-gradient-to-br from-stone-900 to-black rounded-sm mb-6 relative overflow-hidden flex items-center justify-center border border-stone-800">
+          <div class="text-center">
+            <div class="display text-5xl text-stone-700 mb-2">WACKO MARIA</div>
+            <div class="text-stone-600 text-sm">× NEW ERA · SS26</div>
+            <div class="display text-9xl font-bold accent-c mt-4 opacity-30">59FIFTY</div>
+          </div>
+        </div>
+        <h3 class="display text-3xl mb-3">WACKO MARIA × New Era</h3>
+        <p class="text-stone-400 text-sm leading-relaxed mb-6">
+          59FIFTY 与 9FORTY 双款式重磅联名。Old English 字体三维立体刺绣，黑、蓝双色系。极简结构，浓烈字体。
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs uppercase tracking-wider">
+          <span class="border border-stone-700 px-3 py-1 rounded-full">59FIFTY</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">三维刺绣</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">Old English</span>
+        </div>
+        <div class="cap-overlay opacity-0 absolute bottom-8 right-8 text-xs accent-c">→ HYPEBEAST</div>
+      </a>
+
+      <!-- Drop 2: Supreme × La Martina × Jacob & Co. -->
+      <a href="https://hypebeast.com/2026/6/best-drops-june-week-2-supreme-palace-bape-puma" target="_blank" class="cap-card relative bg-black p-8 md:p-12 group">
+        <div class="flex items-start justify-between mb-8">
+          <span class="display text-7xl accent-c">02</span>
+          <div class="text-right text-xs tracking-widest uppercase text-stone-500">
+            <div>RELEASE</div>
+            <div class="text-white mt-1">JUN 11 · 2026</div>
+          </div>
+        </div>
+        <div class="aspect-[4/3] bg-gradient-to-br from-red-950 to-black rounded-sm mb-6 relative overflow-hidden flex items-center justify-center border border-stone-800">
+          <div class="text-center">
+            <div class="display text-5xl text-red-700 mb-2">SUPREME</div>
+            <div class="text-stone-500 text-sm">× LA MARTINA × JACOB & CO.</div>
+            <div class="display text-9xl font-bold text-stone-800 mt-4">6-PANEL</div>
+          </div>
+        </div>
+        <h3 class="display text-3xl mb-3">Supreme × La Martina</h3>
+        <p class="text-stone-400 text-sm leading-relaxed mb-6">
+          联名阿根廷百年马球品牌 + 高级珠宝商 Jacob & Co.。经典 6-panel 帽形配奢华联名标，运动 × 街头 × 奢侈三合一。
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs uppercase tracking-wider">
+          <span class="border border-stone-700 px-3 py-1 rounded-full">6-PANEL</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">马球运动</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">奢华联名</span>
+        </div>
+        <div class="cap-overlay opacity-0 absolute bottom-8 right-8 text-xs accent-c">→ HYPEBEAST</div>
+      </a>
+
+      <!-- Drop 3: Barbour × New Era -->
+      <a href="https://hypebeast.com/2026/4/barbour-new-era-9twenty-adventure-hat-collaboration-collection-release-info" target="_blank" class="cap-card relative bg-black p-8 md:p-12 group">
+        <div class="flex items-start justify-between mb-8">
+          <span class="display text-7xl accent-c">03</span>
+          <div class="text-right text-xs tracking-widest uppercase text-stone-500">
+            <div>RELEASE</div>
+            <div class="text-white mt-1">APR 28 · 2026</div>
+          </div>
+        </div>
+        <div class="aspect-[4/3] bg-gradient-to-br from-emerald-950 to-black rounded-sm mb-6 relative overflow-hidden flex items-center justify-center border border-stone-800">
+          <div class="text-center">
+            <div class="display text-5xl text-emerald-700 mb-2">BARBOUR</div>
+            <div class="text-stone-500 text-sm">× NEW ERA</div>
+            <div class="display text-9xl font-bold text-stone-800 mt-4">9TWENTY</div>
+          </div>
+        </div>
+        <h3 class="display text-3xl mb-3">Barbour × New Era 9TWENTY</h3>
+        <p class="text-stone-400 text-sm leading-relaxed mb-6">
+          双层防水透气面料 + 内衬透气网眼。把英国户外功能 DNA 注入帽款，户外 / 街头 / 都市三栖。
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs uppercase tracking-wider">
+          <span class="border border-stone-700 px-3 py-1 rounded-full">9TWENTY</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">防水面料</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">户外功能</span>
+        </div>
+        <div class="cap-overlay opacity-0 absolute bottom-8 right-8 text-xs accent-c">→ HYPEBEAST</div>
+      </a>
+
+      <!-- Drop 4: sacai × Carhartt WIP -->
+      <a href="https://us.carhartt-wip.com/en-us/journal/sacai-x-carhartt-wip-spring-summer-2026" target="_blank" class="cap-card relative bg-black p-8 md:p-12 group">
+        <div class="flex items-start justify-between mb-8">
+          <span class="display text-7xl accent-c">04</span>
+          <div class="text-right text-xs tracking-widest uppercase text-stone-500">
+            <div>RELEASE</div>
+            <div class="text-white mt-1">FEB 06 · 2026</div>
+          </div>
+        </div>
+        <div class="aspect-[4/3] bg-gradient-to-br from-amber-950 to-black rounded-sm mb-6 relative overflow-hidden flex items-center justify-center border border-stone-800">
+          <div class="text-center">
+            <div class="display text-5xl text-amber-700 mb-2">sacai</div>
+            <div class="text-stone-500 text-sm">× CARHARTT WIP · SS26</div>
+            <div class="display text-9xl font-bold text-stone-800 mt-4">CHORE</div>
+          </div>
+        </div>
+        <h3 class="display text-3xl mb-3">sacai × Carhartt WIP</h3>
+        <p class="text-stone-400 text-sm leading-relaxed mb-6">
+          9 件套联名（含工装帽款）。Duck canvas + 西装套料解构混搭。日式拼接 × 美式工装的代表作。
+        </p>
+        <div class="flex flex-wrap gap-2 text-xs uppercase tracking-wider">
+          <span class="border border-stone-700 px-3 py-1 rounded-full">工装帽</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">解构拼接</span>
+          <span class="border border-stone-700 px-3 py-1 rounded-full">Duck Canvas</span>
+        </div>
+        <div class="cap-overlay opacity-0 absolute bottom-8 right-8 text-xs accent-c">→ CARHARTT WIP</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ COLOR ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="grid md:grid-cols-12 gap-12 mb-16">
+      <div class="md:col-span-4">
+        <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">03 / Color</div>
+        <h2 class="display text-6xl md:text-8xl font-bold leading-none">2026<br>色彩</h2>
+      </div>
+      <div class="md:col-span-8 serif text-lg leading-relaxed text-stone-300">
+        <p class="mb-4">
+          <strong class="text-white">Pantone 2026 年度色：Cloud Dancer (PANTONE 11-4201)</strong>
+          —— 一种漂浮的纯白，象征当下社会重新发掘静谧反思价值的"安抚之色"。
+        </p>
+        <p class="text-stone-500 text-base">
+          作为结构色，它能为整个色谱搭起骨架，让所有颜色更出彩。WGSN 与 Coloro 同时把 Transformative Teal（深青绿）列为 2026 年度色。整体趋势：大地色系 + 纯净中性 + 高饱和点睛色并行。
+        </p>
+      </div>
+    </div>
+
+    <!-- Cloud Dancer Hero -->
+    <a href="https://www.pantone.com/color-of-the-year/2026" target="_blank" class="block mb-12 group">
+      <div class="bg-[#F4F2ED] aspect-[3/1] rounded-sm p-12 md:p-16 flex flex-col md:flex-row items-start md:items-end justify-between text-black relative overflow-hidden">
+        <div>
+          <div class="text-xs tracking-[0.4em] uppercase text-stone-600 mb-4">PANTONE COLOR OF THE YEAR 2026</div>
+          <div class="display text-6xl md:text-9xl font-bold leading-none">CLOUD<br>DANCER</div>
+        </div>
+        <div class="mt-8 md:mt-0 text-right">
+          <div class="display text-3xl">11—4201</div>
+          <div class="text-xs tracking-widest uppercase text-stone-600 mt-2">→ PANTONE.COM</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- Color Palette -->
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-px bg-stone-800">
+      <div class="color-swatch p-6 bg-[#F4F2ED] text-black aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">CLOUD DANCER</div>
+        <div>
+          <div class="display text-2xl">11-4201</div>
+          <div class="text-xs">主色 · 结构色</div>
+        </div>
+      </div>
+      <div class="color-swatch p-6 bg-[#3F6F6E] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">TRANSFORMATIVE TEAL</div>
+        <div>
+          <div class="display text-2xl">深青绿</div>
+          <div class="text-xs opacity-70">WGSN 年度</div>
+        </div>
+      </div>
+      <div class="color-swatch p-6 bg-[#9CAF88] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">SAGE GREEN</div>
+        <div>
+          <div class="display text-2xl">鼠尾草绿</div>
+          <div class="text-xs opacity-70">大地系</div>
+        </div>
+      </div>
+      <div class="color-swatch p-6 bg-[#9C7C5E] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">COCOA POWDER</div>
+        <div>
+          <div class="display text-2xl">可可粉</div>
+          <div class="text-xs opacity-70">大地系</div>
+        </div>
+      </div>
+      <div class="color-swatch p-6 bg-[#D4A574] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">ANGORA</div>
+        <div>
+          <div class="display text-2xl">驼色</div>
+          <div class="text-xs opacity-70">大地系</div>
+        </div>
+      </div>
+      <div class="color-swatch p-6 bg-[#C8553D] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">LAVA FALLS</div>
+        <div>
+          <div class="display text-2xl">熔岩红</div>
+          <div class="text-xs opacity-70">点睛色</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-xs tracking-widest uppercase text-stone-500 mt-6 text-right">
+      数据来源 ：
+      <a href="https://www.pantone.com/articles/fashion-color-trend-report/new-york-fashion-week-spring-summer-2026" target="_blank" class="hover:text-white">Pantone NYFW SS26</a>
+      ／
+      <a href="https://wunderlabel.com/en-gb/blog/p/colour-trends-2026-uk" target="_blank" class="hover:text-white">WGSN × Coloro 2026</a>
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ TREND PILLARS ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">04 / Trend Pillars</div>
+    <h2 class="display text-6xl md:text-8xl font-bold mb-16">五大风向</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <div class="border-l border-stone-700 pl-8 py-4">
+        <div class="display text-9xl text-stone-800 absolute -ml-4 -mt-12">01</div>
+        <div class="relative">
+          <h3 class="display text-4xl mb-3 accent-c">CAMO REVIVAL</h3>
+          <p class="serif text-stone-300 leading-relaxed mb-3">
+            迷彩重磅回归。不是传统打猎迷彩，而是 vintage "枝叶" 迷彩、像素迷彩、单色调迷彩。
+          </p>
+          <p class="text-stone-500 text-sm">
+            来源：<a href="https://shop.foremosthat.com/blogs/news/hat-trend" target="_blank" class="underline hover:text-white">Foremost Hat 2026 头饰趋势</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-l border-stone-700 pl-8 py-4">
+        <div class="display text-9xl text-stone-800 absolute -ml-4 -mt-12">02</div>
+        <div class="relative">
+          <h3 class="display text-4xl mb-3 accent-c">TRUCKER COMEBACK</h3>
+          <p class="serif text-stone-300 leading-relaxed mb-3">
+            Trucker 网帽借 Y2K 复古浪潮强势回归。在线搜索量同比 +28%。Richardson 112LN 加棉款冬季版受关注。
+          </p>
+          <p class="text-stone-500 text-sm">
+            来源：<a href="https://soulbyrdla.com/blogs/the-edit/trucker-hats-comeback" target="_blank" class="underline hover:text-white">SoulByrdLA</a> ／
+            <a href="https://www.custompatchhats.com/2026-trend-report" target="_blank" class="underline hover:text-white">Custom Patch Hats 2026</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-l border-stone-700 pl-8 py-4">
+        <div class="display text-9xl text-stone-800 absolute -ml-4 -mt-12">03</div>
+        <div class="relative">
+          <h3 class="display text-4xl mb-3 accent-c">BUCKET HAT 进化</h3>
+          <p class="serif text-stone-300 leading-relaxed mb-3">
+            渔夫帽不再只是基础款。钩织、棉布、编织面料 + 故意做旧的随性感。从街头到度假场景全覆盖。
+          </p>
+          <p class="text-stone-500 text-sm">
+            来源：<a href="https://www.vixpaulahermanny.com/blogs/vix-blog/summer-hat-trends-for-2026" target="_blank" class="underline hover:text-white">ViX 2026 夏季帽款趋势</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-l border-stone-700 pl-8 py-4">
+        <div class="display text-9xl text-stone-800 absolute -ml-4 -mt-12">04</div>
+        <div class="relative">
+          <h3 class="display text-4xl mb-3 accent-c">SAILOR / WESTERN</h3>
+          <p class="serif text-stone-300 leading-relaxed mb-3">
+            Pinterest 2026 夏季报告：水手帽 +385%、复古航海美学 +1962%。同时西部牛仔风、Festival 流苏帽热度持续。
+          </p>
+          <p class="text-stone-500 text-sm">
+            来源：<a href="https://newsroom.pinterest.com/news/summer-trend-report-2026" target="_blank" class="underline hover:text-white">Pinterest Summer 2026 报告</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-l border-stone-700 pl-8 py-4">
+        <div class="display text-9xl text-stone-800 absolute -ml-4 -mt-12">05</div>
+        <div class="relative">
+          <h3 class="display text-4xl mb-3 accent-c">PERFORMANCE 极简</h3>
+          <p class="serif text-stone-300 leading-relaxed mb-3">
+            Performance 帽款向极简方向走：极简 logo、焊接式贴布、整洁工艺。技术运动感 + 日常风格融合。
+          </p>
+          <p class="text-stone-500 text-sm">
+            来源：<a href="https://shop.foremosthat.com/blogs/news/hat-trend" target="_blank" class="underline hover:text-white">Foremost Hat 2026</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-l border-stone-700 pl-8 py-4">
+        <div class="display text-9xl text-stone-800 absolute -ml-4 -mt-12">06</div>
+        <div class="relative">
+          <h3 class="display text-4xl mb-3 accent-c">PATCH 工艺</h3>
+          <p class="serif text-stone-300 leading-relaxed mb-3">
+            创意贴片造型：六边形、盾形、菱形、复古拱形。皮革贴 / 织唛贴 / 同色调低调贴。立体刺绣回归（参见 WACKO MARIA × New Era）。
+          </p>
+          <p class="text-stone-500 text-sm">
+            来源：Custom Patch Hats 2026 + HYPEBEAST
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ BRAND STYLE MATRIX ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">05 / Brand Matrix</div>
+    <h2 class="display text-6xl md:text-8xl font-bold mb-4">品牌风格</h2>
+    <p class="serif text-stone-400 text-lg mb-12">六大头部品牌本周动态对比</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-800">
+
+      <a href="https://us.supreme.com" target="_blank" class="brand-tile bg-black p-8">
+        <div class="flex justify-between items-start mb-6">
+          <div class="display text-3xl">SUPREME</div>
+          <div class="text-xs accent-c">→</div>
+        </div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-3">本周风格</div>
+        <p class="text-sm leading-relaxed mb-4">奢华运动跨界。马球 × 珠宝 × 街头三方联名，把高端运动带入主线。</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="border border-stone-700 px-2 py-0.5">街头</span>
+          <span class="border border-stone-700 px-2 py-0.5">奢华</span>
+          <span class="border border-stone-700 px-2 py-0.5">联名</span>
+        </div>
+      </a>
+
+      <a href="https://www.neweracap.com" target="_blank" class="brand-tile bg-black p-8">
+        <div class="flex justify-between items-start mb-6">
+          <div class="display text-3xl">NEW ERA</div>
+          <div class="text-xs accent-c">→</div>
+        </div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-3">本周风格</div>
+        <p class="text-sm leading-relaxed mb-4">联名机器全开。WACKO MARIA / Barbour / BLACKPINK / Gundam，每周都有新合作。</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="border border-stone-700 px-2 py-0.5">59FIFTY</span>
+          <span class="border border-stone-700 px-2 py-0.5">9TWENTY</span>
+          <span class="border border-stone-700 px-2 py-0.5">合作王</span>
+        </div>
+      </a>
+
+      <a href="https://us.carhartt-wip.com" target="_blank" class="brand-tile bg-black p-8">
+        <div class="flex justify-between items-start mb-6">
+          <div class="display text-3xl">CARHARTT WIP</div>
+          <div class="text-xs accent-c">→</div>
+        </div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-3">本周风格</div>
+        <p class="text-sm leading-relaxed mb-4">工装本色 + 日式解构。sacai 联名延续讨论度，灯芯绒 6-panel 仍是核心。</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="border border-stone-700 px-2 py-0.5">工装</span>
+          <span class="border border-stone-700 px-2 py-0.5">大地色</span>
+          <span class="border border-stone-700 px-2 py-0.5">实用主义</span>
+        </div>
+      </a>
+
+      <a href="https://www.stussy.com/blogs/news/stussy-spring-26-collection" target="_blank" class="brand-tile bg-black p-8">
+        <div class="flex justify-between items-start mb-6">
+          <div class="display text-3xl">STÜSSY</div>
+          <div class="text-xs accent-c">→</div>
+        </div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-3">本周风格</div>
+        <p class="text-sm leading-relaxed mb-4">Spring '26 第一波 delivery 持续上新。Caps / Beanies / Buckets 三线齐发，加州滑板 DNA 不变。</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="border border-stone-700 px-2 py-0.5">滑板</span>
+          <span class="border border-stone-700 px-2 py-0.5">涂鸦</span>
+          <span class="border border-stone-700 px-2 py-0.5">加州</span>
+        </div>
+      </a>
+
+      <a href="https://hypebeast.com/2026/4/wacko-maria-new-era-spring-summer-ss-2026-collaboration-collection-release-info" target="_blank" class="brand-tile bg-black p-8">
+        <div class="flex justify-between items-start mb-6">
+          <div class="display text-3xl">WACKO MARIA</div>
+          <div class="text-xs accent-c">→</div>
+        </div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-3">本周风格</div>
+        <p class="text-sm leading-relaxed mb-4">东京黑帮美学。Old English 字体 + 高饱和单色 + 立体刺绣。极简版型，最大化字体表达。</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="border border-stone-700 px-2 py-0.5">日本</span>
+          <span class="border border-stone-700 px-2 py-0.5">字体</span>
+          <span class="border border-stone-700 px-2 py-0.5">立体刺绣</span>
+        </div>
+      </a>
+
+      <a href="https://hypebeast.com/2026/5/kappa-24-hours-of-le-mans-2026-collection-release-info" target="_blank" class="brand-tile bg-black p-8">
+        <div class="flex justify-between items-start mb-6">
+          <div class="display text-3xl">KAPPA</div>
+          <div class="text-xs accent-c">→</div>
+        </div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-3">本周风格</div>
+        <p class="text-sm leading-relaxed mb-4">勒芒 24 小时赛官方系列。赛车 / 性能 / 复古运动三线，Banda 条纹符号化标识。</p>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <span class="border border-stone-700 px-2 py-0.5">赛车</span>
+          <span class="border border-stone-700 px-2 py-0.5">运动</span>
+          <span class="border border-stone-700 px-2 py-0.5">条纹</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ACTION ITEMS ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12 bg-gradient-to-b from-black to-stone-950">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">06 / For Designers</div>
+    <h2 class="display text-6xl md:text-8xl font-bold mb-12">本周可落地建议</h2>
+
+    <div class="space-y-px bg-stone-800">
+
+      <div class="bg-black p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
+        <div class="display text-7xl accent-c shrink-0">A</div>
+        <div>
+          <h3 class="display text-3xl mb-3">立体刺绣 OLD ENGLISH 字体打样</h3>
+          <p class="serif text-stone-300 leading-relaxed">
+            WACKO MARIA × New Era 验证了：极简版型 + 三维 puff 立体刺绣 + 大字体居中。我们绣花部完全能复制工艺。
+            建议立刻打 3-5 款样，测试不同字体粗细在 6-panel 黑/海军蓝底布上的视觉效果。
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-black p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
+        <div class="display text-7xl accent-c shrink-0">B</div>
+        <div>
+          <h3 class="display text-3xl mb-3">Cloud Dancer 全白系列开发</h3>
+          <p class="serif text-stone-300 leading-relaxed">
+            Pantone 年度色全行业要追。建议先做 5 款全白基础帽（棒球帽 / 渔夫帽 / 老爹帽 / Trucker / 5-panel），
+            主打"完整白"概念，搭同色调织唛或者超低饱和点缀。客户拿样率会很高。
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-black p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
+        <div class="display text-7xl accent-c shrink-0">C</div>
+        <div>
+          <h3 class="display text-3xl mb-3">Vintage 枝叶迷彩面料采购</h3>
+          <p class="serif text-stone-300 leading-relaxed">
+            Camo 回归是确定方向，但**避开传统迷彩**。优先采购：单色调 vintage 枝叶迷彩 / 像素迷彩面料。
+            配合 Trucker 网帽 + 5-panel 帽款，做 6 月底秋冬样卡。
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-black p-8 md:p-12 flex flex-col md:flex-row gap-8 items-start">
+        <div class="display text-7xl accent-c shrink-0">D</div>
+        <div>
+          <h3 class="display text-3xl mb-3">户外功能面料 9TWENTY 试验</h3>
+          <p class="serif text-stone-300 leading-relaxed">
+            Barbour × New Era 用了双层防水透气 + 内衬 mesh。我们的研发部应该测试类似面料组合，
+            做"户外功能棒球帽"概念，针对欧美徒步 / 跑步 / 户外品牌客户主推。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SOURCES ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">07 / Sources</div>
+    <h2 class="display text-6xl md:text-8xl font-bold mb-12">数据来源</h2>
+
+    <details class="border border-stone-800 rounded-sm">
+      <summary class="p-6 hover:bg-stone-900 transition flex justify-between items-center">
+        <span class="display text-2xl">展开 11 个引用链接</span>
+        <span class="text-stone-500">▾</span>
+      </summary>
+      <div class="border-t border-stone-800 p-6 grid md:grid-cols-2 gap-3 text-sm">
+        <a href="https://www.pantone.com/color-of-the-year/2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">01</span>
+          <span>Pantone Color of the Year 2026 — Cloud Dancer</span>
+        </a>
+        <a href="https://www.pantone.com/articles/fashion-color-trend-report/new-york-fashion-week-spring-summer-2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">02</span>
+          <span>Pantone NYFW SS26 Color Trend Report</span>
+        </a>
+        <a href="https://www.pantone.com/articles/fashion-color-trend-report/new-york-fashion-week-autumn-winter-2026-2027" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">03</span>
+          <span>Pantone NYFW AW26/27 Color Report</span>
+        </a>
+        <a href="https://wunderlabel.com/en-gb/blog/p/colour-trends-2026-uk" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">04</span>
+          <span>Wunderlabel — 2026 Colour Trends (Pantone × Coloro × WGSN)</span>
+        </a>
+        <a href="https://hypebeast.com/2026/4/wacko-maria-new-era-spring-summer-ss-2026-collaboration-collection-release-info" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">05</span>
+          <span>HYPEBEAST — WACKO MARIA × New Era SS26</span>
+        </a>
+        <a href="https://hypebeast.com/2026/6/best-drops-june-week-2-supreme-palace-bape-puma" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">06</span>
+          <span>HYPEBEAST — Best Drops June Week 2 (Supreme/Palace/BAPE)</span>
+        </a>
+        <a href="https://hypebeast.com/2026/4/barbour-new-era-9twenty-adventure-hat-collaboration-collection-release-info" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">07</span>
+          <span>HYPEBEAST — Barbour × New Era 9TWENTY</span>
+        </a>
+        <a href="https://hypebeast.com/2026/5/kappa-24-hours-of-le-mans-2026-collection-release-info" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">08</span>
+          <span>HYPEBEAST — Kappa × 24 Hours of Le Mans 2026</span>
+        </a>
+        <a href="https://us.carhartt-wip.com/en-us/journal/sacai-x-carhartt-wip-spring-summer-2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">09</span>
+          <span>Carhartt WIP — sacai × Carhartt WIP SS26</span>
+        </a>
+        <a href="https://www.stussy.com/blogs/news/stussy-spring-26-collection" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">10</span>
+          <span>Stüssy — Spring '26 Collection Drop 1</span>
+        </a>
+        <a href="https://newsroom.pinterest.com/news/summer-trend-report-2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">11</span>
+          <span>Pinterest — Summer 2026 Trend Report</span>
+        </a>
+        <a href="https://soulbyrdla.com/blogs/the-edit/trucker-hats-comeback" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">12</span>
+          <span>SoulByrdLA — Trucker Hats Comeback</span>
+        </a>
+        <a href="https://shop.foremosthat.com/blogs/news/hat-trend" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">13</span>
+          <span>Foremost Hat — 2026 Headwear Trends</span>
+        </a>
+        <a href="https://www.custompatchhats.com/2026-trend-report" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">14</span>
+          <span>Custom Patch Hats — 2026 Trend Report</span>
+        </a>
+        <a href="https://www.vixpaulahermanny.com/blogs/vix-blog/summer-hat-trends-for-2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">15</span>
+          <span>ViX — Summer Hat Trends 2026</span>
+        </a>
+      </div>
+    </details>
+
+    <p class="text-stone-500 text-sm mt-6 leading-relaxed">
+      所有信息均来自公开发布渠道，本周报内容仅供设计参考。下期将持续追踪同一品牌矩阵动态，对比演变趋势。
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="border-t border-stone-800 py-12 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
+    <div>
+      <div class="display text-3xl mb-2">HAT TREND RADAR</div>
+      <div class="text-xs tracking-widest uppercase text-stone-500">Issue №.001 · Week 24 · 2026</div>
+    </div>
+    <div class="text-right text-xs tracking-widest uppercase text-stone-500">
+      <div>BUILT BY REX · DESIGNER AGENT</div>
+      <div class="mt-1">FOR HAT FACTORY · DESIGN DEPT</div>
+      <div class="mt-1">NEXT ISSUE · 2026.06.22</div>
+    </div>
   </div>
 </footer>
 
