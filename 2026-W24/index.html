@@ -34,12 +34,13 @@
   details summary { list-style: none; cursor: pointer; }
   details summary::-webkit-details-marker { display: none; }
   .hero-bg {
-    background-image: url('images/wacko-1.jpg');
+    background-image: url('images/wacko-3.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center 30%;
+    filter: contrast(1.05);
   }
   .hero-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,0.85) 70%, #0a0a0a 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.7) 70%, #0a0a0a 100%);
   }
   /* Spec table */
   .spec-row { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #1c1917; }
@@ -112,6 +113,24 @@
     });
   }).catch(()=>{});
 </script>
+
+<!-- ═══════════ TAG FILTER ═══════════ -->
+<div class="bg-black border-b border-stone-800 sticky top-0 z-30 backdrop-blur" id="tagBar">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 overflow-x-auto whitespace-nowrap text-xs">
+    <span class="text-stone-500 mr-2 tracking-widest uppercase">快跳：</span>
+    <a href="#takeaway" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">首页一句话</a>
+    <a href="#hat-no01" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.01 WACKO MARIA</a>
+    <a href="#hat-no02" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.02 Barbour</a>
+    <a href="#hat-no03" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.03 Kijima×TEATORA</a>
+    <a href="#apparel" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">服装参考</a>
+    <a href="#color" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">本周色</a>
+    <a href="#craft" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">3D Puff 工艺</a>
+    <a href="#tool" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">Vizcom 工具</a>
+    <a href="#action" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">必做清单</a>
+    <span class="flex-1"></span>
+    <a href="../archive.html" class="px-3 py-1 accent-bg text-black tracking-widest font-bold hover:bg-stone-200 transition">历史期数</a>
+  </div>
+</div>
 
 <!-- ═══════════ TICKER BAR ═══════════ -->
 <div class="bg-white text-black overflow-hidden border-b border-stone-300">
@@ -188,10 +207,52 @@
   </div>
 </section>
 
+<!-- ═══════════ 30秒速读 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-gradient-to-b from-stone-950 to-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-6">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-3xl text-stone-500">01 / 30秒速读</div>
+        <span class="text-xs text-stone-500">老板与设计部主管 · 不看全文看这一部分就够</span>
+      </div>
+      <button onclick="document.getElementById('quick').classList.toggle('hidden')" class="text-xs accent-c hover:text-white tracking-widest">[收起 / 展开]</button>
+    </div>
+
+    <div id="quick" class="grid md:grid-cols-3 gap-4">
+      <div class="bg-black border border-stone-800 p-6">
+        <div class="text-xs accent-c tracking-widest mb-2">本期最值得看 3 件事</div>
+        <ol class="text-sm text-stone-300 space-y-2 list-decimal pl-4">
+          <li><strong class="text-white">3D Puff 立体刺绣</strong> = SS26 最抢手工艺，WACKO MARIA / Carhartt / SKYLRK 都在用 → HF 车间可打 3 款样</li>
+          <li><strong class="text-white">国际真实零售 ¥7,700-19,800</strong> · 以后不要再说“价格低 70%” — 用“工厂价”表述</li>
+          <li><strong class="text-white">Vizcom 免费版</strong> 5 分钟能出 3 个颜色变体 · 设计部上手试试</li>
+        </ol>
+      </div>
+      <div class="bg-black border border-stone-800 p-6">
+        <div class="text-xs accent-c tracking-widest mb-2">本周主调</div>
+        <p class="serif text-stone-200 text-base leading-relaxed">
+          立体刺绣 + 户外功能 + 高科技面料 + 黑色调
+        </p>
+        <div class="mt-4 text-xs text-stone-500 leading-relaxed">
+          3 个帽款联名同时落地 · 4 个服装联名走同一路线<br>
+          颜色：Pantone Cloud Dancer · 黑 · 藏青 · 橄榄绿
+        </div>
+      </div>
+      <div class="bg-black border border-stone-800 p-6">
+        <div class="text-xs accent-c tracking-widest mb-2">这周要动手的 3 件</div>
+        <ul class="text-sm text-stone-300 space-y-2">
+          <li>⚡ HF 车间 → 打 3 款 3D puff 立体刺绣样</li>
+          <li>⚡ 研发部 → 采购高弹力防泼水尼龙面料</li>
+          <li>⚡ 营业部 → 世界杯干口主题上梠同步</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ THE TAKEAWAY ═══════════ -->
 <section class="border-t border-stone-800 py-24 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
-    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">01 / 本周一句话</div>
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8" id="takeaway">02 / 本周一句话</div>
     <h2 class="display text-5xl md:text-8xl font-bold leading-tight mb-10">
       立体刺绣 + 户外功能 +<br>
       <span class="accent-c">高科技面料 + 黑色调</span> = 这周打样方向
@@ -217,7 +278,7 @@
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500">02 / 本周帽款 No.01</div>
+      <div class="display text-3xl text-stone-500" id="hat-no01">03 / 本周帽款 No.01</div>
       <span class="badge-yes">我们能做</span>
     </div>
 
@@ -263,6 +324,47 @@
           </div>
         </div>
 
+        <!-- 工艺难度评分卡 + 成本拆解 -->
+        <div class="bg-stone-950 border border-stone-800 mb-6">
+          <div class="grid grid-cols-4 border-b border-stone-800">
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
+              <div class="text-sm accent-c">★★★★☆</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
+              <div class="text-sm text-white">5-7 天</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
+              <div class="text-sm text-white">144+</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
+              <div class="text-sm accent-c">★★★★★</div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有1/2 · 怎么改</div>
+            <div class="text-xs text-stone-400 leading-relaxed">
+              · 面料：涤纶斜纹 → 采 80% 涤 + 20% 棉（节省 USD 0.4）<br>
+              · 工艺：3D puff 5mm → 厚平绣 + 描边（节省 USD 0.5）<br>
+              · 调节扬：金属块 → 塑料插锁（节省 USD 0.2）<br>
+              <strong class="text-white">→ 总价：USD 2.8 → USD 1.7</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 下载设计参考包 -->
+        <a href="design-pack-no01-wacko-maria.zip" download class="flex items-center justify-between bg-black border border-stone-700 hover:accent-bg hover:text-black p-4 mb-6 group transition">
+          <div>
+            <div class="text-[10px] tracking-widest text-stone-500 group-hover:text-black/70 mb-1">下载设计参考包</div>
+            <div class="display text-base">DESIGN PACK · No.01 WACKO MARIA</div>
+            <div class="text-[10px] text-stone-500 group-hover:text-black/70 mt-1">含高清图 + 字母走向参考 + 配色 + 推单话术</div>
+          </div>
+          <div class="display text-2xl">↓</div>
+        </a>
+
         <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设计参考建议 · 反推到打样</div>
         <div class="border-l-2 accent-c pl-4 text-sm text-stone-300 mb-6">
           <strong class="text-white">→ 设计部这次可以试:</strong><br>
@@ -300,7 +402,7 @@ MOQ 144pcs."<br><br>
 <section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500">03 / 本周帽款 No.02</div>
+      <div class="display text-3xl text-stone-500" id="hat-no02">04 / 本周帽款 No.02</div>
       <span class="badge-maybe">研发部需测试面料</span>
     </div>
 
@@ -342,6 +444,47 @@ MOQ 144pcs."<br><br>
           </div>
         </div>
 
+        <!-- 工艺难度评分卡 + 成本拆解 -->
+        <div class="bg-stone-950 border border-stone-800 mb-6">
+          <div class="grid grid-cols-4 border-b border-stone-800">
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
+              <div class="text-sm accent-c">★★★☆☆</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
+              <div class="text-sm text-white">7-10 天</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
+              <div class="text-sm text-white">200+</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
+              <div class="text-sm accent-c">★★★★☆</div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有1/2 · 怎么改</div>
+            <div class="text-xs text-stone-400 leading-relaxed">
+              · 面料：Barbour 蜡棉 → 防泼水 Ö 涤纶（节省 USD 1.0）<br>
+              · 压胶：全面压胶 → 只在帽顶与帽檐拼接处（节省 USD 0.5）<br>
+              · 反光条：反光 PVC → 只保留后顆小标（节省 USD 0.3）<br>
+              <strong class="text-white">→ 总价：USD 4.5 → USD 2.7</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 下载设计参考包 -->
+        <a href="design-pack-no02-barbour.zip" download class="flex items-center justify-between bg-black border border-stone-700 hover:accent-bg hover:text-black p-4 mb-6 group transition">
+          <div>
+            <div class="text-[10px] tracking-widest text-stone-500 group-hover:text-black/70 mb-1">下载设计参考包</div>
+            <div class="display text-base">DESIGN PACK · No.02 BARBOUR</div>
+            <div class="text-[10px] text-stone-500 group-hover:text-black/70 mt-1">含高清图 + 面料供应商联系表 + 推单话术</div>
+          </div>
+          <div class="display text-2xl">↓</div>
+        </a>
+
         <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设计参考建议 · 反推到打样</div>
         <div class="border-l-2 accent-c pl-4 text-sm text-stone-300 mb-6">
           <strong class="text-white">→ 设计部这次可以试:</strong><br>
@@ -381,7 +524,7 @@ mesh 内衬,结构和 Barbour × New Era 一样。<br>
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500">04 / 本周帽款 No.03</div>
+      <div class="display text-3xl text-stone-500" id="hat-no03">05 / 本周帽款 No.03</div>
       <span class="badge-yes">高科技黑色调 · 全季全年龄通杀</span>
     </div>
 
@@ -430,6 +573,47 @@ mesh 内衬,结构和 Barbour × New Era 一样。<br>
           </div>
         </div>
 
+        <!-- 工艺难度评分卡 + 成本拆解 -->
+        <div class="bg-stone-950 border border-stone-800 mb-6">
+          <div class="grid grid-cols-4 border-b border-stone-800">
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
+              <div class="text-sm accent-c">★★★★★</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
+              <div class="text-sm text-white">10-14 天</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
+              <div class="text-sm text-white">200+</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
+              <div class="text-sm accent-c">★★★☆☆</div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有1/2 · 怎么改</div>
+            <div class="text-xs text-stone-400 leading-relaxed">
+              · 面料：尼龙/涤纶/聚氨酯混纺 → 100% 高密涤纶 + DWR（节省 USD 1.5）<br>
+              · 压胶车线无露针 → 车线 + 胶条压部件（节省 USD 0.8）<br>
+              · 金属扬 → 塑料带扣（节省 USD 0.3）<br>
+              <strong class="text-white">→ 总价：USD 4.5 → USD 1.9</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 下载设计参考包 -->
+        <a href="design-pack-no03-teatora.zip" download class="flex items-center justify-between bg-black border border-stone-700 hover:accent-bg hover:text-black p-4 mb-6 group transition">
+          <div>
+            <div class="text-[10px] tracking-widest text-stone-500 group-hover:text-black/70 mb-1">下载设计参考包</div>
+            <div class="display text-base">DESIGN PACK · No.03 TEATORA</div>
+            <div class="text-[10px] text-stone-500 group-hover:text-black/70 mt-1">含高清图 + 高科技面料参考 + 推单话术</div>
+          </div>
+          <div class="display text-2xl">↓</div>
+        </a>
+
         <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设计参考建议 · 反推到打样</div>
         <div class="border-l-2 accent-c pl-4 text-sm text-stone-300 mb-6">
           <strong class="text-white">→ 设计部这次可以试:</strong><br>
@@ -468,7 +652,7 @@ outdoor / urban brands. 7-day sample."<br><br>
 <section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500">05 / 服装风格参考</div>
+      <div class="display text-3xl text-stone-500" id="apparel">06 / 服装风格参考</div>
       <span class="badge-ref">设计灵感借鉴</span>
     </div>
     <h2 class="display text-4xl md:text-6xl font-bold mb-4">从服装看本季<br>风格走向</h2>
@@ -550,7 +734,7 @@ outdoor / urban brands. 7-day sample."<br><br>
 
     <div class="grid md:grid-cols-12 gap-12 mb-16">
       <div class="md:col-span-4">
-        <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">06 / 本周色彩</div>
+        <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4" id="color">07 / 本周色彩</div>
         <h2 class="display text-6xl md:text-8xl font-bold leading-none">2026<br>色彩</h2>
       </div>
       <div class="md:col-span-8 serif text-lg leading-relaxed text-stone-300">
@@ -633,7 +817,7 @@ outdoor / urban brands. 7-day sample."<br><br>
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500">07 / 本周特别 logo 工艺</div>
+      <div class="display text-3xl text-stone-500" id="craft">08 / 本周特别 logo 工艺</div>
       <span class="badge-yes">可复刻· 帬打样参考</span>
     </div>
     <h2 class="display text-4xl md:text-6xl font-bold mb-2 leading-none">3D PUFF</h2>
@@ -723,7 +907,7 @@ outdoor / urban brands. 7-day sample."<br><br>
 <section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500">08 / 本周设计工具推荐</div>
+      <div class="display text-3xl text-stone-500" id="tool">09 / 本周设计工具推荐</div>
       <span class="badge-yes">设计部可以上手试</span>
     </div>
     <h2 class="display text-4xl md:text-6xl font-bold mb-2 leading-none">VIZCOM</h2>
@@ -785,7 +969,7 @@ outdoor / urban brands. 7-day sample."<br><br>
 <!-- ═══════════ ACTION CHECKLIST ═══════════ -->
 <section class="border-t border-stone-800 py-24 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
-    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">09 / 这周必做清单</div>
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4" id="action">10 / 这周必做清单</div>
     <h2 class="display text-6xl md:text-8xl font-bold mb-12">本周必做</h2>
 
     <div class="space-y-px bg-stone-800">
@@ -856,7 +1040,7 @@ outdoor / urban brands. 7-day sample."<br><br>
 <!-- ═══════════ SOURCES ═══════════ -->
 <section class="border-t border-stone-800 py-24 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
-    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">10 / 数据来源</div>
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">11 / 数据来源</div>
     <h2 class="display text-5xl md:text-7xl font-bold mb-12">引用 & 来源</h2>
 
     <details class="border border-stone-800 rounded-sm">

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>趋势榜单 · HAT TREND RADAR</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', -apple-system, "PingFang SC", sans-serif; background: #0a0a0a; color: #fafafa; }
+  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .serif { font-family: 'Noto Serif SC', serif; }
+  .accent-c { color: #FF4B1F; }
+  .accent-bg { background: #FF4B1F; }
+  .bar { background: linear-gradient(90deg, #FF4B1F, #FF8C2A); height: 8px; border-radius: 4px; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- HEADER -->
+<header class="border-b border-stone-800 px-6 md:px-12 py-6">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <a href="index.html" class="display text-2xl tracking-widest">📡 HAT TREND RADAR</a>
+    <nav class="text-xs tracking-widest space-x-6">
+      <a href="2026-W24/" class="hover:accent-c">最新一期</a>
+      <a href="archive.html" class="hover:accent-c">历史归档</a>
+      <a href="trends.html" class="accent-c">趋势榜单</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="px-6 md:px-12 py-20 max-w-7xl mx-auto">
+  <div class="text-xs tracking-[0.4em] text-stone-500 uppercase mb-4">SEASONAL TRENDS</div>
+  <h1 class="display text-6xl md:text-8xl mb-6 leading-none">趋势榜单</h1>
+  <p class="serif text-stone-300 text-lg max-w-2xl leading-relaxed">
+    汇总过去 X 期监测的所有数据 · 看哪些品牌、工艺、颜色累计出现最多 · 为下季新品方案提供 brief 凭据
+  </p>
+  <div class="text-stone-500 text-xs mt-4">最后更新：2026-06-13 · 累计监测期数：1 期</div>
+</section>
+
+<div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-8 pb-20">
+
+  <!-- 最热品牌 Top 5 -->
+  <div class="bg-stone-950 border border-stone-800 p-6">
+    <div class="text-xs tracking-widest text-stone-500 mb-4 uppercase">本季最热品牌 TOP 5</div>
+    <ol class="space-y-3">
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">1. New Era</span><span class="display text-sm accent-c">2 次</span></div>
+        <div class="bar" style="width:100%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">2. WACKO MARIA</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:50%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">3. Barbour</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:50%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">4. Kijima Takayuki</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:50%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">5. Supreme</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:50%"></div>
+      </li>
+    </ol>
+    <div class="text-[10px] text-stone-500 mt-4 italic">注：累计期数少时数据参考性弱，建议 ≥ 4 期再用作 brief 凭据</div>
+  </div>
+
+  <!-- 最热工艺 -->
+  <div class="bg-stone-950 border border-stone-800 p-6">
+    <div class="text-xs tracking-widest text-stone-500 mb-4 uppercase">本季最热工艺 TOP 5</div>
+    <ol class="space-y-3">
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">1. 3D Puff 立体刺绣</span><span class="display text-sm accent-c">1 次 ★</span></div>
+        <div class="bar" style="width:100%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">2. DWR 防水尼龙</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:80%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">3. 压胶车线无露针</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:80%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">4. 蜡棉</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:60%"></div>
+      </li>
+      <li>
+        <div class="flex justify-between items-center mb-1"><span class="text-sm">5. 4-way 弹力混纺</span><span class="display text-sm accent-c">1 次</span></div>
+        <div class="bar" style="width:60%"></div>
+      </li>
+    </ol>
+    <div class="text-[10px] text-stone-500 mt-4 italic">★ = 本周专题深度介绍</div>
+  </div>
+
+  <!-- 最热颜色 -->
+  <div class="bg-stone-950 border border-stone-800 p-6">
+    <div class="text-xs tracking-widest text-stone-500 mb-4 uppercase">本季最热颜色 TOP 5</div>
+    <ol class="space-y-3">
+      <li>
+        <div class="flex items-center gap-3 mb-1">
+          <div style="background:#0A0A0A;width:24px;height:24px;border-radius:4px;border:1px solid #333"></div>
+          <span class="text-sm flex-1">1. 黑（Black 6 C）</span>
+          <span class="display text-sm accent-c">3 款</span>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-1">
+          <div style="background:#1B2A47;width:24px;height:24px;border-radius:4px"></div>
+          <span class="text-sm flex-1">2. 海军蓝 / 藏青</span>
+          <span class="display text-sm accent-c">2 款</span>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-1">
+          <div style="background:#F0EBE0;width:24px;height:24px;border-radius:4px"></div>
+          <span class="text-sm flex-1">3. Pantone Cloud Dancer</span>
+          <span class="display text-sm accent-c">1 款 ★</span>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-1">
+          <div style="background:#4A5D23;width:24px;height:24px;border-radius:4px"></div>
+          <span class="text-sm flex-1">4. 橄榄绿</span>
+          <span class="display text-sm accent-c">1 款</span>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center gap-3 mb-1">
+          <div style="background:#6E0E22;width:24px;height:24px;border-radius:4px"></div>
+          <span class="text-sm flex-1">5. 酒红</span>
+          <span class="display text-sm accent-c">1 款</span>
+        </div>
+      </li>
+    </ol>
+    <div class="text-[10px] text-stone-500 mt-4 italic">★ = 本周年度色专题</div>
+  </div>
+
+</div>
+
+<!-- 设计部用法说明 -->
+<section class="bg-stone-950 border-t border-stone-800 py-16 px-6 md:px-12">
+  <div class="max-w-5xl mx-auto">
+    <div class="display text-3xl text-stone-500 mb-4">这个榜单怎么用</div>
+    <div class="grid md:grid-cols-3 gap-6 text-sm text-stone-300">
+      <div class="border-l-2 accent-c pl-4">
+        <div class="display text-lg text-white mb-2">设计部</div>
+        春夏新品方案 brief 直接拿 Top 5 颜色 + Top 3 工艺打底
+      </div>
+      <div class="border-l-2 accent-c pl-4">
+        <div class="display text-lg text-white mb-2">营业部</div>
+        客户问"这季什么走"时，截图本榜单作为客观市场凭据
+      </div>
+      <div class="border-l-2 accent-c pl-4">
+        <div class="display text-lg text-white mb-2">采购部</div>
+        Top 工艺出现 ≥ 3 次时，提前备料；颜色 Top 3 提前调染缸
+      </div>
+    </div>
+    <p class="text-xs text-stone-500 mt-8 italic">
+      数据来自每周潮流雷达监测 · 当累计期数 ≥ 4 期时数据稳定性显著提高
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-stone-800 px-6 md:px-12 py-8">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between gap-4 text-xs tracking-widest text-stone-500 uppercase">
+    <div>TOP ONE HAT FACTORY · DESIGN DEPT</div>
+    <div>DESIGNED BY KIN</div>
+  </div>
+</footer>
+
+</body>
+</html>
