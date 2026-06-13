@@ -1,0 +1,29 @@
+{
+  "latest": "2026-W24",
+  "issues": [
+    {
+      "id": "2026-W24",
+      "number": "001",
+      "year": 2026,
+      "week": 24,
+      "title": "立体刺绣 + 户外功能 + 世界杯主题",
+      "subtitle": "5 款帽款深度拆解 + 2 款服装风格参考",
+      "publishDate": "2026-06-13",
+      "dateRange": "06.09 — 06.15",
+      "coverImage": "2026-W24/images/wacko-1.jpg",
+      "highlights": [
+        "WACKO MARIA × New Era 立体刺绣",
+        "Barbour × New Era 户外功能",
+        "2026 世界杯 8 国主题",
+        "Kith × Taxi Driver 老爹帽",
+        "Pantone Cloud Dancer 年度色"
+      ],
+      "stats": {
+        "hats": 5,
+        "apparel": 2,
+        "pitches": 3
+      },
+      "url": "2026-W24/index.html"
+    }
+  ]
+}

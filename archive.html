@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历史归档 · HAT TREND RADAR · Top One Hat Factory</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', "PingFang SC", sans-serif; background: #0a0a0a; color: #fafafa; }
+  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .serif { font-family: 'Noto Serif SC', serif; }
+  .accent-c { color: #FF4B1F; }
+  .accent-bg { background: #FF4B1F; }
+  .grain::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.3;
+  }
+  .issue-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+  .issue-card:hover { transform: translateY(-4px); }
+  .issue-card:hover .cover-img { transform: scale(1.04); }
+  .cover-img { transition: transform 0.6s ease; }
+</style>
+</head>
+<body class="grain min-h-screen">
+
+<!-- TOP BRAND BAR -->
+<div class="bg-black border-b border-stone-800 py-3 px-6 md:px-12 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <a href="index.html" class="flex items-center gap-3 hover:opacity-80">
+      <div class="w-8 h-8 accent-bg rounded-sm flex items-center justify-center">
+        <span class="display text-xl text-black">T</span>
+      </div>
+      <div>
+        <div class="display text-xl tracking-wider">TOP ONE HAT FACTORY</div>
+        <div class="text-[10px] tracking-widest text-stone-500 uppercase">HAT TREND RADAR · ARCHIVE</div>
+      </div>
+    </a>
+    <div class="flex items-center gap-4">
+      <a href="index.html" class="text-xs tracking-widest text-stone-400 hover:text-white uppercase">→ 最新一期</a>
+    </div>
+  </div>
+</div>
+
+<section class="py-16 md:py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="mb-16">
+      <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">📚 ARCHIVE · 历史归档</div>
+      <h1 class="display text-6xl md:text-9xl font-bold leading-none mb-6">
+        所有期数<br><span class="accent-c">HAT TREND RADAR</span>
+      </h1>
+      <p class="serif text-stone-400 text-lg max-w-2xl">
+        每周日 20:00 自动更新一期 · 设计部内部参考 · 含规格 / 工艺 / 成本 / 推单话术
+      </p>
+    </div>
+
+    <!-- Issue cards loaded dynamically -->
+    <div id="issues-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="text-stone-500 text-sm">加载中...</div>
+    </div>
+
+    <!-- Stats -->
+    <div id="stats" class="mt-16 pt-12 border-t border-stone-800 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"></div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-stone-800 py-12 px-6 md:px-12 mt-16">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-4 items-center">
+    <div class="text-xs tracking-widest text-stone-500 uppercase">
+      © 2026 TOP ONE HAT FACTORY · INTERNAL USE ONLY
+    </div>
+    <div class="text-xs tracking-[0.3em] uppercase text-stone-300 font-bold">
+      DESIGNED BY <span class="accent-c">KIN</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  fetch('issues.json').then(r => r.json()).then(data => {
+    const grid = document.getElementById('issues-grid');
+    grid.innerHTML = '';
+
+    if (!data.issues || data.issues.length === 0) {
+      grid.innerHTML = '<div class="text-stone-500">暂无期数</div>';
+      return;
+    }
+
+    data.issues.forEach((issue, idx) => {
+      const isLatest = idx === 0;
+      const card = document.createElement('a');
+      card.href = issue.url;
+      card.className = 'issue-card block bg-stone-900 border border-stone-800 hover:border-stone-600 rounded-sm overflow-hidden';
+
+      card.innerHTML = `
+        <div class="relative aspect-[4/3] overflow-hidden bg-stone-800">
+          <img src="${issue.coverImage}" alt="${issue.title}" class="cover-img w-full h-full object-cover">
+          ${isLatest ? '<div class="absolute top-3 right-3 accent-bg text-black text-[10px] tracking-widest font-bold px-2 py-1 uppercase">LATEST</div>' : ''}
+          <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+            <div class="display text-3xl">№.${issue.number}</div>
+            <div class="text-xs tracking-widest text-stone-300 uppercase">WK${issue.week} · ${issue.year}</div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">${issue.dateRange}</div>
+          <h3 class="display text-2xl mb-3 leading-tight">${issue.title}</h3>
+          <p class="text-stone-400 text-sm mb-4 leading-relaxed">${issue.subtitle}</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            ${issue.highlights.slice(0, 3).map(h => `<span class="text-[10px] border border-stone-700 px-2 py-1 rounded-full text-stone-400">${h}</span>`).join('')}
+          </div>
+          <div class="flex items-center justify-between pt-4 border-t border-stone-800">
+            <div class="flex gap-4 text-xs text-stone-500">
+              <span><span class="accent-c font-bold">${issue.stats.hats}</span> 帽款</span>
+              <span><span class="accent-c font-bold">${issue.stats.apparel}</span> 服饰</span>
+              <span><span class="accent-c font-bold">${issue.stats.pitches}</span> 话术</span>
+            </div>
+            <div class="text-xs tracking-widest text-stone-300 uppercase">→ 阅读</div>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Stats
+    const totalHats = data.issues.reduce((sum, i) => sum + (i.stats.hats || 0), 0);
+    const totalApparel = data.issues.reduce((sum, i) => sum + (i.stats.apparel || 0), 0);
+    const totalPitches = data.issues.reduce((sum, i) => sum + (i.stats.pitches || 0), 0);
+    document.getElementById('stats').innerHTML = `
+      <div><div class="display text-5xl accent-c">${data.issues.length}</div><div class="text-xs tracking-widest text-stone-500 uppercase mt-2">期</div></div>
+      <div><div class="display text-5xl">${totalHats}</div><div class="text-xs tracking-widest text-stone-500 uppercase mt-2">款帽款</div></div>
+      <div><div class="display text-5xl">${totalApparel}</div><div class="text-xs tracking-widest text-stone-500 uppercase mt-2">款服饰</div></div>
+      <div><div class="display text-5xl">${totalPitches}</div><div class="text-xs tracking-widest text-stone-500 uppercase mt-2">套推单话术</div></div>
+    `;
+  }).catch(err => {
+    document.getElementById('issues-grid').innerHTML = '<div class="text-red-500">加载失败：' + err.message + '</div>';
+  });
+</script>
+
+</body>
+</html>
