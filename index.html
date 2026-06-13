@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>帽类潮流雷达 · 历史归档</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .accent { color: #C8553D; }
+  .accent-bg { background-color: #C8553D; }
+</style>
+</head>
+<body class="bg-stone-50 min-h-screen">
+
+<!-- Header -->
+<header class="border-b border-stone-200 bg-white">
+  <div class="max-w-5xl mx-auto px-6 py-8">
+    <div class="flex items-center gap-3 mb-2">
+      <span class="text-3xl">📡</span>
+      <h1 class="text-3xl font-bold text-stone-900">帽类潮流雷达</h1>
+    </div>
+    <p class="text-stone-500 text-sm">设计部每周潮流资讯仪表板 · by Rex</p>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="max-w-5xl mx-auto px-6 py-12">
+
+  <!-- Intro -->
+  <section class="mb-12">
+    <h2 class="text-xl font-semibold text-stone-900 mb-4">关于本仪表板</h2>
+    <div class="prose prose-stone text-stone-700 leading-relaxed">
+      <p>每周自动收集全球帽类潮流资讯，监测大牌新品、街拍、电商爆款、流行色等多个维度，整理成可视化周报。</p>
+      <p>资料来源真实、可溯源，每条信息均附原始链接。</p>
+    </div>
+  </section>
+
+  <!-- Sources -->
+  <section class="mb-12">
+    <h2 class="text-xl font-semibold text-stone-900 mb-4">监测站点</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">HYPEBEAST</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Highsnobiety</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Hatclub</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Lids</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Supreme</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">'47 Brand</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Carhartt WIP</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">New Era</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Stussy</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Kangol</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Pantone</div>
+      <div class="bg-white border border-stone-200 rounded-lg p-3 text-center text-sm text-stone-700">Amazon BS</div>
+    </div>
+  </section>
+
+  <!-- Archive -->
+  <section class="mb-12">
+    <h2 class="text-xl font-semibold text-stone-900 mb-4">历史周报</h2>
+
+    <!-- Coming soon placeholder -->
+    <div class="bg-white border border-stone-200 rounded-lg p-8 text-center">
+      <div class="text-5xl mb-3">🚀</div>
+      <h3 class="text-lg font-semibold text-stone-900 mb-2">系统已上线，正在采集数据</h3>
+      <p class="text-stone-500 text-sm mb-4">第一份正式周报将于 <strong class="accent">2026 年 6 月 22 日（周日）</strong> 发布</p>
+      <p class="text-stone-400 text-xs">数据采集自 2026-06-14 起，连续 7 天积累后生成首期</p>
+    </div>
+
+    <!-- 未来周报列表会自动追加在这里 -->
+    <!-- WEEKLY_REPORTS_START -->
+    <!-- WEEKLY_REPORTS_END -->
+  </section>
+
+  <!-- How it works -->
+  <section class="mb-12">
+    <h2 class="text-xl font-semibold text-stone-900 mb-4">工作原理</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-white border border-stone-200 rounded-lg p-5">
+        <div class="text-2xl mb-2">🔍</div>
+        <h3 class="font-semibold text-stone-900 mb-1">每日采集</h3>
+        <p class="text-sm text-stone-600">每天 9:00 自动抓取 12 个潮流站点</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-lg p-5">
+        <div class="text-2xl mb-2">🧠</div>
+        <h3 class="font-semibold text-stone-900 mb-1">AI 聚合分析</h3>
+        <p class="text-sm text-stone-600">每周日 20:00 用 AI 提炼趋势 + 风格对照</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-lg p-5">
+        <div class="text-2xl mb-2">📡</div>
+        <h3 class="font-semibold text-stone-900 mb-1">自动发布</h3>
+        <p class="text-sm text-stone-600">周一 8:30 推送 WeCom + 邮件 + 公网</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-stone-200 bg-white mt-12">
+  <div class="max-w-5xl mx-auto px-6 py-6 text-center text-sm text-stone-400">
+    Powered by Rex · Designer Agent | 数据来源真实可溯源 | <span id="last-updated">2026-06-13</span>
+  </div>
+</footer>
+
+</body>
+</html>
