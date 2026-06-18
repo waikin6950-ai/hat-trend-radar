@@ -33,15 +33,8 @@
   .accent-bg { background: #FF4B1F; }
   details summary { list-style: none; cursor: pointer; }
   details summary::-webkit-details-marker { display: none; }
-  .hero-bg {
-    background-image: url('images/pluto-4.jpg');
-    background-size: cover;
-    background-position: center 30%;
-    filter: contrast(1.05);
-  }
-  .hero-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.7) 70%, #0a0a0a 100%);
-  }
+  
+  
   /* Spec table */
   .spec-row { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #1c1917; }
   .spec-row:last-child { border-bottom: none; }
@@ -63,6 +56,145 @@
     line-height: 1.7;
     color: #d6d3d1;
     border-radius: 0 4px 4px 0;
+  }
+
+  /* ═══ HERO POSTER STYLE ═══ */
+  .hero-poster {
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .hero-cell {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+  }
+  .hero-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.55) contrast(1.15) saturate(1.1);
+    transition: filter 0.6s, transform 0.6s;
+  }
+  .hero-cell:hover img {
+    filter: brightness(0.75) contrast(1.15) saturate(1.2);
+    transform: scale(1.04);
+  }
+  .hero-cell::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.95) 100%);
+  }
+  .hero-cell-tag {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 5;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.7);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    padding: 6px 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .hero-cell-name {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 5;
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    line-height: 0.95;
+  }
+  .hero-cell-name .small {
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .hero-cell-name .big {
+    font-size: 28px;
+    letter-spacing: -0.01em;
+  }
+  .hero-cell-name .price {
+    font-size: 18px;
+    color: #ff6b00;
+    margin-top: 6px;
+  }
+  .hero-overlay-magazine {
+    position: absolute;
+    inset: 0;
+    background: 
+      linear-gradient(180deg, rgba(10,10,10,0.7) 0%, transparent 25%, transparent 60%, rgba(10,10,10,0.95) 100%);
+    z-index: 6;
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 8;
+  }
+  .hero-headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 700;
+    line-height: 0.85;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.8);
+  }
+  .hero-stripe {
+    background: linear-gradient(90deg, #ff6b00 0%, #ff9540 100%);
+    color: black;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 11px;
+    padding: 6px 14px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .hero-stat-bar {
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-stat-cell {
+    border-right: 1px solid rgba(255,255,255,0.08);
+    padding: 18px 24px;
+    transition: background 0.3s;
+  }
+  .hero-stat-cell:hover {
+    background: rgba(255,107,0,0.08);
+  }
+  .hero-stat-cell:last-child {
+    border-right: none;
+  }
+  .hero-stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    color: #ff6b00;
+  }
+  .hero-stat-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+  @media (max-width: 768px) {
+    .hero-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 1fr); }
+    .hero-cell-name .big { font-size: 22px; }
   }
 </style>
 </head>
@@ -151,56 +283,133 @@
   </div>
 </div>
 
-<!-- ═══════════ HERO ═══════════ -->
-<section class="relative min-h-[90vh] hero-bg">
-  <div class="absolute inset-0 hero-overlay"></div>
-  <div class="relative z-10 min-h-[90vh] flex flex-col justify-between px-6 md:px-12 py-12">
-
-    <div class="flex justify-between items-start text-xs tracking-widest uppercase">
-      <div class="text-white">
-        <div class="text-stone-400">ISSUE No.002</div>
-        <div class="mt-1">2026 / 06 / 18 · WK25</div>
+<!-- ═══════════ HERO POSTER (杂志风) ═══════════ -->
+<section class="hero-poster" style="min-height:100vh;">
+  
+  <!-- 3 帽款拼图背景 -->
+  <div class="hero-grid">
+    <div class="hero-cell">
+      <img src="images/pluto-4.jpg" alt="Pluto of Saint Andrews × DSM">
+      <div class="hero-cell-tag">No.01 · 独立潮牌</div>
+      <div class="hero-cell-name">
+        <div class="small">SCOTLAND · INDEPENDENT</div>
+        <div class="big">PLUTO ×<br>DSM</div>
+        <div class="price">USD 44</div>
       </div>
-      <div class="text-right text-white">
-        <div class="text-stone-400">CURATED BY KIN</div>
-        <div class="mt-1">DESIGN DEPT TOOL</div>
+    </div>
+    <div class="hero-cell">
+      <img src="images/knicks-1-59fifty.jpg" alt="NewEra × NY Knicks Champions">
+      <div class="hero-cell-tag">No.02 · NBA 总冠军</div>
+      <div class="hero-cell-name">
+        <div class="small">USA · CHAMPIONSHIP</div>
+        <div class="big">NEW ERA ×<br>KNICKS</div>
+        <div class="price">USD 33-53</div>
+      </div>
+    </div>
+    <div class="hero-cell">
+      <img src="images/swar47-1.jpg" alt="Swarovski × 47 × MLB Yankees">
+      <div class="hero-cell-tag">No.03 · 奢侈水晶</div>
+      <div class="hero-cell-name">
+        <div class="small">AUSTRIA × USA · LUXURY</div>
+        <div class="big">SWAROVSKI ×<br>'47</div>
+        <div class="price">USD 175</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 渐变蒙版 -->
+  <div class="hero-overlay-magazine"></div>
+
+  <!-- 杂志风文字层 -->
+  <div class="hero-content min-h-screen flex flex-col">
+
+    <!-- 顶部期号信息 -->
+    <div class="px-6 md:px-12 pt-10 flex justify-between items-start text-xs tracking-[0.3em] uppercase text-stone-300">
+      <div>
+        <div class="text-stone-500 mb-1">ISSUE</div>
+        <div class="text-white font-bold">No.002 · WK25</div>
+      </div>
+      <div class="text-center hidden md:block">
+        <div class="text-stone-500 mb-1">DATE</div>
+        <div class="text-white font-bold">2026 · 06 · 15-21</div>
+      </div>
+      <div class="text-right">
+        <div class="text-stone-500 mb-1">EDITION</div>
+        <div class="text-white font-bold">设计部内参</div>
       </div>
     </div>
 
-    <div class="my-12 md:my-0 flex-1 flex flex-col justify-center">
-      <div class="text-xs tracking-[0.4em] text-stone-300 mb-6 uppercase">Weekly Trend Intel · Built For Design Dept</div>
-      <h1 class="display text-7xl md:text-[14rem] leading-[0.9] font-bold drop-shadow-2xl">
-        HAT<br>TREND<br><span class="accent-c">RADAR</span>
-      </h1>
-      <div class="mt-8 max-w-xl">
-        <p class="serif text-lg md:text-xl leading-relaxed text-stone-200 drop-shadow">
-          本周三大跨品牌联名 · 一个独立潮牌 + 一个 NBA 总冠军 + 一个奢侈品水晶<br>
-          <span class="text-stone-400 text-base">Pluto of Saint Andrews / NewEra × Knicks / Swarovski × 47 × MLB</span>
-        </p>
+    <!-- 主标题区 -->
+    <div class="flex-1 flex flex-col justify-center px-6 md:px-12 py-16">
+      <div class="max-w-6xl">
+        <div class="hero-stripe mb-6">每周三大跨品牌联名 · 真本周新品 · 跨地区跨价位</div>
+        
+        <h1 class="hero-headline text-white text-7xl md:text-[10rem] mb-8">
+          HAT TREND<br>
+          <span class="accent-c">RADAR.</span>
+        </h1>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mb-8">
+          <div class="border-l-2 accent-c pl-4">
+            <div class="text-[10px] tracking-widest text-stone-400 uppercase mb-2">本期主调</div>
+            <p class="text-white text-base leading-snug font-medium">独立潮牌 +<br>NBA 总冠军 +<br>奢侈品水晶</p>
+          </div>
+          <div class="border-l-2 border-stone-600 pl-4">
+            <div class="text-[10px] tracking-widest text-stone-400 uppercase mb-2">三档价位</div>
+            <p class="text-white text-base leading-snug">
+              <span class="accent-c">USD 44</span> 精品店<br>
+              <span class="accent-c">USD 33-53</span> 体育矩阵<br>
+              <span class="accent-c">USD 175</span> 奢侈水晶
+            </p>
+          </div>
+          <div class="border-l-2 border-stone-600 pl-4">
+            <div class="text-[10px] tracking-widest text-stone-400 uppercase mb-2">本期数据</div>
+            <p class="text-white text-base leading-snug">
+              扫 <span class="accent-c">17 品牌</span><br>
+              真本周 <span class="accent-c">23 款</span> 新品<br>
+              非 NewEra 占 <span class="accent-c">2/3</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 text-xs text-stone-400 tracking-widest uppercase">
+          <span>↓ SCROLL · 11 SECTIONS</span>
+          <span class="w-12 h-px bg-stone-600"></span>
+          <a href="#takeaway" class="hover:text-white transition">TAKEAWAY</a>
+          <span class="text-stone-700">/</span>
+          <a href="#hat-no01" class="hover:text-white transition">3 HATS</a>
+          <span class="text-stone-700">/</span>
+          <a href="#software" class="hover:text-white transition">3 AI 软件</a>
+          <span class="text-stone-700">/</span>
+          <a href="#action" class="hover:text-white transition">本周必做</a>
+        </div>
       </div>
     </div>
 
-    <div class="flex justify-between items-end text-xs tracking-widest uppercase text-stone-300">
-      <div class="flex gap-8">
-        <div>
-          <div class="text-stone-500">深度拆帽款</div>
-          <div class="text-white font-bold mt-1">3</div>
-        </div>
-        <div>
-          <div class="text-stone-500">真本周抓品牌</div>
-          <div class="text-white font-bold mt-1">17</div>
-        </div>
-        <div>
-          <div class="text-stone-500">真本周新品</div>
-          <div class="text-white font-bold mt-1">23 款</div>
-        </div>
-        <div>
-          <div class="text-stone-500">非 NewEra 占比</div>
-          <div class="text-white font-bold mt-1">2/3</div>
-        </div>
+    <!-- 底部数据条 -->
+    <div class="hero-stat-bar grid grid-cols-2 md:grid-cols-5">
+      <div class="hero-stat-cell">
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">深度拆帽款</div>
       </div>
-      <div>↓ SCROLL</div>
+      <div class="hero-stat-cell">
+        <div class="hero-stat-num">17</div>
+        <div class="hero-stat-label">真本周抓品牌</div>
+      </div>
+      <div class="hero-stat-cell">
+        <div class="hero-stat-num">23</div>
+        <div class="hero-stat-label">真本周新品 (件)</div>
+      </div>
+      <div class="hero-stat-cell">
+        <div class="hero-stat-num">2/3</div>
+        <div class="hero-stat-label">非 NewEra 占比</div>
+      </div>
+      <div class="hero-stat-cell">
+        <div class="hero-stat-num">$44-175</div>
+        <div class="hero-stat-label">价位跨度</div>
+      </div>
     </div>
+
   </div>
 </section>
 
