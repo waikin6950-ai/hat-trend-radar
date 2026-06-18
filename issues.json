@@ -6,24 +6,24 @@
       "number": "002",
       "year": 2026,
       "week": 25,
-      "title": "IP 联名爆款 + MLB 全明星 + 街头音乐文化",
-      "subtitle": "3 帽款深度拆解 + 真本周新品 + 18 张实图",
+      "title": "跨品牌联名 · 不再只看 NewEra",
+      "subtitle": "3 帽款全跨品牌（独立潮牌 + 体育 + 奢侈品）+ 17 品牌真扫描",
       "publishDate": "2026-06-18",
       "dateRange": "06.15 — 06.21",
-      "coverImage": "2026-W25/images/hp-1.jpg",
+      "coverImage": "2026-W25/images/pluto-4.jpg",
       "highlights": [
-        "NewEra × Harry Potter Hogwarts · IP 联名 9FIFTY Snapback",
-        "NewEra × MLB 2026 All-Star Game · Optic White 全 30 队系列",
-        "Patta × Tom Trago SoundSystem · 街头音乐文化联名",
-        "本周共抓真品 459 件，覆盖 8 个潮帽品牌",
-        "Harry Potter 系列 9 款全部 6/18 同步上线",
-        "MLB 2026 ASG 17+ 个队 6/18 同步开卖"
+        "Pluto of Saint Andrews × Dover Street Market · 苏格兰小独立品牌 6 款",
+        "NewEra × NY Knicks 2026 NBA Champions · 9 款全档线即时纪念",
+        "Swarovski × '47 × MLB Yankees · $175 奢侈品水晶帽",
+        "本周抓 17 个潮牌 / 真本周 6/15-21 created 23 件",
+        "强制非 NewEra 占 2/3 · 跨价位 $44-175",
+        "配套水钻外协指南 · 3 类外协资源池"
       ],
       "stats": {
         "hats": 3,
-        "brands_scraped": 8,
-        "real_products": 459,
-        "real_images": 13
+        "brands_scraped": 17,
+        "real_new_products": 23,
+        "non_newera_ratio": "2/3"
       },
       "url": "2026-W25/index.html"
     },
