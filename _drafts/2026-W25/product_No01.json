@@ -1,0 +1,159 @@
+{
+  "product": {
+    "id": 9245005349091,
+    "title": "Harry Potter Hogwarts Chrome White 9FIFTY Snapback Hat",
+    "body_html": "<p>The Harry Potter Hogwarts Chrome White 9FIFTY Snapback features an embroidered Harry Potter Hogwarts graphic at the front panels with a Platform 9 3/4 patch at the right-wear side. Additional details include an adjustable snapback closure at the rear and a gray undervisor.</p>",
+    "vendor": "us-neweracap-production",
+    "product_type": "HEADWEAR",
+    "created_at": "2026-04-29T10:32:09-04:00",
+    "handle": "harry-potter-hogwarts-chrome-white-9fifty-snapback",
+    "updated_at": "2026-06-18T09:43:35-04:00",
+    "published_at": "2026-06-17T09:55:12-04:00",
+    "template_suffix": null,
+    "published_scope": "web",
+    "tags": "cap type: SNAPBACK, ENRICHED, EXCLUDES WH, gender: MALE, hotMarketFlag: false, hybris_product_id: 60957810, JUNE26 CUSTOMS, license: WARNER BROS, returnable: true, sapLogo: NONE, sbu: FANGEAR, silhouette: 9FIFTY, sport: ENTERTAINMENT, summary_null: ENT26 HARRY POTTER 25TH, taxID: PC040129, team: HARRY POTTER",
+    "variants": [
+      {
+        "id": 48886651420899,
+        "product_id": 9245005349091,
+        "title": "One Size",
+        "price": "42.99",
+        "sku": "199843522104",
+        "position": 1,
+        "compare_at_price": "42.99",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "One Size",
+        "option2": null,
+        "option3": null,
+        "created_at": "2026-04-29T10:32:09-04:00",
+        "updated_at": "2026-06-18T09:43:35-04:00",
+        "taxable": true,
+        "barcode": "199843522104",
+        "grams": 0,
+        "image_id": null,
+        "weight": 0.0,
+        "weight_unit": "lb",
+        "tax_code": "",
+        "requires_shipping": true,
+        "quantity_rule": {
+          "min": 1,
+          "max": null,
+          "increment": 1
+        },
+        "price_currency": "USD",
+        "compare_at_price_currency": "USD",
+        "quantity_price_breaks": []
+      }
+    ],
+    "options": [
+      {
+        "id": 11701812035811,
+        "product_id": 9245005349091,
+        "name": "Size",
+        "position": 1,
+        "values": [
+          "One Size"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 48366901592291,
+        "product_id": 9245005349091,
+        "position": 1,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_3QR.jpg?v=1781546419",
+        "variant_ids": []
+      },
+      {
+        "id": 48366901690595,
+        "product_id": 9245005349091,
+        "position": 2,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_F.jpg?v=1781546419",
+        "variant_ids": []
+      },
+      {
+        "id": 48366901756131,
+        "product_id": 9245005349091,
+        "position": 3,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_3QL.jpg?v=1781546419",
+        "variant_ids": []
+      },
+      {
+        "id": 48366901625059,
+        "product_id": 9245005349091,
+        "position": 4,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_RSIDE.jpg?v=1781546419",
+        "variant_ids": []
+      },
+      {
+        "id": 48366901559523,
+        "product_id": 9245005349091,
+        "position": 5,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_LSIDE.jpg?v=1781546419",
+        "variant_ids": []
+      },
+      {
+        "id": 48366901657827,
+        "product_id": 9245005349091,
+        "position": 6,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_R.jpg?v=1781546419",
+        "variant_ids": []
+      },
+      {
+        "id": 48366901723363,
+        "product_id": 9245005349091,
+        "position": 7,
+        "created_at": "2026-06-15T14:00:17-04:00",
+        "updated_at": "2026-06-15T14:00:19-04:00",
+        "alt": null,
+        "width": 1920,
+        "height": 1920,
+        "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_UV.jpg?v=1781546419",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 48366901592291,
+      "product_id": 9245005349091,
+      "position": 1,
+      "created_at": "2026-06-15T14:00:17-04:00",
+      "updated_at": "2026-06-15T14:00:19-04:00",
+      "alt": null,
+      "width": 1920,
+      "height": 1920,
+      "src": "https://cdn.shopify.com/s/files/1/0601/2554/4675/files/60957810_9FIFTY_LifestyleEnergy_HARPOT_CHW_3QR.jpg?v=1781546419",
+      "variant_ids": []
+    }
+  }
+}
