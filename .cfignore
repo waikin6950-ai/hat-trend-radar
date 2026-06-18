@@ -1,0 +1,6 @@
+_drafts/
+*.bak
+*.log
+.git/
+.wrangler/
+PYEOF

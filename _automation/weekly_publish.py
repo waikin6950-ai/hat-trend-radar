@@ -75,7 +75,6 @@ def create_draft(target_date: dt.date | None = None):
 - [ ] 替换 dateRange："06.09 - 06.15" → "{date_range_for_week(target_date)}"
 - [ ] 抓本周 hypebeast / wgsn / business of fashion 帽类联名
 - [ ] 每张帽款图 **单图 image() 严格核验** （铁律）
-- [ ] 更新 3 个 design-pack zip
 - [ ] 更新 trends.html 累计期数
 - [ ] 替换设计工具（W25 介绍 LOOK AI 或 Refabric）
 - [ ] 替换 logo 工艺（W25 介绍 3D Embossed 压胶）
