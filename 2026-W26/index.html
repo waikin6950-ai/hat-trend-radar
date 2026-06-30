@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HAT TREND RADAR · WK26 / 2026 - Top One Hat Factory</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    font-family: 'Inter', -apple-system, "PingFang SC", sans-serif;
+    background: #0a0a0a;
+    color: #fafafa;
+  }
+  .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .serif { font-family: 'Noto Serif SC', serif; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .grain::before {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+  .marquee {
+    animation: marquee 35s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .accent-c { color: #FF4B1F; }
+  .accent-bg { background: #FF4B1F; }
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  .hero-bg {
+    background-image: url('images/dc-1.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: contrast(1.05);
+  }
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.7) 70%, #0a0a0a 100%);
+  }
+  .spec-row { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #1c1917; }
+  .spec-row:last-child { border-bottom: none; }
+  .spec-key { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #78716c; padding-top: 2px; }
+  .spec-val { color: #d6d3d1; font-size: 14px; line-height: 1.6; }
+  .badge-yes { display: inline-block; padding: 2px 8px; background: #FF4B1F; color: #000; font-size: 10px; font-weight: bold; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px; }
+  .pitch-box { background: #1c1917; padding: 1rem; border-left: 3px solid #FF4B1F; font-size: 13px; line-height: 1.6; color: #d6d3d1; }
+  /* Hat placeholder (SVG gradient card) - replace with img later */
+  .hat-card {
+    background: radial-gradient(ellipse at center, #1c1917 0%, #0a0a0a 80%);
+    display: flex; align-items: center; justify-content: center;
+    color: #57534e; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    text-align: center; padding: 1rem;
+  }
+  .usa-flag-bg {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e3a8a 35%, #fff 35%, #fff 45%, #dc2626 45%, #dc2626 55%, #fff 55%, #fff 65%, #1e3a8a 65%);
+  }
+</style>
+</head>
+<body class="grain">
+
+<!-- ═══════════ TOP NAV ═══════════ -->
+<div class="bg-black border-b border-stone-800">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-8 h-8 accent-bg rounded-sm flex items-center justify-center">
+        <span class="display text-xl text-black">T</span>
+      </div>
+      <div>
+        <div class="display text-xl tracking-wider">TOP ONE HAT FACTORY</div>
+        <div class="text-[10px] tracking-widest text-stone-500 uppercase hidden md:block">HAT TREND RADAR · DESIGN DEPT</div>
+      </div>
+    </a>
+
+    <div class="flex items-center gap-2 md:gap-4">
+      <div class="relative">
+        <select id="issue-selector" onchange="if(this.value)window.location.href=this.value"
+          class="appearance-none bg-stone-900 border border-stone-700 hover:border-stone-500 text-white text-xs tracking-widest uppercase pl-3 pr-8 py-2 rounded-sm cursor-pointer focus:outline-none focus:border-orange-500">
+          <option value="">📚 切换期数</option>
+          <option value="../2026-W25/index.html">No.002 · WK25 / 2026</option>
+          <option value="../2026-W24/index.html">No.001 · WK24 / 2026</option>
+          <option value="index.html" selected>WK26 / 2026 (本期)</option>
+        </select>
+        <span class="absolute right-2 top-1/2 -translate-y-1/2 text-stone-500 pointer-events-none">▾</span>
+      </div>
+      <a href="../archive.html" class="text-xs tracking-widest text-stone-400 hover:text-white uppercase hidden md:inline">所有期数</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ TAG FILTER ═══════════ -->
+<div class="bg-black border-b border-stone-800 sticky top-0 z-30 backdrop-blur" id="tagBar">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 overflow-x-auto whitespace-nowrap text-xs">
+    <span class="text-stone-500 mr-2 tracking-widest uppercase">快跳:</span>
+    <a href="#takeaway" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">首页一句话</a>
+    <a href="#hat-no01" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.01 NE × Padres</a>
+    <a href="#hat-no02" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.02 Dunkin'</a>
+    <a href="#hat-no03" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.03 Polo RL</a>
+    <a href="#events" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">当周 6 大事件</a>
+    <a href="#color" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">5 色</a>
+    <a href="#craft" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">3 工艺</a>
+    <a href="#tool" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">Look AI</a>
+    <a href="#action" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">必做清单</a>
+    <span class="flex-1"></span>
+    <a href="../archive.html" class="px-3 py-1 accent-bg text-black tracking-widest font-bold hover:bg-stone-200 transition">历史期数</a>
+  </div>
+</div>
+
+<!-- ═══════════ TICKER BAR ═══════════ -->
+<div class="bg-white text-black overflow-hidden border-b border-stone-300">
+  <div class="marquee py-2 text-xs tracking-widest font-bold uppercase flex gap-12">
+    <span>📡 HAT TREND RADAR</span><span>·</span>
+    <span>WEEK 26 / 2026</span><span>·</span>
+    <span>06.22 — 06.28</span><span>·</span>
+    <span>3 帽款 USA 250 主旋律</span><span>·</span>
+    <span>6 大事件驱动</span><span>·</span>
+    <span>+ Heat Press 压胶 + Vintage Chenille + Foil Embroidery</span><span>·</span>
+    <span>+ Look AI 工具</span><span>·</span>
+    <span>含规格 / 工艺 / 成本 / 推单话术</span><span>·</span>
+    <span>📡 HAT TREND RADAR</span><span>·</span>
+    <span>WEEK 26 / 2026</span><span>·</span>
+    <span>06.22 — 06.28</span><span>·</span>
+    <span>3 帽款 USA 250 主旋律</span><span>·</span>
+    <span>6 大事件驱动</span><span>·</span>
+    <span>+ 复古刺绣 + 散热科技</span><span>·</span>
+    <span>+ AI 设计工具</span><span>·</span>
+    <span>含规格 / 工艺 / 成本 / 推单话术</span><span>·</span>
+  </div>
+</div>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="relative min-h-[90vh] hero-bg">
+  <div class="absolute inset-0 hero-overlay"></div>
+  <div class="relative z-10 min-h-[90vh] flex flex-col justify-between px-6 md:px-12 py-12">
+
+    <div class="flex justify-between items-start text-xs tracking-widest uppercase">
+      <div class="text-white">
+        <div class="text-stone-400">ISSUE No.003</div>
+        <div class="mt-1">2026 / 06 / 28</div>
+      </div>
+      <div class="text-right text-white">
+        <div class="text-stone-400">CURATED BY KIN</div>
+        <div class="mt-1">DESIGN DEPT TOOL</div>
+      </div>
+    </div>
+
+    <div class="my-12 md:my-0 flex-1 flex flex-col justify-center">
+      <div class="text-xs tracking-[0.4em] text-stone-300 mb-6 uppercase">Weekly Trend Intel · Built For Design Dept</div>
+      <h1 class="display text-7xl md:text-[14rem] leading-[0.9] font-bold drop-shadow-2xl">
+        USA<br>250<br><span class="accent-c">RADAR</span>
+      </h1>
+      <div class="mt-8 max-w-xl">
+        <p class="serif text-lg md:text-xl leading-relaxed text-stone-200 drop-shadow">
+          本期主旋律：美国 250 周年 × 7/4 独立日预热期<br>
+          <span class="text-stone-400 text-base">3 帽款 / 6 大当周事件 / 含规格工艺成本推单话术</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-end text-xs tracking-widest uppercase text-stone-300">
+      <div class="flex gap-8">
+        <div>
+          <div class="text-stone-500">本周新帽</div>
+          <div class="text-white font-bold mt-1">3</div>
+        </div>
+        <div>
+          <div class="text-stone-500">当周事件</div>
+          <div class="text-white font-bold mt-1">6</div>
+        </div>
+        <div>
+          <div class="text-stone-500">主旋律</div>
+          <div class="text-white font-bold mt-1">USA 250</div>
+        </div>
+        <div>
+          <div class="text-stone-500">价位跨度</div>
+          <div class="text-white font-bold mt-1">$24 - $58</div>
+        </div>
+      </div>
+      <div>↓ SCROLL</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 30秒速读 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-gradient-to-b from-stone-950 to-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-6">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-3xl text-stone-500">01 / 30秒速读</div>
+        <span class="text-xs text-stone-500">老板与设计部主管 · 不看全文看这一部分就够</span>
+      </div>
+      <button onclick="document.getElementById('quick').classList.toggle('hidden')" class="text-xs accent-c hover:text-white tracking-widest">[收起 / 展开]</button>
+    </div>
+
+    <div id="quick" class="grid md:grid-cols-3 gap-4">
+      <div class="bg-black border border-stone-800 p-6">
+        <div class="text-xs accent-c tracking-widest mb-2">本期最值得看 3 件事</div>
+        <ol class="text-sm text-stone-300 space-y-2 list-decimal pl-4">
+          <li><strong class="text-white">USA 250 主旋律</strong>：NewEra 6/29 上线 16 队 MLS Americana 系列 ($35.99) · Polo RL 7/4 系列 · Dunkin' 6/26 全线 merch</li>
+          <li><strong class="text-white">三大事件驱动</strong>：NBA Draft 6/23 Dybantsa #1 → Wizards · 巴黎 SS27 Rick Owens × Adidas Climacool · Bode 6/26 Semiquincentennial 上线</li>
+          <li><strong class="text-white">Heat Press 压胶</strong> 是爱国主题帽的视觉差异化关键工艺，HF 车间可立刻打样</li>
+        </ol>
+      </div>
+      <div class="bg-black border border-stone-800 p-6">
+        <div class="text-xs accent-c tracking-widest mb-2">本周主调</div>
+        <p class="serif text-stone-200 text-base leading-relaxed">
+          美国 250 周年 + 7/4 预热期<br>
+          + NBA Draft 新人 × 巴黎 Climacool × Bode 美式复古
+        </p>
+        <div class="mt-4 text-xs text-stone-500 leading-relaxed">
+          3 帽款全部呼应 USA 250 · 跨价位 $24-$58<br>
+          颜色：Stars &amp; Stripes Red / White / Navy · 米色奶油 / 砖红 v.cream
+        </div>
+      </div>
+      <div class="bg-black border border-stone-800 p-6">
+        <div class="text-xs accent-c tracking-widest mb-2">这周要动手的 3 件</div>
+        <ul class="text-sm text-stone-300 space-y-2">
+          <li>⚡ HF 车间 → 立刻打样 Heat Press 压胶爱国主题帽（USD 0.5/件）</li>
+          <li>⚡ 设计部 → 用 Look AI 把爱国主题 3 款做成 SKKU 提案图，明早进 cert</li>
+          <li>⚡ 营业部 → 美国 250 主题帽款同步推给所有美国客户（独立日礼盒套装）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ THE TAKEAWAY ═══════════ -->
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8" id="takeaway">02 / 本周一句话</div>
+    <h2 class="display text-5xl md:text-8xl font-bold leading-tight mb-10">
+      USA 250 + 7/4<br>
+      <span class="accent-c">爱国主题帽</span> = 这周打样方向
+    </h2>
+    <div class="grid md:grid-cols-3 gap-px bg-stone-800">
+      <div class="bg-black p-8">
+        <div class="text-xs tracking-widest text-stone-500 mb-2">为什么</div>
+        <p class="serif text-stone-300 leading-relaxed">本周 W26 是 7/4 独立日 + USA 250 双高峰前的最后一周。NewEra 6/29 上线 16 队 MLS Americana 系列 ($35.99/顶)，Polo RL USA 250 7/4 系列 + Dunkin' 6/26 全线 merch — 爱国主题帽正式进旺季。</p>
+      </div>
+      <div class="bg-black p-8">
+        <div class="text-xs tracking-widest text-stone-500 mb-2">该做什么</div>
+        <p class="serif text-stone-300 leading-relaxed">HF 车间立刻打样 Heat Press 压胶 + 5 色星条旗配色帽款；设计部用 Look AI 把 3 款做成营销套图；营业部把爱国主题帽同步推给所有美国客户做独立日/国庆礼盒套装。</p>
+      </div>
+      <div class="bg-black p-8">
+        <div class="text-xs tracking-widest text-stone-500 mb-2">时间窗口</div>
+        <p class="serif text-stone-300 leading-relaxed">USA 250 主题从本周 W26 到 W28 (7/4 - 7/11) 是 3 周强档期；NBA Draft 新人 AJ Dybantsa Wizards 帽款至少带动 7-10 天的体育周边窗口；巴黎 SS27 Climacool 概念会延续到 8 月发售。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HAT No.01 - NewEra × San Diego Padres ID4 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-baseline gap-4 mb-8">
+      <div class="display text-3xl text-stone-500" id="hat-no01">03 / 本周帽款 No.01</div>
+      <span class="badge-yes">我们能做</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8">
+
+      <!-- LEFT: Image -->
+      <div class="md:col-span-7">
+        <a href="https://www.neweracap.com/products/san-diego-padres-independence-day-2026-19twenty-snapback" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
+          <img src="images/padres-1.jpg" alt="NewEra × San Diego Padres Independence Day 2026 19TWENTY Snapback" class="w-full h-full object-cover hover:scale-105 transition duration-700" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='<div>NewEra × SD Padres ID4 2026<br>19TWENTY Snapback<br><br>图源替换中 · neweracap.com 已上架</div>';">
+        </a>
+        <div class="grid grid-cols-4 gap-1 mt-1">
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/padres-2.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/padres-3.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/padres-4.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/padres-5.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Spec sheet -->
+      <div class="md:col-span-5">
+        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">PADRES<br>× NEW ERA</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">2026 ID4 · Star Spangled Sand / 12 队 MLB 系列</div>
+
+        <div class="mb-6">
+          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">19TWENTY 平檐 / 经典棒球款 · 低顶可调</div></div>
+          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">6-Panel 标准版型 / 帽顶高约 10.5cm</div></div>
+          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 棉斜纹 (推估)· 米黄主色 (Star Spangled Sand)</div></div>
+          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板平绣金边 Padres 队徽（星条旗配色）<br>右侧 ID 2026 Logo 平绣 / 后面 MLB Batterman</div></div>
+          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">红/白/蓝 undervisor / 防汗内带 / NE flag 织唛<br>+ League ID 2026 织唛</div></div>
+          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">Snapback 塑料插扣 9 档可调</div></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-px bg-stone-800 mb-6">
+          <div class="bg-black p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 mb-1">我们成本</div>
+            <div class="display text-2xl accent-c">USD 2.4-3.0</div>
+            <div class="text-[10px] text-stone-500 mt-1">不含 MLB 授权</div>
+          </div>
+          <div class="bg-black p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 mb-1">国际零售</div>
+            <div class="display text-2xl">USD 39.99</div>
+            <div class="text-[10px] text-stone-500 mt-1">neweracap.com 6/22-28 已上市</div>
+          </div>
+        </div>
+
+        <!-- 工艺难度评分卡 + 成本拆解 -->
+        <div class="bg-stone-950 border border-stone-800 mb-6">
+          <div class="grid grid-cols-4 border-b border-stone-800">
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
+              <div class="text-sm accent-c">★★★☆☆</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
+              <div class="text-sm text-white">5-7 天</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
+              <div class="text-sm text-white">288+</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
+              <div class="text-sm accent-c">★★★★★</div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有 1/2 · 怎么改</div>
+            <div class="text-xs text-stone-400 leading-relaxed">
+              · IP 替换：自创历史里程碑 IP / 复古老字号 logo<br>
+              · 工艺：金边绣 → 普通彩线绣（节省 USD 0.4）<br>
+              · 织唛：MLB 官方织唛 → 自家 USA 250 织唛（节省 USD 0.2）<br>
+              <strong class="text-white">→ 总价：USD 2.4 → USD 1.8</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="pitch-box mb-4">
+          <div class="text-stone-500 mb-2">→ 给客户的开发要点</div>
+          USA 250 主旋律是 7/4 旺季最稳话题。<br>
+          重点：1 金边 + 星条旗配色是核心 2 米黄主色适合夏季美式休闲<br>
+          3 适合做粉丝向礼盒套装（多队一组售 + 独立日限定）。
+        </div>
+
+        <a href="https://www.neweracap.com/products/san-diego-padres-independence-day-2026-19twenty-snapback" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ NewEra Padres ID4 2026 产品页</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HAT No.02 - Dunkin' Fourth of July Trucker ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-baseline gap-4 mb-8">
+      <div class="display text-3xl text-stone-500" id="hat-no02">04 / 本周帽款 No.02</div>
+      <span class="badge-yes">我们能做</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8 md:[grid-template-areas:'r_l']">
+
+      <div class="md:col-span-7 md:[grid-area:l]">
+        <a href="https://news.dunkindonuts.com/news/dunkin-fourth-of-july-2026" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
+          <img src="images/dunkin-1.jpg" alt="Dunkin' Fourth of July Trucker Hat - shark reaching for iced coffee" class="w-full h-full object-cover hover:scale-105 transition duration-700" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='<div>Dunkin\' Fourth of July Trucker<br>Shark reaching iced coffee<br><br>图源替换中 · dunkindonuts.com 6/26 上线</div>';">
+        </a>
+        <div class="grid grid-cols-4 gap-1 mt-1">
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/dunkin-2.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/dunkin-3.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/dunkin-4.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/dunkin-5.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 md:[grid-area:r]">
+        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">DUNKIN'<br>4TH OF JULY</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">2026 ID4 Trucker · Shark + Iced Coffee / 全美 merch</div>
+
+        <div class="mb-6">
+          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">Trucker 卡车帽 / 后开 mesh · 平檐 Adjustable</div></div>
+          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">5-Panel 中顶 / 帽顶高约 10cm</div></div>
+          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">前面板 100% 棉斜纹 + 后开 mesh · 海军蓝/红配色</div></div>
+          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板大版印（DTF 直喷） 鲨鱼举 Dunkin 冰咖啡杯图案<br>右侧 Dunkin' Logo 平绣</div></div>
+          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">网眼后片 / 后开塑料插扣 / Dunkin' 内标</div></div>
+          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">Snapback 塑料插扣 7 档可调</div></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-px bg-stone-800 mb-6">
+          <div class="bg-black p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 mb-1">我们成本</div>
+            <div class="display text-2xl accent-c">USD 1.6-2.2</div>
+            <div class="text-[10px] text-stone-500 mt-1">不含 Dunkin' 授权</div>
+          </div>
+          <div class="bg-black p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 mb-1">国际零售</div>
+            <div class="display text-2xl">USD 24.99</div>
+            <div class="text-[10px] text-stone-500 mt-1">DunkinRunsOnMerch.com 6/26 上线</div>
+          </div>
+        </div>
+
+        <div class="bg-stone-950 border border-stone-800 mb-6">
+          <div class="grid grid-cols-4 border-b border-stone-800">
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
+              <div class="text-sm accent-c">★★☆☆☆</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
+              <div class="text-sm text-white">3-5 天</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
+              <div class="text-sm text-white">500+</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
+              <div class="text-sm accent-c">★★★★☆</div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有 1/2 · 怎么改</div>
+            <div class="text-xs text-stone-400 leading-relaxed">
+              · IP 替换：自创卡通 IP / 自家历史 logo / 行业 mascot<br>
+              · 工艺：DTF 直喷 → 普通胶印（节省 USD 0.3，但色牢度差）<br>
+              · 后开 mesh 改纯棉（全印风格）节省 USD 0.2<br>
+              <strong class="text-white">→ 总价：USD 1.6 → USD 1.1</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="pitch-box mb-4">
+          <div class="text-stone-500 mb-2">→ 给客户的开发要点</div>
+          餐饮品牌 merch 化是 2026 美国市场最热趋势。<br>
+          重点：1 Trucker 印图款是美式户外风主力 2 鲨鱼+冰咖啡组合适合夏季度假风<br>
+          3 适合做礼盒套装（鸭嘴杯+Trucker+泳衣裤套装售 $80+）。
+        </div>
+
+        <a href="https://news.dunkindonuts.com/news/dunkin-fourth-of-july-2026" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ Dunkin' 4th of July 系列</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ HAT No.03 - Polo Ralph Lauren USA 250 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-baseline gap-4 mb-8">
+      <div class="display text-3xl text-stone-500" id="hat-no03">05 / 本周帽款 No.03</div>
+      <span class="badge-yes">我们能做</span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-8">
+
+      <div class="md:col-span-7">
+        <a href="https://www.ralphlauren.com/men-accessories-hats-scarves-gloves/polo-bear-twill-sports-cap/661117.html" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
+          <img src="images/polo-1.jpg" alt="Polo Ralph Lauren × USA 250 Sports Cap" class="w-full h-full object-cover hover:scale-105 transition duration-700" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='<div>Polo RL × USA 250 Sports Cap<br>Polo Bear / Pony / Stars<br><br>图源替换中 · ralphlauren.com promotion 期</div>';">
+        </a>
+        <div class="grid grid-cols-4 gap-1 mt-1">
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/polo-2.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/polo-3.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/polo-4.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/polo-5.jpg" class="w-full h-full object-cover" loading="lazy" alt="" onerror="this.style.display='none';this.parentElement.classList.add('hat-card');this.parentElement.innerHTML='·';"></div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5">
+        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">POLO RL<br>USA 250</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">2026 ID4 · Polo Bear Twill Sports Cap / 美国国旗限定</div>
+
+        <div class="mb-6">
+          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">Twill Sports Cap / 高顶 棒球版 · 平檐 Curved Visor</div></div>
+          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">6-Panel 高顶硬挺 / 帽顶高约 12cm</div></div>
+          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 棉斜纹 / 深海军蓝主色 + 红白条文</div></div>
+          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板大型 Polo Bear 刺绣（拿星条旗图案）<br>+ 右侧刺绣小 Pony Logo / 后面 1776-2026 leather patch</div></div>
+          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">米黄 undervisor / 海军蓝汗带 / RL 旗标</div></div>
+          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">Snapback 金属调节扣（铜色）8 档可调</div></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-px bg-stone-800 mb-6">
+          <div class="bg-black p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 mb-1">我们成本</div>
+            <div class="display text-2xl accent-c">USD 3.6-4.4</div>
+            <div class="text-[10px] text-stone-500 mt-1">不含 Polo 授权</div>
+          </div>
+          <div class="bg-black p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 mb-1">国际零售</div>
+            <div class="display text-2xl">USD 58.00</div>
+            <div class="text-[10px] text-stone-500 mt-1">ralphlauren.com 6/22-28 promotion 期</div>
+          </div>
+        </div>
+
+        <div class="bg-stone-950 border border-stone-800 mb-6">
+          <div class="grid grid-cols-4 border-b border-stone-800">
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
+              <div class="text-sm accent-c">★★★★☆</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
+              <div class="text-sm text-white">7-10 天</div>
+            </div>
+            <div class="p-3 border-r border-stone-800 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
+              <div class="text-sm text-white">288+</div>
+            </div>
+            <div class="p-3 text-center">
+              <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
+              <div class="text-sm accent-c">★★★★★</div>
+            </div>
+          </div>
+          <div class="p-4">
+            <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有 1/2 · 怎么改</div>
+            <div class="text-xs text-stone-400 leading-relaxed">
+              · Polo Bear 替换：自家品牌 mascot / 历史 logo（节省授权）<br>
+              · 工艺：7 色高密刺绣 → 5 色普通刺绣（节省 USD 0.7）<br>
+              · 织物：棉斜纹 → 棉麻混纺（节省 USD 0.3）<br>
+              <strong class="text-white">→ 总价：USD 3.6 → USD 2.3</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="pitch-box mb-4">
+          <div class="text-stone-500 mb-2">→ 给客户的开发要点</div>
+          美式传统 Polo Bear 是 7/4 旺季美式经典 icon。<br>
+          重点：1 海军蓝 + 红白 = 配色永不过时 2 leather patch（1776-2026）增身价感<br>
+          3 适合做礼品套装（Polo Bear + Yankees + USA 250 多件组合）。
+        </div>
+
+        <a href="https://www.ralphlauren.com/men-accessories-hats-scarves-gloves/polo-bear-twill-sports-cap/661117.html" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ Polo Bear Twill Sports Cap 产品页</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 当周 6 大事件驱动 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12" id="events">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">06 / 当周 6 大事件驱动</div>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-10 leading-none">当 W26<br><span class="accent-c">三大事件交织</span></h2>
+
+    <div class="grid md:grid-cols-3 gap-px bg-stone-800">
+      <div class="bg-black p-6">
+        <div class="display text-7xl accent-c mb-2">A</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/23 · NBA Draft 2026</div>
+        <h3 class="text-xl font-bold mb-3">AJ Dybantsa → Wizards #1</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-3">6/24 选秀夜 Wizards 选中 BYU 一年级 19 岁 6-9 后卫，连续 25.5 分 NCAA 得分王。Nike 当晚发布 "monumental" 致敬视频。Giannis 被交易到 Heat，制造选秀夜最大爆点。</p>
+        <div class="text-xs text-stone-500">→ 推 American East Coast 运动周边客户</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="display text-7xl accent-c mb-2">B</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/22-28 · 巴黎男装周 SS27</div>
+        <h3 class="text-xl font-bold mb-3">Rick Owens × Adidas Climacool</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-3">Rick Owens 6/25 把巴黎秀提前到早上 10 点（避开热浪）。用了 Adidas 专为 2026 世界杯开发的 Climacool 散热科技（曾在 2026 世界杯热身背心用过），给出 track jacket + jogger + 长款 hoodie + 鞋系列全套暗黑机能。</p>
+        <div class="text-xs text-stone-500">→ 推 Avant-garde / 暗黑机能风格客户</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="display text-7xl accent-c mb-2">C</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/26 · Bode Semiquincentennial</div>
+        <h3 class="text-xl font-bold mb-3">Bode 限量 Semiquincentennial 系列</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-3">纽约独立设计师 Emily Adams Bode Aujla 的 Bode 推出美国 250 周年主题复古系列：$450-1800，主打真古着灵感 + 当代剪裁，灵感源自 1930s 林肯就职游行服与 1970s 旅游纪念 tee。系列 6/26 上线即售罄警告。</p>
+        <div class="text-xs text-stone-500">→ 推 Vintage Americana 高端客户</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="display text-7xl accent-c mb-2">D</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/26 · Dunkin' 4th July 全线 merch</div>
+        <h3 class="text-xl font-bold mb-3">Dunkin' Eagle Cup + Trucker</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-3">6/24 Dunkin' 公告第 250 周年庆祝项目：Eagle Cup $10.99 6/29 全国上市，6 件 merch 包括 Trucker Hat ($24.99 鲨鱼抱咖啡图案)、Captain's Hat ($24.99)、Liberty Tee、Swim Shorts、Crabby Tote 等。</p>
+        <div class="text-xs text-stone-500">→ 推连锁餐饮 + 美式周边客户</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="display text-7xl accent-c mb-2">E</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/23-28 · 巴黎 Sacai × Birkenstock</div>
+        <h3 class="text-xl font-bold mb-3">Sacai 十年后再联手 Birkenstock</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-3">Chitose Abe 6/28 巴黎 Sacai SS27 推出与 Birkenstock 的十年后第二次合作 — 把 Arizona + Madrid + Boston 三款融合成两款 hybrid 凉鞋，GQ 称"夏季第一双好凉鞋"。Sacai cap 同步出夏日新色。</p>
+        <div class="text-xs text-stone-500">→ 推日本融合风格 + 高端买手店</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="display text-7xl accent-c mb-2">F</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/24 · NewEra NHL 2026 Draft 系列</div>
+        <h3 class="text-xl font-bold mb-3">NHL Draft 9FIFTY + 59FIFTY 上线</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-3">6/24 NewEra 上线 NHL 2026 Draft 9FIFTY Snapback ($44.99) + 59FIFTY Fitted ($44.99)。2026 MLB All-Star Game 7/14 费城举办前一周预热。Yahoo Sports 称 PJ Haggerty 入选预期第一阵容。</p>
+        <div class="text-xs text-stone-500">→ 推体育 / 赛事限定周边客户</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 本周色卡（5 色）═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12" id="color">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">07 / 本周色卡（5 色全换）</div>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-10 leading-none">USA 250<br><span class="accent-c">5 色调色盘</span></h2>
+
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div>
+        <div class="aspect-square bg-[#1e3a8a] mb-3 rounded"></div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">PRIMARY</div>
+        <div class="display text-2xl mt-1">Liberty Navy</div>
+        <div class="text-xs text-stone-400 mono mt-1">#1E3A8A · Pantone 19-3939 TPX</div>
+      </div>
+      <div>
+        <div class="aspect-square bg-[#dc2626] mb-3 rounded"></div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">PRIMARY</div>
+        <div class="display text-2xl mt-1">Betsy Ross Red</div>
+        <div class="text-xs text-stone-400 mono mt-1">#DC2626 · Pantone 18-1664 TPX</div>
+      </div>
+      <div>
+        <div class="aspect-square bg-[#f5f5dc] mb-3 rounded border border-stone-700"></div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">BASE</div>
+        <div class="display text-2xl mt-1">Sand Star Cream</div>
+        <div class="text-xs text-stone-400 mono mt-1">#F5F5DC · Pantone 11-0907 TPX</div>
+      </div>
+      <div>
+        <div class="aspect-square bg-[#0c0a09] mb-3 rounded"></div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">DARK</div>
+        <div class="display text-2xl mt-1">Coal Black</div>
+        <div class="text-xs text-stone-400 mono mt-1">#0C0A09 · Pantone 19-3911 TPX</div>
+      </div>
+      <div>
+        <div class="aspect-square bg-[#fbbf24] mb-3 rounded"></div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">ACCENT</div>
+        <div class="display text-2xl mt-1">Eagle Gold</div>
+        <div class="text-xs text-stone-400 mono mt-1">#FBBF24 · Pantone 13-0859 TPX</div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-sm text-stone-400 leading-relaxed serif">
+      本周 5 色全部呼应"USA 250"美国独立日主题：Liberty Navy + Betsy Ross Red 是星条旗主色，Sand Star Cream 是 MLB ID 系列米黄主色，Coal Black 是底/边/字符色，Eagle Gold 是金边工艺点睛。<br>
+      <span class="text-stone-500">→ 与 W25 （Cream Dancer / Onyx / Snow / Cardinal）色彩无重合</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LOGO CRAFT（3 工艺）═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12" id="craft">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">08 / 本周 LOGO CRAFT（3 工艺全换）</div>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-10 leading-none">爱国主题帽<br><span class="accent-c">3 大工艺</span></h2>
+
+    <div class="grid md:grid-cols-3 gap-px bg-stone-800">
+      <div class="bg-black p-8">
+        <div class="display text-7xl accent-c mb-2">01</div>
+        <h3 class="text-xl font-bold mb-3">Heat Press Tonal Patch</h3>
+        <p class="serif text-stone-300 leading-relaxed mb-4">高级品牌在爱国主题帽上的主流工艺：用金属铝模具在棉布上烫出低对比度 logo，耐久 + 防伪 + 触感强。Rick Owens × Adidas 6/25 走秀款就用了这个。</p>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设备</div>
+        <div class="text-xs text-stone-400">· 母版雕刻机 USD 200-500<br>· 平压烫帽机 USD 1,200-2,500<br>· 单件耗材 USD 0.4-0.6</div>
+      </div>
+      <div class="bg-black p-8">
+        <div class="display text-7xl accent-c mb-2">02</div>
+        <h3 class="text-xl font-bold mb-3">Vintage Chenille（簇绒绣）</h3>
+        <p class="serif text-stone-300 leading-relaxed mb-4">复古纹饰学院风的羊毛 / 腈纶绒线刺绣，立体感强。Bode 6/26 上线的 Semiquincentennial 复古系列大量使用，灵感来自 1930s 游行服。</p>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设备</div>
+        <div class="text-xs text-stone-400">· 簇绒绣机头 + 长臂机 USD 4,000-8,000<br>· 单件耗材 USD 0.8-1.5<br>· 起订 288+ · 周期 7-10 天</div>
+      </div>
+      <div class="bg-black p-8">
+        <div class="display text-7xl accent-c mb-2">03</div>
+        <h3 class="text-xl font-bold mb-3">Metallic Foil Embroidery（金属箔刺绣）</h3>
+        <p class="serif text-stone-300 leading-relaxed mb-4">金 / 银 / 红箔线做小面积点缀，Padres ID4 帽的金边队徽就用了这个，是爱国主题帽显身价的"点睛"工艺，Dunkin' Captain's Hat 也用了同款。</p>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设备</div>
+        <div class="text-xs text-stone-400">· 普通电脑绣花机即可（针换 foil needle）<br>· 金箔线 USD 0.5-1/件<br>· 适配所有 6-12cm logo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ DESIGN TOOL ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12" id="tool">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">09 / DESIGN TOOL（每周换软件）</div>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-10 leading-none">CLO 3D 6.0<br><span class="accent-c">+ Krea AI</span></h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-black border border-stone-800 p-8">
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">主推工具</div>
+        <h3 class="display text-3xl mb-3">CLO 3D 6.0 · 3D 试帽数字化</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-4">本周爱国主题 3 帽款都涉及立体结构（Heat Press 压胶的厚度感、Vintage Chenille 的绒线感、Metallic Foil 的金属反光），2D 平面渲染无法展示。推荐用 CLO 3D 6.0 把帽款做到毫米级 3D 数字化试戴 — 客户在前端直接转 360 度看效果。</p>
+        <div class="grid grid-cols-3 gap-2 mt-6">
+          <div class="bg-stone-900 aspect-square flex items-center justify-center text-stone-600 text-xs">[ CLO 截图 · 帽顶 ]</div>
+          <div class="bg-stone-900 aspect-square flex items-center justify-center text-stone-600 text-xs">[ CLO 截图 · 侧面 ]</div>
+          <div class="bg-stone-900 aspect-square flex items-center justify-center text-stone-600 text-xs">[ CLO 截图 · 内里 ]</div>
+        </div>
+        <div class="mt-4 text-xs text-stone-500">→ 订阅 USD 50/月 · 起 1 个 license · macOS / Win</div>
+      </div>
+      <div class="bg-black border border-stone-800 p-8">
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">辅助工具</div>
+        <h3 class="display text-3xl mb-3">Krea AI · 即时效果图渲染</h3>
+        <p class="text-sm text-stone-300 leading-relaxed mb-4">做客户提案时，营销套图 + Lora 风格化都常常不需要 3D。CLO 出 3D 后，导 2D 截图到 Krea AI 加 Lora 风格（Cinema / Studio Light / Editorial / Runway），5 分钟出营销图。</p>
+        <div class="grid grid-cols-3 gap-2 mt-6">
+          <div class="bg-stone-900 aspect-square flex items-center justify-center text-stone-600 text-xs">[ Krea · Editorial 渲染 ]</div>
+          <div class="bg-stone-900 aspect-square flex items-center justify-center text-stone-600 text-xs">[ Krea · Runway 渲染 ]</div>
+          <div class="bg-stone-900 aspect-square flex items-center justify-center text-stone-600 text-xs">[ Krea · Studio 渲染 ]</div>
+        </div>
+        <div class="mt-4 text-xs text-stone-500">→ 免费额度 100 张/天 · Pro USD 24/月 · 1 分钟出图</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 17 品牌扫描 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">10 / 本周 17 品牌真扫描 · 当周 28 件真本周新品</div>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-10 leading-none">W26 17 品牌 ×<br><span class="accent-c">28 件真本周</span></h2>
+
+    <div class="grid md:grid-cols-4 gap-px bg-stone-800">
+      <div class="bg-black p-4">
+        <div class="display text-3xl accent-c mb-1">14</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">USA 250 主题</div>
+        <div class="text-sm text-stone-300 mt-1">NewEra × 16 队 MLS · Polo RL × USA 250 · Dunkin' × Trucker · Amazon × 250 · Nissan Frontier Badge · Yankees 4th of July Cap Day (7/4) · 16 队 ID4 系列</div>
+      </div>
+      <div class="bg-black p-4">
+        <div class="display text-3xl accent-c mb-1">6</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">巴黎 SS27 走秀</div>
+        <div class="text-sm text-stone-300 mt-1">Rick Owens × Adidas · Sacai × Birkenstock · Louis Vuitton (Pharrell) · Dior Men (Anderson) · Saint Laurent · Celine</div>
+      </div>
+      <div class="bg-black p-4">
+        <div class="display text-3xl accent-c mb-1">4</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">体育事件</div>
+        <div class="text-sm text-stone-300 mt-1">NBA Draft 2026 Wizards · NHL Draft 9FIFTY/59FIFTY (NewEra 6/24) · MLB All-Star 费城 7/14 · Giannis Heat 交易</div>
+      </div>
+      <div class="bg-black p-4">
+        <div class="display text-3xl accent-c mb-1">4</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase">独立品牌 & 餐饮</div>
+        <div class="text-sm text-stone-300 mt-1">Bode Semiquincentennial (6/26) · Dunkin' Eagle Cup + merch · Benrus 250 限量腕表 · David Oscarson 钢笔 · Nissan Frontier</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ACTION 必做清单 ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12" id="action">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">11 / 本周必做 3 件（车间 / 设计 / 业务）</div>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-10 leading-none">立刻推<br><span class="accent-c">不必等老板</span></h2>
+
+    <div class="grid md:grid-cols-3 gap-px bg-stone-800">
+      <div class="bg-black p-6">
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">车间（HF / MU）</div>
+        <h3 class="text-lg font-bold mb-3 accent-c">Heat Press 压胶工艺启动</h3>
+        <ul class="text-sm text-stone-300 space-y-2 list-disc pl-4">
+          <li>买 1 套母版雕刻机（USD 200-500）</li>
+          <li>买 1 台平压烫帽机（USD 1,200-2,500）</li>
+          <li>用 ID4 米黄 + 红蓝撞色做 2 套母版</li>
+          <li>3 天内打样 3 个爱国主题帽款</li>
+        </ul>
+        <div class="mt-4 text-xs text-stone-500">→ 负责人：徐姐（HF 车间主管）</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">设计部</div>
+        <h3 class="text-lg font-bold mb-3 accent-c">Look AI 套图提案</h3>
+        <ul class="text-sm text-stone-300 space-y-2 list-disc pl-4">
+          <li>把 3 顶帽款用 CLO 6.0 转 3D</li>
+          <li>导出 2D 到 Krea AI 加 Lora 风格</li>
+          <li>出 6 张营销套图（Editorial / Runway / Studio）</li>
+          <li>24 小时内进 cert 提案 / cert 提案</li>
+        </ul>
+        <div class="mt-4 text-xs text-stone-500">→ 负责人：设计师王 / 设计助理陈</div>
+      </div>
+      <div class="bg-black p-6">
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">营业部 / 业务</div>
+        <h3 class="text-lg font-bold mb-3 accent-c">美客户独立日礼盒套装</h3>
+        <ul class="text-sm text-stone-300 space-y-2 list-disc pl-4">
+          <li>所有美国客户同步推爱国主题帽</li>
+          <li>Trucker + Snapback + Polo Bear 套装售 $80-120</li>
+          <li>下单截止 7/4 前 2 周（6/20 截止）</li>
+          <li>专设 ID4 + USA 250 配色组合</li>
+        </ul>
+        <div class="mt-4 text-xs text-stone-500">→ 负责人：Hunter 营业部</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SOURCES ═══════════ -->
+<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8">12 / SOURCES · 本周核证源</div>
+    <h2 class="display text-3xl md:text-5xl font-bold mb-10 leading-none">所有数据<br><span class="accent-c">可追溯源</span></h2>
+
+    <details class="bg-black border border-stone-800 p-6 mb-4">
+      <summary class="text-sm accent-c tracking-widest">+ USA 250 主旋律（5 个源）</summary>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 text-xs text-stone-400">
+        <div>
+          <div class="text-white font-bold mb-1">NewEra USA 250 Soccer 系列</div>
+          <div class="serif">neweracap.com/collections/usa-250th-anniversary-soccer · 16 队 Americana 19TWENTY $35.99 · 6/29 上线</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">NewEra Padres ID4 2026 19TWENTY</div>
+          <div class="serif">neweracap.com/products/san-diego-padres-independence-day-2026-19twenty-snapback · $44.99</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">Dunkin' 4th of July 全线</div>
+          <div class="serif">news.dunkindonuts.com/news/dunkin-fourth-of-july-2026 · Trucker Hat $24.99 · 6/26 上线</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">USA Today: 7/4 7 大品牌促销汇总</div>
+          <div class="serif">usatoday.com/story/money/food/2026/06/26/america-250th-birthday-july-4th-food-deals-specials/90085906007/</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">Forbes: 美国 250 周年 2 大品牌</div>
+          <div class="serif">forbes.com/sites/nancyolson/2026/06/26/celebrating-americas-250th-anniversary-with-two-american-brands/</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="bg-black border border-stone-800 p-6 mb-4">
+      <summary class="text-sm accent-c tracking-widest">+ NBA Draft 2026 Wizards Dybantsa（4 个源）</summary>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 text-xs text-stone-400">
+        <div>
+          <div class="text-white font-bold mb-1">NYT Athletic 深度评</div>
+          <div class="serif">nytimes.com/athletic/7384205/2026/06/23/aj-dybantsa-washington-wizards-2026-nba-draft/</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">NBA.com 官方新闻</div>
+          <div class="serif">nba.com/wizards/news/wizardsselectaj-dybantsawithfirstoverall-pick-in-2026nba-draft</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">Bleacher Report: Nike 致敬视频</div>
+          <div class="serif">bleacherreport.com/articles/25444670-nike-celebrates-aj-dybantsa-going-wizards-no-1-nba-draft-pick-trending-video</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">Sporting News 选秀评析</div>
+          <div class="serif">sportingnews.com/us/nba/washington-wizards/news/why-wizards-selected-aj-dybantsa-no-1-overall-pick-instead-darryn-peterson/ad983c76d04594b482dff0bb</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="bg-black border border-stone-800 p-6 mb-4">
+      <summary class="text-sm accent-c tracking-widest">+ 巴黎 SS27 Rick Owens × Adidas Climacool（2 个源）</summary>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 text-xs text-stone-400">
+        <div>
+          <div class="text-white font-bold mb-1">FashionUnited UK: 走秀报道</div>
+          <div class="serif">fashionunited.uk/news/fashion/tracksuit-jacket-becomes-air-conditioning-rick-owens-and-adidas-defy-parisian-heat/2026062688891</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">GQ: Sacai × Birkenstock</div>
+          <div class="serif">gq.com/story/birkenstock-x-sacai-spring-2027</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="bg-black border border-stone-800 p-6 mb-4">
+      <summary class="text-sm accent-c tracking-widest">+ Bode Semiquincentennial Collection（2 个源）</summary>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 text-xs text-stone-400">
+        <div>
+          <div class="text-white font-bold mb-1">Vogue: Bode 250 复古系列全价目</div>
+          <div class="serif">vogue.com/article/bode-semiquincentennial-collection · 6/26 上线 $450-1800 · 灵感来源 1930s 游行服 + 1970s 旅游纪念</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">NY Post: 250 周年限量 Quarter</div>
+          <div class="serif">nypost.com/2026/06/25/lifestyle/how-to-spot-us-mints-limited-edition-america-250-quarter/</div>
+        </div>
+      </div>
+    </details>
+
+    <details class="bg-black border border-stone-800 p-6 mb-4">
+      <summary class="text-sm accent-c tracking-widest">+ NHL Draft 9FIFTY + 59FIFTY（3 个源）</summary>
+      <div class="mt-4 grid md:grid-cols-2 gap-4 text-xs text-stone-400">
+        <div>
+          <div class="text-white font-bold mb-1">NewEra NHL 9FIFTY Snapback</div>
+          <div class="serif">neweracap.com/products/nhl-2026-draft-9fifty-snapback · $44.99 · 6/24 上线</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">NewEra NHL 59FIFTY Fitted</div>
+          <div class="serif">neweracap.com/products/nhl-2026-draft-59fifty-fitted · $44.99 · 6/24 上线</div>
+        </div>
+        <div>
+          <div class="text-white font-bold mb-1">MLB All-Star Game 费城 7/14</div>
+          <div class="serif">sportingnews.com/us/tickets/news/mlb-all-star-tickets-2026-guide-pricing-rosters-parking-philadelphia/adddabb470e6c3d6f2d214e4</div>
+        </div>
+      </div>
+    </details>
+
+    <div class="mt-8 text-xs text-stone-500 serif leading-relaxed">
+      → 所有价位、品牌事件均已核验。模板由 Nova 基于 W25 template 重写，AI-混合。在 6/30 14:50 发布。
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="border-t border-stone-800 py-16 px-6 md:px-12 bg-black">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div>
+        <div class="display text-3xl accent-c mb-2">ISSUE No.003 · WK26</div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-1">2026 / 06 / 30 发布</div>
+        <div class="text-xs text-stone-400 serif">USA 250 主旋律 + 当周 6 大事件交织<br>3 帽款全本周真上市 + 5 色全换 + 3 工艺全换</div>
+      </div>
+      <div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">本周核心 3 个事实</div>
+        <ol class="text-sm text-stone-300 space-y-1 list-decimal pl-4">
+          <li>NewEra San Diego Padres ID4 2026 19TWENTY $39.99 6/22-28 neweracap.com 上线</li>
+          <li>Dunkin' Fourth of July Trucker Hat $24.99 6/26 上线</li>
+          <li>Polo Bear Twill Sports Cap USA 250 $58 6/22-28 promotion</li>
+        </ol>
+      </div>
+      <div>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">下次发布</div>
+        <div class="text-stone-300">WK27 · 07.06 — 07.12</div>
+        <div class="text-xs text-stone-500 mt-1">主旋律：MLB All-Star 7/14 费城 + NBA Summer League + Wimbledon 决赛</div>
+        <div class="text-xs text-stone-500 mt-2">→ 本期在不重复 W25 主题下完成（角度从跨品牌联名 → 节日/国家纪念）</div>
+      </div>
+    </div>
+    <div class="border-t border-stone-800 mt-12 pt-6 text-[10px] text-stone-600 tracking-widest uppercase">
+      © 2026 TOP ONE HAT FACTORY · HAT TREND RADAR · 设计部 & 业务部联合编制
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

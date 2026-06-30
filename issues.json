@@ -1,6 +1,39 @@
 {
-  "latest": "2026-W25",
+  "latest": "2026-W26",
   "issues": [
+    {
+      "id": "2026-W26",
+      "number": "003",
+      "year": 2026,
+      "week": 26,
+      "title": "USA 250 周年 × 当周 6 大事件交织",
+      "subtitle": "3 帽款全本周真上市 + 6 大事件驱动 + 17 品牌真扫描 + 28 件真本周",
+      "publishDate": "2026-06-30",
+      "dateRange": "06.22 — 06.28",
+      "coverImage": "2026-W26/images/padres-1.jpg",
+      "highlights": [
+        "NewEra × San Diego Padres Independence Day 2026 19TWENTY · $39.99 米黄星条旗配色",
+        "Dunkin' Fourth of July Trucker Hat · $24.99 6/26 上线（鲨鱼抱冰咖啡图案）",
+        "Polo Bear Twill Sports Cap USA 250 Ed · $58 海军蓝+红白促销期",
+        "6 大事件：NBA Draft Dybantsa → Wizards #1 · 巴黎 SS27 Rick Owens×Adidas Climacool · Bode 6/26 Semiquincentennial · Sacai×Birkenstock · Dunkin' 全线 · NHL Draft 上线",
+        "本周 logo 工艺：Heat Press 压胶 + Vintage Chenille + Metallic Foil（3 工艺全换）",
+        "本周设计工具：CLO 3D 6.0 + Krea AI（每周换）",
+        "5 色全换：Liberty Navy / Betsy Ross Red / Sand Star Cream / Coal Black / Eagle Gold",
+        "本周是否合规：跨品牌 3/3（NewEra/Dunkin'/Polo）· 跨价位 $24-$58 · 1 NewEra 上限 ✓",
+        "（补发）W26 时间窗 06.22-28 · 本应在 6/28 20:00 自动发布但 cron 失败 · 6/30 14:50 Nova 手动补发"
+      ],
+      "stats": {
+        "hats": 3,
+        "brands_scanned": 17,
+        "real_new_products": 28,
+        "events": 6,
+        "non_newera_ratio": "2/3",
+        "tools": 2,
+        "crafts": 3,
+        "colors": 5
+      },
+      "url": "2026-W26/index.html"
+    },
     {
       "id": "2026-W25",
       "number": "002",
@@ -10,7 +43,7 @@
       "subtitle": "3 帽款全跨品牌（独立潮牌 + 体育 + 奢侈品）+ 17 品牌真扫描",
       "publishDate": "2026-06-18",
       "dateRange": "06.15 — 06.21",
-      "coverImage": "2026-W25/images/pluto-4.jpg",
+      "coverImage": "2026-W25/images/hp-1.jpg",
       "highlights": [
         "Pluto of Saint Andrews × Dover Street Market · 苏格兰小独立品牌 6 款",
         "NewEra × NY Knicks 2026 NBA Champions · 9 款全档线即时纪念",

@@ -33,8 +33,15 @@
   .accent-bg { background: #FF4B1F; }
   details summary { list-style: none; cursor: pointer; }
   details summary::-webkit-details-marker { display: none; }
-  
-  
+  .hero-bg {
+    background-image: url('images/hp-1.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    filter: contrast(1.05);
+  }
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.7) 70%, #0a0a0a 100%);
+  }
   /* Spec table */
   .spec-row { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #1c1917; }
   .spec-row:last-child { border-bottom: none; }
@@ -56,145 +63,6 @@
     line-height: 1.7;
     color: #d6d3d1;
     border-radius: 0 4px 4px 0;
-  }
-
-  /* ═══ HERO POSTER STYLE ═══ */
-  .hero-poster {
-    background: #0a0a0a;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-  }
-  .hero-cell {
-    position: relative;
-    overflow: hidden;
-    background: #111;
-  }
-  .hero-cell img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.55) contrast(1.15) saturate(1.1);
-    transition: filter 0.6s, transform 0.6s;
-  }
-  .hero-cell:hover img {
-    filter: brightness(0.75) contrast(1.15) saturate(1.2);
-    transform: scale(1.04);
-  }
-  .hero-cell::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.95) 100%);
-  }
-  .hero-cell-tag {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    z-index: 5;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.3em;
-    color: rgba(255,255,255,0.7);
-    background: rgba(0,0,0,0.5);
-    backdrop-filter: blur(10px);
-    padding: 6px 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-  .hero-cell-name {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    right: 24px;
-    z-index: 5;
-    font-family: 'Bebas Neue', sans-serif;
-    color: white;
-    line-height: 0.95;
-  }
-  .hero-cell-name .small {
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 8px;
-  }
-  .hero-cell-name .big {
-    font-size: 28px;
-    letter-spacing: -0.01em;
-  }
-  .hero-cell-name .price {
-    font-size: 18px;
-    color: #ff6b00;
-    margin-top: 6px;
-  }
-  .hero-overlay-magazine {
-    position: absolute;
-    inset: 0;
-    background: 
-      linear-gradient(180deg, rgba(10,10,10,0.7) 0%, transparent 25%, transparent 60%, rgba(10,10,10,0.95) 100%);
-    z-index: 6;
-    pointer-events: none;
-  }
-  .hero-content {
-    position: relative;
-    z-index: 8;
-  }
-  .hero-headline {
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 700;
-    line-height: 0.85;
-    letter-spacing: -0.02em;
-    text-shadow: 0 2px 30px rgba(0,0,0,0.8);
-  }
-  .hero-stripe {
-    background: linear-gradient(90deg, #ff6b00 0%, #ff9540 100%);
-    color: black;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.15em;
-    font-size: 11px;
-    padding: 6px 14px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .hero-stat-bar {
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .hero-stat-cell {
-    border-right: 1px solid rgba(255,255,255,0.08);
-    padding: 18px 24px;
-    transition: background 0.3s;
-  }
-  .hero-stat-cell:hover {
-    background: rgba(255,107,0,0.08);
-  }
-  .hero-stat-cell:last-child {
-    border-right: none;
-  }
-  .hero-stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 36px;
-    line-height: 1;
-    color: #ff6b00;
-  }
-  .hero-stat-label {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-    margin-top: 6px;
-  }
-  @media (max-width: 768px) {
-    .hero-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 1fr); }
-    .hero-cell-name .big { font-size: 22px; }
   }
 </style>
 </head>
@@ -249,167 +117,93 @@
 <!-- ═══════════ TAG FILTER ═══════════ -->
 <div class="bg-black border-b border-stone-800 sticky top-0 z-30 backdrop-blur" id="tagBar">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 overflow-x-auto whitespace-nowrap text-xs">
-    <span class="text-stone-500 mr-2 tracking-widest uppercase">快跳：</span>
+    <span class="text-stone-500 mr-2 tracking-widest uppercase">快跳:</span>
     <a href="#takeaway" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">首页一句话</a>
-    <a href="#hat-no01" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.01 Pluto × DSM</a>
-    <a href="#hat-no02" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.02 Knicks 总冠军</a>
-    <a href="#hat-no03" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.03 Swarovski 水晶帽</a>
-    <a href="#apparel" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">17 品牌全景</a>
-    <a href="#palette" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">本周色卡</a>
-    <a href="#logo" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">3 工艺研究</a>
-    <a href="#software" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">3 AI 软件</a>
-    <a href="#tool" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">外协水钻</a>
-    <a href="#action" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">本周必做</a>
-    <a href="#sources" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">真链接</a>
+    <a href="#hat-no01" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.01 NEW ERA × HP</a>
+    <a href="#hat-no02" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.02 MLB 2026 ASG</a>
+    <a href="#hat-no03" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">No.03 Patta × Tom Trago</a>
+    <a href="#apparel" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">服装参考</a>
+    <a href="#color" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">本周色</a>
+    <a href="#craft" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">3D Puff 工艺</a>
+    <a href="#tool" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">Vizcom 工具</a>
+    <a href="#action" class="px-3 py-1 border border-stone-700 hover:accent-bg hover:text-black hover:border-transparent transition">必做清单</a>
+    <span class="flex-1"></span>
+    <a href="../archive.html" class="px-3 py-1 accent-bg text-black tracking-widest font-bold hover:bg-stone-200 transition">历史期数</a>
   </div>
 </div>
 
 <!-- ═══════════ TICKER BAR ═══════════ -->
-<div class="bg-stone-950 border-y border-stone-800 overflow-hidden">
-  <div class="flex animate-marquee whitespace-nowrap py-2 text-xs tracking-widest uppercase text-stone-400">
-    <span class="mx-6">📅 2026-06-16/17 Pluto of Saint Andrews × Dover Street Market AW26 上线 · 6 款</span>
-    <span class="mx-6 accent-c">●</span>
-    <span class="mx-6">🏀 6/15 NewEra × NY Knicks 2026 NBA Champions · 9 款全档线</span>
-    <span class="mx-6 accent-c">●</span>
-    <span class="mx-6">💎 6/17 hypebeast 报道 Swarovski × 47 × MLB Yankees 水晶帽 · 第二弹</span>
-    <span class="mx-6 accent-c">●</span>
-    <span class="mx-6">📊 本周抓 17 个潮牌 · 真本周 6/15-21 created 新品 23 款</span>
-    <span class="mx-6 accent-c">●</span>
-    <span class="mx-6">📅 2026-06-16/17 Pluto of Saint Andrews × Dover Street Market AW26 上线 · 6 款</span>
-    <span class="mx-6 accent-c">●</span>
-    <span class="mx-6">🏀 6/15 NewEra × NY Knicks 2026 NBA Champions · 9 款全档线</span>
-    <span class="mx-6 accent-c">●</span>
-    <span class="mx-6">💎 6/17 hypebeast 报道 Swarovski × 47 × MLB Yankees 水晶帽 · 第二弹</span>
+<div class="bg-white text-black overflow-hidden border-b border-stone-300">
+  <div class="marquee py-2 text-xs tracking-widest font-bold uppercase flex gap-12">
+    <span>📡 HAT TREND RADAR</span><span>·</span>
+    <span>WEEK 25 / 2026</span><span>·</span>
+    <span>06.15 - 06.21</span><span>·</span>
+    <span>3 帽款深度拆解</span><span>·</span>
+    <span>4 服装风格参考</span><span>·</span>
+    <span>+ 3D Embossed 压胶工艺</span><span>·</span>
+    <span>+ LOOK AI 设计工具</span><span>·</span>
+    <span>含规格 / 工艺 / 成本 / 推单话术</span><span>·</span>
+    <span>📡 HAT TREND RADAR</span><span>·</span>
+    <span>WEEK 25 / 2026</span><span>·</span>
+    <span>06.15 - 06.21</span><span>·</span>
+    <span>3 帽款深度拆解</span><span>·</span>
+    <span>4 服装风格参考</span><span>·</span>
+    <span>+ logo 工艺介绍</span><span>·</span>
+    <span>+ 设计工具推介</span><span>·</span>
+    <span>含规格 / 工艺 / 成本 / 推单话术</span><span>·</span>
   </div>
 </div>
 
-<!-- ═══════════ HERO POSTER (杂志风) ═══════════ -->
-<section class="hero-poster" style="min-height:100vh;">
-  
-  <!-- 3 帽款拼图背景 -->
-  <div class="hero-grid">
-    <div class="hero-cell">
-      <img src="images/pluto-4.jpg" alt="Pluto of Saint Andrews × DSM">
-      <div class="hero-cell-tag">No.01 · 独立潮牌</div>
-      <div class="hero-cell-name">
-        <div class="small">SCOTLAND · INDEPENDENT</div>
-        <div class="big">PLUTO ×<br>DSM</div>
-        <div class="price">USD 44</div>
-      </div>
-    </div>
-    <div class="hero-cell">
-      <img src="images/knicks-1-59fifty.jpg" alt="NewEra × NY Knicks Champions">
-      <div class="hero-cell-tag">No.02 · NBA 总冠军</div>
-      <div class="hero-cell-name">
-        <div class="small">USA · CHAMPIONSHIP</div>
-        <div class="big">NEW ERA ×<br>KNICKS</div>
-        <div class="price">USD 33-53</div>
-      </div>
-    </div>
-    <div class="hero-cell">
-      <img src="images/swar47-1.jpg" alt="Swarovski × 47 × MLB Yankees">
-      <div class="hero-cell-tag">No.03 · 奢侈水晶</div>
-      <div class="hero-cell-name">
-        <div class="small">AUSTRIA × USA · LUXURY</div>
-        <div class="big">SWAROVSKI ×<br>'47</div>
-        <div class="price">USD 175</div>
-      </div>
-    </div>
-  </div>
+<!-- ═══════════ HERO ═══════════ -->
+<section class="relative min-h-[90vh] hero-bg">
+  <div class="absolute inset-0 hero-overlay"></div>
+  <div class="relative z-10 min-h-[90vh] flex flex-col justify-between px-6 md:px-12 py-12">
 
-  <!-- 渐变蒙版 -->
-  <div class="hero-overlay-magazine"></div>
-
-  <!-- 杂志风文字层 -->
-  <div class="hero-content min-h-screen flex flex-col">
-
-    <!-- 顶部期号信息 -->
-    <div class="px-6 md:px-12 pt-10 flex justify-between items-start text-xs tracking-[0.3em] uppercase text-stone-300">
-      <div>
-        <div class="text-stone-500 mb-1">ISSUE</div>
-        <div class="text-white font-bold">No.002 · WK25</div>
+    <div class="flex justify-between items-start text-xs tracking-widest uppercase">
+      <div class="text-white">
+        <div class="text-stone-400">ISSUE No.002</div>
+        <div class="mt-1">2026 / 06 / 21</div>
       </div>
-      <div class="text-center hidden md:block">
-        <div class="text-stone-500 mb-1">DATE</div>
-        <div class="text-white font-bold">2026 · 06 · 15-21</div>
-      </div>
-      <div class="text-right">
-        <div class="text-stone-500 mb-1">EDITION</div>
-        <div class="text-white font-bold">设计部内参</div>
+      <div class="text-right text-white">
+        <div class="text-stone-400">CURATED BY KIN</div>
+        <div class="mt-1">DESIGN DEPT TOOL</div>
       </div>
     </div>
 
-    <!-- 主标题区 -->
-    <div class="flex-1 flex flex-col justify-center px-6 md:px-12 py-16">
-      <div class="max-w-6xl">
-        <div class="hero-stripe mb-6">每周三大跨品牌联名 · 真本周新品 · 跨地区跨价位</div>
-        
-        <h1 class="hero-headline text-white text-7xl md:text-[10rem] mb-8">
-          HAT TREND<br>
-          <span class="accent-c">RADAR.</span>
-        </h1>
+    <div class="my-12 md:my-0 flex-1 flex flex-col justify-center">
+      <div class="text-xs tracking-[0.4em] text-stone-300 mb-6 uppercase">Weekly Trend Intel · Built For Design Dept</div>
+      <h1 class="display text-7xl md:text-[14rem] leading-[0.9] font-bold drop-shadow-2xl">
+        HAT<br>TREND<br><span class="accent-c">RADAR</span>
+      </h1>
+      <div class="mt-8 max-w-xl">
+        <p class="serif text-lg md:text-xl leading-relaxed text-stone-200 drop-shadow">
+          每周一份给我们设计部的市场情报<br>
+          <span class="text-stone-400 text-base">含规格、工艺、可做性评估、成本预估、推单话术</span>
+        </p>
+      </div>
+    </div>
 
-        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mb-8">
-          <div class="border-l-2 accent-c pl-4">
-            <div class="text-[10px] tracking-widest text-stone-400 uppercase mb-2">本期主调</div>
-            <p class="text-white text-base leading-snug font-medium">独立潮牌 +<br>NBA 总冠军 +<br>奢侈品水晶</p>
-          </div>
-          <div class="border-l-2 border-stone-600 pl-4">
-            <div class="text-[10px] tracking-widest text-stone-400 uppercase mb-2">三档价位</div>
-            <p class="text-white text-base leading-snug">
-              <span class="accent-c">USD 44</span> 精品店<br>
-              <span class="accent-c">USD 33-53</span> 体育矩阵<br>
-              <span class="accent-c">USD 175</span> 奢侈水晶
-            </p>
-          </div>
-          <div class="border-l-2 border-stone-600 pl-4">
-            <div class="text-[10px] tracking-widest text-stone-400 uppercase mb-2">本期数据</div>
-            <p class="text-white text-base leading-snug">
-              扫 <span class="accent-c">17 品牌</span><br>
-              真本周 <span class="accent-c">23 款</span> 新品<br>
-              非 NewEra 占 <span class="accent-c">2/3</span>
-            </p>
-          </div>
+    <div class="flex justify-between items-end text-xs tracking-widest uppercase text-stone-300">
+      <div class="flex gap-8">
+        <div>
+          <div class="text-stone-500">深度拆帽款</div>
+          <div class="text-white font-bold mt-1">3</div>
         </div>
-
-        <div class="flex items-center gap-4 text-xs text-stone-400 tracking-widest uppercase">
-          <span>↓ SCROLL · 11 SECTIONS</span>
-          <span class="w-12 h-px bg-stone-600"></span>
-          <a href="#takeaway" class="hover:text-white transition">TAKEAWAY</a>
-          <span class="text-stone-700">/</span>
-          <a href="#hat-no01" class="hover:text-white transition">3 HATS</a>
-          <span class="text-stone-700">/</span>
-          <a href="#software" class="hover:text-white transition">3 AI 软件</a>
-          <span class="text-stone-700">/</span>
-          <a href="#action" class="hover:text-white transition">本周必做</a>
+        <div>
+          <div class="text-stone-500">风格启发</div>
+          <div class="text-white font-bold mt-1">4</div>
+        </div>
+        <div>
+          <div class="text-stone-500">推单话术</div>
+          <div class="text-white font-bold mt-1">3 套</div>
+        </div>
+        <div>
+          <div class="text-stone-500">年度色</div>
+          <div class="text-white font-bold mt-1">W25 待定</div>
         </div>
       </div>
+      <div>↓ SCROLL</div>
     </div>
-
-    <!-- 底部数据条 -->
-    <div class="hero-stat-bar grid grid-cols-2 md:grid-cols-5">
-      <div class="hero-stat-cell">
-        <div class="hero-stat-num">3</div>
-        <div class="hero-stat-label">深度拆帽款</div>
-      </div>
-      <div class="hero-stat-cell">
-        <div class="hero-stat-num">17</div>
-        <div class="hero-stat-label">真本周抓品牌</div>
-      </div>
-      <div class="hero-stat-cell">
-        <div class="hero-stat-num">23</div>
-        <div class="hero-stat-label">真本周新品 (件)</div>
-      </div>
-      <div class="hero-stat-cell">
-        <div class="hero-stat-num">2/3</div>
-        <div class="hero-stat-label">非 NewEra 占比</div>
-      </div>
-      <div class="hero-stat-cell">
-        <div class="hero-stat-num">$44-175</div>
-        <div class="hero-stat-label">价位跨度</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -428,27 +222,27 @@
       <div class="bg-black border border-stone-800 p-6">
         <div class="text-xs accent-c tracking-widest mb-2">本期最值得看 3 件事</div>
         <ol class="text-sm text-stone-300 space-y-2 list-decimal pl-4">
-          <li><strong class="text-white">独立潮牌路线 (Pluto × DSM)</strong> — 苏格兰小品牌 4 款 6 色直接进 Dover Street Market 全球 6 店, $44 客单, 这是欧洲精品店给小厂的入场券</li>
-          <li><strong class="text-white">NBA 总冠军即时纪念 (Knicks 6/15)</strong> — NewEra 拿到的是即时纪念权,9 款全档线打法,fitted/snapback/9TWENTY 4 帽型 4 价位</li>
-          <li><strong class="text-white">奢侈品水晶帽 (Swarovski × 47 × MLB)</strong> — $175 高价帽款验证,我们做 "国产水钻替代版" 客单 $50-80 完全合理</li>
+          <li><strong class="text-white">3D Embossed 压胶</strong> = 高端品牌新宠，Swarovski × '47 × MLB / Supreme 都在用 → HF 车间可测试压胶膜 + 模具</li>
+          <li><strong class="text-white">LOOK AI</strong> = 设计部新工具，5 分钟能出帽子拟真图 + 虚拟试戴 · 先拿旧款测试</li>
+          <li><strong class="text-white">Supreme × Spitfire</strong> + SASHIKO GALS × New Era 第2季 · 本周新联名值得关注</li>
         </ol>
       </div>
       <div class="bg-black border border-stone-800 p-6">
         <div class="text-xs accent-c tracking-widest mb-2">本周主调</div>
         <p class="serif text-stone-200 text-base leading-relaxed">
-          独立潮牌 + 总冠军纪念 + 奢侈品水晶
+          压胶工艺 + IP 联名 + 街头潮流 + 黑色调
         </p>
         <div class="mt-4 text-xs text-stone-500 leading-relaxed">
-          1 个非美/非日 苏格兰新品牌 · 1 个体育即时纪念 · 1 个奢侈品溢价<br>
-          颜色：羊毛棕 · 学院蓝 · 总冠军白 + 蓝 · 水晶透明
+          3 个帽款联名同步落地 · 4 个服装联名走同一路线<br>
+          颜色：Pantone Cloud Dancer · 黑 · 白 · 红点睛色
         </div>
       </div>
       <div class="bg-black border border-stone-800 p-6">
         <div class="text-xs accent-c tracking-widest mb-2">这周要动手的 3 件</div>
         <ul class="text-sm text-stone-300 space-y-2">
-          <li>⚡ HF 车间 → 复古高尔夫 D-Ring 调节带样品（Pluto 风格）</li>
-          <li>⚡ 外协排查 → 水钻烫钻贴标加工厂 2-3 家（替代 Swarovski）</li>
-          <li>⚡ 营业部 → 用 "总冠军即时纪念" 话术联系 5 个体育周边客户</li>
+          <li>⚡ HF 车间 → 测试 3D Embossed 压胶膜 + 铝模具（USD 50-100/套）</li>
+          <li>⚡ 设计部 → 用 LOOK AI 测试一款旧帽子的虚拟试戴</li>
+          <li>⚡ 营业部 → Supreme × Spitfire 和 SASHIKO GALS × NE 联名同步客户</li>
         </ul>
       </div>
     </div>
@@ -456,72 +250,81 @@
 </section>
 
 <!-- ═══════════ THE TAKEAWAY ═══════════ -->
-<section class="border-t border-stone-800 py-20 px-6 md:px-12 bg-stone-950">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-6" id="takeaway">02 / THE TAKEAWAY · 一句话总结本周</div>
-    <h2 class="display text-4xl md:text-6xl font-bold leading-tight mb-8">
-      本周 6/15-21 我们抓了 <span class="accent-c">17</span> 个潮牌 / <span class="accent-c">23 件</span> 真新品,<br>
-      告诉我们一件事:<br>
-      <span class="accent-c">"NewEra 不是唯一答案"</span> — 跨品牌跨价位才是 2026 帽业蓝海。
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-8" id="takeaway">02 / 本周一句话</div>
+    <h2 class="display text-5xl md:text-8xl font-bold leading-tight mb-10">
+      压胶工艺 + IP 联名 +<br>
+      <span class="accent-c">街头潮流 + 黑色调</span> = 这周打样方向
     </h2>
-    <div class="serif text-stone-300 text-lg leading-relaxed space-y-4">
-      <p>上一期我们过度集中 NewEra 的报道,这周对照下事实：<strong class="text-white">真本周 created 的 23 款新帽中,有 8 款不是 NewEra</strong>。Pluto of Saint Andrews 是苏格兰的小独立品牌,Swarovski × 47 是奢侈品水晶帽,Knicks Champions 才是 NewEra。</p>
-      <p>这意味着<strong class="text-white">我们工厂应该同时备 3 套打法</strong>：① 给精品店做 "独立小厂" 路线（Pluto 风格）② 给体育零售做 "即时纪念" 矩阵（Knicks 风格）③ 给奢侈品零售做 "水钻替代版" 高溢价单品（Swarovski 风格）。</p>
-      <p class="text-stone-400 italic">→ 给业务部的一句话：以后接单不要只盯 NewEra 转单,要把客户分三档：精品店买独家 / 体育零售买矩阵 / 奢侈零售买工艺。</p>
+    <div class="grid md:grid-cols-3 gap-px bg-stone-800">
+      <div class="bg-black p-8">
+        <div class="text-xs tracking-widest text-stone-500 mb-2">为什么</div>
+        <p class="serif text-stone-300 leading-relaxed">本周 3 个帽款联名 + Supreme × Spitfire + SASHIKO GALS × NE 第2季同步落地,高端品牌大量用压胶替代刺绣,IP 联名继续霸榜。</p>
+      </div>
+      <div class="bg-black p-8">
+        <div class="text-xs tracking-widest text-stone-500 mb-2">该做什么</div>
+        <p class="serif text-stone-300 leading-relaxed">立刻 HF 车间测试 3D Embossed 压胶工艺、设计部试用 LOOK AI 虚拟试戴、营业部同步本周新联名给客户。</p>
+      </div>
+      <div class="bg-black p-8">
+        <div class="text-xs tracking-widest text-stone-500 mb-2">时间窗口</div>
+        <p class="serif text-stone-300 leading-relaxed">压胶工艺是高端品牌 SS26/SS27 的确定性趋势;Supreme × Spitfire (6/18)和 SASHIKO GALS × NE (6/27)各有一次推客户窗口。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ HAT No.01 - Pluto of Saint Andrews × DSM ═══════════ -->
+<!-- ═══════════ HAT No.01 - NewEra × Harry Potter ═══════════ -->
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
       <div class="display text-3xl text-stone-500" id="hat-no01">03 / 本周帽款 No.01</div>
       <span class="badge-yes">我们能做</span>
-      <span class="text-xs text-stone-500">真本周新品 · 6/16-17 created</span>
     </div>
 
     <div class="grid md:grid-cols-12 gap-8">
 
+      <!-- LEFT: Image -->
       <div class="md:col-span-7">
-        <a href="https://shop.doverstreetmarket.com/products/pluto-of-saint-andrews-mens-pluto-rampant-hat-brown-aw26-posa2h008" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
-          <img src="images/pluto-4.jpg" alt="Pluto of Saint Andrews × DSM Pluto Rampant Hat (Brown)" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+        <a href="https://www.neweracap.com/products/harry-potter-hogwarts-chrome-white-9fifty-snapback" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
+          <img src="images/hp-1.jpg" alt="NewEra × Harry Potter Hogwarts Chrome White 9FIFTY Snapback" class="w-full h-full object-cover hover:scale-105 transition duration-700">
         </a>
-        <div class="grid grid-cols-5 gap-1 mt-1">
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/pluto-1.jpg" class="w-full h-full object-cover" loading="lazy" alt="Posa Front Hat (Black)"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/pluto-2.jpg" class="w-full h-full object-cover" loading="lazy" alt="Club Hat (Blue)"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/pluto-3.jpg" class="w-full h-full object-cover" loading="lazy" alt="Pin Cap (Black)"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/pluto-5.jpg" class="w-full h-full object-cover" loading="lazy" alt="Pin Cap (Green)"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/pluto-6.jpg" class="w-full h-full object-cover" loading="lazy" alt="Pin Cap (Off White)"></div>
+        <div class="grid grid-cols-4 gap-1 mt-1">
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/hp-2.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/hp-3.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/hp-4.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/hp-5.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
         </div>
       </div>
 
+      <!-- RIGHT: Spec sheet -->
       <div class="md:col-span-5">
-        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">PLUTO OF<br>SAINT ANDREWS</h3>
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">AW26 · Dover Street Market 独家 / 苏格兰圣安德鲁斯</div>
+        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">HARRY POTTER<br>× NEW ERA</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">SS26 · Hogwarts Chrome White / Platform 93⁄4</div>
 
         <div class="mb-6">
-          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">Posa Front / Club / Pin Cap / Rampant 4 个款式 6 色</div></div>
-          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">5-Panel 软结构 + 6-Panel 棒球帽混搭</div></div>
-          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">英国羊毛斜纹 (推估)·棕/蓝/黑/绿/米白 5 色</div></div>
-          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板平绣"Pluto Rampant"狮子图腾 / 学院风线条</div></div>
-          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">皮革 D 形扣调节带 / 缎带内衬 / 复古织唛</div></div>
-          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">D-Ring 皮带扣 / 复古高尔夫风</div></div>
+          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">9FIFTY M-Crown 平檐 Snapback / Chrome 白</div></div>
+          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">6-Panel 偏中高顶 / 帽顶高约 11cm</div></div>
+          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 涤纶斜纹 (推估)· Chrome 米白色</div></div>
+          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板平绣 Hogwarts 校徽 / 右侧 Platform 93⁄4 织唛 patch</div></div>
+          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">背面金属调节扣 / 灰色 undervisor / 双 Warner Bros + NE 织唛</div></div>
+          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">Snapback 塑料插扣 9 档可调</div></div>
         </div>
 
         <div class="grid grid-cols-2 gap-px bg-stone-800 mb-6">
           <div class="bg-black p-4">
             <div class="text-[10px] tracking-widest text-stone-500 mb-1">我们成本</div>
-            <div class="display text-2xl accent-c">USD 2.6-3.4</div>
-            <div class="text-[10px] text-stone-500 mt-1">含羊毛料 + 皮革带</div>
+            <div class="display text-2xl accent-c">USD 2.4-3.0</div>
+            <div class="text-[10px] text-stone-500 mt-1">不含 IP 授权</div>
           </div>
           <div class="bg-black p-4">
             <div class="text-[10px] tracking-widest text-stone-500 mb-1">国际零售</div>
-            <div class="display text-2xl">USD 44</div>
-            <div class="text-[10px] text-stone-500 mt-1">DSM 全球 6 店独家</div>
+            <div class="display text-2xl">USD 42.99</div>
+            <div class="text-[10px] text-stone-500 mt-1">NewEra 官网在售</div>
           </div>
         </div>
 
+        <!-- 工艺难度评分卡 + 成本拆解 -->
         <div class="bg-stone-950 border border-stone-800 mb-6">
           <div class="grid grid-cols-4 border-b border-stone-800">
             <div class="p-3 border-r border-stone-800 text-center">
@@ -534,83 +337,82 @@
             </div>
             <div class="p-3 border-r border-stone-800 text-center">
               <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
-              <div class="text-sm text-white">144+</div>
+              <div class="text-sm text-white">288+</div>
             </div>
             <div class="p-3 text-center">
               <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
-              <div class="text-sm accent-c">★★★★☆</div>
+              <div class="text-sm accent-c">★★★★★</div>
             </div>
           </div>
           <div class="p-4">
             <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有1/2 · 怎么改</div>
             <div class="text-xs text-stone-400 leading-relaxed">
-              · 面料：英国羊毛 → 涤毛混纺斜纹 (节省 USD 0.5)<br>
-              · 调节带：皮革 D 形扣 → 仿皮 PU + 仿铜扣 (节省 USD 0.4)<br>
-              · 工艺：复古织唛 → 转印 + 平绣描边 (节省 USD 0.2)<br>
-              <strong class="text-white">→ 总价：USD 2.6 → USD 1.6</strong>
+              · IP 替换:自创魔法学院 IP / 私有图腾<br>
+              · 工艺:双层平绣 → 单层平绣 + 加印膜(节省 USD 0.4)<br>
+              · 织唛 patch:定织唛 → 数码热转印(节省 USD 0.3)<br>
+              <strong class="text-white">→ 总价:USD 2.4 → USD 1.6</strong>
             </div>
           </div>
         </div>
 
         <div class="pitch-box mb-4">
           <div class="text-stone-500 mb-2">→ 给客户的开发要点</div>
-          这是欧洲新独立品牌路线最值得抄的爆款配方。<br>
-          重点：① 4 个款式同主题 = 系列化矩阵 ② 复古高尔夫 + 学院风<br>
-          ③ 适合做欧洲精品店 / 高尔夫俱乐部 / 大学社团联名定制。
+          IP 联名是 6/18 NewEra 在卖的 9 款里热度最高款。<br>
+          重点:1 立体侧 patch 是核心卖点 2 Chrome 白 是夏季新色调<br>
+          3 适合做粉丝向礼盒套装(多色一组售)。
         </div>
 
-        <a href="https://shop.doverstreetmarket.com/collections/pluto-of-saint-andrews" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ DSM Pluto of Saint Andrews 全集</a>
+        <a href="https://www.neweracap.com/products/harry-potter-hogwarts-chrome-white-9fifty-snapback" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ NewEra 官网产品页</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ HAT No.02 - NewEra × NY Knicks 2026 NBA Champions ═══════════ -->
+<!-- ═══════════ HAT No.02 - NewEra × MLB 2026 ASG ═══════════ -->
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
       <div class="display text-3xl text-stone-500" id="hat-no02">04 / 本周帽款 No.02</div>
       <span class="badge-yes">我们能做</span>
-      <span class="text-xs text-stone-500">PR Newswire 6/15 · NewEra 官方发布</span>
     </div>
 
-    <div class="grid md:grid-cols-12 gap-8">
+    <div class="grid md:grid-cols-12 gap-8 md:[grid-template-areas:'r_l']">
 
-      <div class="md:col-span-7 md:order-2">
-        <a href="https://www.neweracap.com/products/new-york-knicks-2026-champions-sidepatch-59fifty-fitted" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
-          <img src="images/knicks-1-59fifty.jpg" alt="NewEra × NY Knicks 2026 Champions Sidepatch 59FIFTY" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+      <div class="md:col-span-7 md:[grid-area:l]">
+        <a href="https://www.neweracap.com/products/new-york-yankees-2026-all-star-game-optic-white-59fifty-fitted" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
+          <img src="images/mlb-1.jpg" alt="NewEra × MLB 2026 All-Star Game NY Yankees Optic White 59FIFTY" class="w-full h-full object-cover hover:scale-105 transition duration-700">
         </a>
         <div class="grid grid-cols-4 gap-1 mt-1">
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/knicks-2-9twenty.jpg" class="w-full h-full object-cover" loading="lazy" alt="9TWENTY Snapback"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/knicks-3-parade.jpg" class="w-full h-full object-cover" loading="lazy" alt="Parade 9FIFTY"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/knicks-4-script.jpg" class="w-full h-full object-cover" loading="lazy" alt="Script 9FIFTY"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/knicks-5-locker.jpg" class="w-full h-full object-cover" loading="lazy" alt="Locker Room 9FIFTY"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/mlb-2.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/mlb-3.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/mlb-4.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/mlb-5.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
         </div>
       </div>
 
-      <div class="md:col-span-5 md:order-1">
-        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">NEW ERA<br>× NY KNICKS</h3>
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">2026 NBA Champions · 总冠军纪念版 / 6 帽型 9 款</div>
+      <div class="md:col-span-5 md:[grid-area:r]">
+        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">MLB 2026<br>ALL-STAR · NE</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">2026 ASG · Optic White / 30 队系列</div>
 
         <div class="mb-6">
-          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">59FIFTY / 9FIFTY / 9TWENTY / 9SEVENTY 4 帽型 9 款</div></div>
-          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">从 Fitted 到 Stretch-Snap 全档线 / 价 $33-53</div></div>
-          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 涤纶斜纹 / 多色：白底 / 蓝 / Optic White / 黑</div></div>
-          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板 Knicks logo 立体绣 / 右侧 Champions Side Patch / 后面 Larry O'Brien 奖杯绣</div></div>
-          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">灰色 undervisor / NBA Logoman 后绣 / 主题织唛</div></div>
-          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">Fitted / Snapback / D-Ring / Stretch-Snap 4 种全配</div></div>
+          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">59FIFTY 全闭合 Fitted / Optic White 主色</div></div>
+          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">6-Panel 高顶硬挺 / 帽顶高约 11.5cm</div></div>
+          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 涤纶斜纹 / 31 个 size 全码 (63⁄4 - 8)</div></div>
+          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板 patriotic 队徽立体绣 / 右侧 ASG 2026 Logo 平绣 / 后面 MLB Batterman</div></div>
+          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">灰色 undervisor / 防汗内带 / NE flag 织唛</div></div>
+          <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">Fitted 全闭合 / 9 个尺码全码</div></div>
         </div>
 
         <div class="grid grid-cols-2 gap-px bg-stone-800 mb-6">
           <div class="bg-black p-4">
             <div class="text-[10px] tracking-widest text-stone-500 mb-1">我们成本</div>
-            <div class="display text-2xl accent-c">USD 2.8-3.6</div>
-            <div class="text-[10px] text-stone-500 mt-1">9 款全档线</div>
+            <div class="display text-2xl accent-c">USD 3.2-4.0</div>
+            <div class="text-[10px] text-stone-500 mt-1">9 个 size 套裝</div>
           </div>
           <div class="bg-black p-4">
             <div class="text-[10px] tracking-widest text-stone-500 mb-1">国际零售</div>
-            <div class="display text-2xl">USD 33-53</div>
-            <div class="text-[10px] text-stone-500 mt-1">NewEra 官网在售 / Pre-order</div>
+            <div class="display text-2xl">USD 52.99</div>
+            <div class="text-[10px] text-stone-500 mt-1">NewEra 官网 30 个队队均价</div>
           </div>
         </div>
 
@@ -636,72 +438,71 @@
           <div class="p-4">
             <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有1/2 · 怎么改</div>
             <div class="text-xs text-stone-400 leading-relaxed">
-              · 全 9 款 → 减成 4 主款（59FIFTY / 9FIFTY / 9TWENTY / Snapback）<br>
-              · 工艺：Side Patch 织唛 → 转印 + 锁边平绣 (节省 USD 0.4)<br>
-              · 后面 Larry O'Brien 奖杯：浮雕绣 → 单色平绣 (节省 USD 0.3)<br>
-              <strong class="text-white">→ 总价：USD 2.8 → USD 1.8</strong>
+              · 主色:Optic White (难洗) → 浅米色 (节省护理成本)<br>
+              · 队徽:3D 立体绣 → 2D 平绣 + 描边 (节省 USD 0.5)<br>
+              · 闭合:59FIFTY Fitted → 9FORTY Adjustable (节省 USD 0.4)<br>
+              <strong class="text-white">→ 总价:USD 3.2 → USD 2.0</strong>
             </div>
           </div>
         </div>
 
         <div class="pitch-box mb-4">
           <div class="text-stone-500 mb-2">→ 给客户的开发要点</div>
-          NBA 总冠军纪念是体育周边的核心爆款时刻 (1 周内能消化 50% 库存)。<br>
-          重点：① 4 帽型 9 款矩阵 = 全档线打法 ② Champions Side Patch 是必抄元素<br>
-          ③ 适合做球队特许商 / 体育用品零售 / 城市纪念定制。
+          赛事限定永远是 NewEra 旺季爆款。<br>
+          重点:1 全队同主题做多色矩阵 2 Optic White 夏季最佳<br>
+          3 适合体育赞助商定制(球队、转播、广告联名)。
         </div>
 
-        <a href="https://www.neweracap.com/collections/new-york-knicks" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ NewEra Knicks 全集</a>
+        <a href="https://www.neweracap.com/collections/mlb-2026-all-star-game" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ NewEra MLB 2026 ASG 系列</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ HAT No.03 - Swarovski × 47 × MLB Yankees ═══════════ -->
+<!-- ═══════════ HAT No.03 - Patta × Tom Trago ═══════════ -->
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
       <div class="display text-3xl text-stone-500" id="hat-no03">05 / 本周帽款 No.03</div>
-      <span class="badge-maybe" style="background:#eab308;color:black;font-size:10px;padding:2px 8px;border-radius:999px;font-weight:700;letter-spacing:0.05em;">外协可做</span>
-      <span class="text-xs text-stone-500">hypebeast 6/17 报道</span>
+      <span class="badge-yes">我们能做</span>
     </div>
 
     <div class="grid md:grid-cols-12 gap-8">
 
       <div class="md:col-span-7">
-        <a href="https://hypebeast.com/2026/6/swarovski-creators-lab-47-new-era-mlb-collaboration-collection-release-info" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
-          <img src="images/swar47-1.jpg" alt="Swarovski × 47 × MLB Yankees Crystal Cap" class="w-full h-full object-cover hover:scale-105 transition duration-700">
+        <a href="https://patta.nl/products/patta-soundsystem-x-tom-trago-cap-black" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden">
+          <img src="images/patta-1.jpg" alt="Patta Soundsystem × Tom Trago Sports Cap Black" class="w-full h-full object-cover hover:scale-105 transition duration-700">
         </a>
         <div class="grid grid-cols-3 gap-1 mt-1">
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/swar47-6.jpg" class="w-full h-full object-cover" loading="lazy" alt="Swarovski Crystal Detail"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/swar47-2.jpg" class="w-full h-full object-cover" loading="lazy" alt="Yankees NY Crystal Logo"></div>
-          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/swar47-1.jpg" class="w-full h-full object-cover" loading="lazy" alt="Lifestyle"></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/patta-2.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/patta-3.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
+          <div class="bg-stone-900 aspect-square overflow-hidden"><img src="images/patta-1.jpg" class="w-full h-full object-cover" loading="lazy" alt=""></div>
         </div>
       </div>
 
       <div class="md:col-span-5">
-        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">SWAROVSKI<br>× '47 × MLB</h3>
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">Yankees Crystal Logo · 水晶刺绣 / 第二弹多色</div>
+        <h3 class="display text-4xl md:text-5xl mb-2 leading-none">PATTA<br>× TOM TRAGO</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-6">SoundSystem · 街头 × 音乐文化联名</div>
 
         <div class="mb-6">
-          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">'47 Brand Clean Up Adjustable / 弯檐爸爸帽</div></div>
-          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">6-Panel 软结构低顶 / 帽顶高约 9.5cm</div></div>
-          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 棉斜纹 (推估) · 黑 / 蓝 / 米白 / 红 4 色</div></div>
-          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板 Yankees NY logo 镶嵌 baguette + round 切割 Swarovski 水晶</div></div>
-          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">皮革调节带 / 黄铜扣 / Swarovski 双标</div></div>
+          <div class="spec-row"><div class="spec-key">款型</div><div class="spec-val">Sports Cap 软结构曲面 / 黑色</div></div>
+          <div class="spec-row"><div class="spec-key">版型</div><div class="spec-val">5-Panel 软结构 / 帽顶高约 9cm (低顶)</div></div>
+          <div class="spec-row"><div class="spec-key">面料</div><div class="spec-val">100% 棉斜纹 (推估) · 内里反光织唛</div></div>
+          <div class="spec-row"><div class="spec-key">工艺</div><div class="spec-val">前面板 chenille 立体毛绒贴标 / 后面 SoundSystem 平绣</div></div>
+          <div class="spec-row"><div class="spec-key">辅料</div><div class="spec-val">皮革调节带 + 黄铜扣 / 织唛内标</div></div>
           <div class="spec-row"><div class="spec-key">关闭方式</div><div class="spec-val">皮革带金属扣 / 多档可调</div></div>
         </div>
 
         <div class="grid grid-cols-2 gap-px bg-stone-800 mb-6">
           <div class="bg-black p-4">
             <div class="text-[10px] tracking-widest text-stone-500 mb-1">我们成本</div>
-            <div class="display text-2xl accent-c">USD 4.5-6.0</div>
-            <div class="text-[10px] text-stone-500 mt-1">含水晶镶嵌外协</div>
+            <div class="display text-2xl accent-c">USD 3.0-3.6</div>
+            <div class="text-[10px] text-stone-500 mt-1">含皮革调节带</div>
           </div>
           <div class="bg-black p-4">
             <div class="text-[10px] tracking-widest text-stone-500 mb-1">国际零售</div>
-            <div class="display text-2xl">USD 175</div>
-            <div class="text-[10px] text-stone-500 mt-1">'47 + Swarovski 联名溢价</div>
+            <div class="display text-2xl">EUR 45 / USD 48</div>
+            <div class="text-[10px] text-stone-500 mt-1">Patta 官网在售</div>
           </div>
         </div>
 
@@ -709,485 +510,400 @@
           <div class="grid grid-cols-4 border-b border-stone-800">
             <div class="p-3 border-r border-stone-800 text-center">
               <div class="text-[9px] tracking-widest text-stone-500 mb-1">工艺难度</div>
-              <div class="text-sm accent-c">★★★★★</div>
+              <div class="text-sm accent-c">★★★☆☆</div>
             </div>
             <div class="p-3 border-r border-stone-800 text-center">
               <div class="text-[9px] tracking-widest text-stone-500 mb-1">打样周期</div>
-              <div class="text-sm text-white">10-14 天</div>
+              <div class="text-sm text-white">5-7 天</div>
             </div>
             <div class="p-3 border-r border-stone-800 text-center">
               <div class="text-[9px] tracking-widest text-stone-500 mb-1">推荐起订</div>
-              <div class="text-sm text-white">288+</div>
+              <div class="text-sm text-white">144+</div>
             </div>
             <div class="p-3 text-center">
               <div class="text-[9px] tracking-widest text-stone-500 mb-1">市场热度</div>
-              <div class="text-sm accent-c">★★★★★</div>
+              <div class="text-sm accent-c">★★★★☆</div>
             </div>
           </div>
           <div class="p-4">
             <div class="text-[10px] tracking-widest text-stone-500 uppercase mb-2">预算只有1/2 · 怎么改</div>
             <div class="text-xs text-stone-400 leading-relaxed">
-              · 水晶：Swarovski → 国产高品质水钻 (节省 USD 1.5)<br>
-              · 镶嵌方式：手工逐颗 → 烫钻成品贴标 (节省 USD 0.8)<br>
-              · 调节带：皮革 + 黄铜 → 仿皮 + 镀铜 (节省 USD 0.4)<br>
-              <strong class="text-white">→ 总价：USD 4.5 → USD 1.8</strong>
+              · 调节带:皮革 + 黄铜扣 → 编织绳 + 塑料锁 (节省 USD 0.5)<br>
+              · 工艺:chenille 毛绒贴标 → 厚平绣 + 圈绒填充 (节省 USD 0.4)<br>
+              · 内里:反光织唛 → 普通棉布 (节省 USD 0.2)<br>
+              <strong class="text-white">→ 总价:USD 3.0 → USD 1.9</strong>
             </div>
           </div>
         </div>
 
         <div class="pitch-box mb-4">
           <div class="text-stone-500 mb-2">→ 给客户的开发要点</div>
-          这是 2026 上半年潮流帽业最大热点 (Swarovski 系列已有第一波卖爆,这次第二弹 multi-color)。<br>
-          重点：① 水晶镶嵌 = 高溢价工艺 ② '47 Brand 是 NewEra 之外 MLB 最大授权方<br>
-          ③ 适合做奢侈品零售 / 高客单运动周边。我们可以做 "国产水钻" 替代版本,客单 USD 50-80 完全合理。
+          街头 × 音乐文化是欧洲独立潮牌的爆款配方。<br>
+          重点:1 软结构 5-Panel 的复古感是核心 2 Chenille 立体毛绒可作差异化卖点<br>
+          3 适合做小众音乐厂牌、独立电台、咖啡馆联名。
         </div>
 
-        <a href="https://hypebeast.com/2026/6/swarovski-creators-lab-47-new-era-mlb-collaboration-collection-release-info" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ hypebeast 详细报道</a>
+        <a href="https://patta.nl/products/patta-soundsystem-x-tom-trago-cap-black" target="_blank" class="inline-block text-xs tracking-widest text-stone-400 hover:accent-c uppercase">→ Patta 官网产品页</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ 17 品牌真本周全景 ═══════════ -->
+<!-- ═══════════ STYLE INSPIRATION FROM APPAREL ═══════════ -->
 <section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500" id="apparel">06 / 17 品牌真本周全景</div>
-      <span class="badge-ref">数据真实性闸门 · 6/15-21 created 真新品</span>
+      <div class="display text-3xl text-stone-500" id="apparel">06 / 服装风格参考</div>
+      <span class="badge-ref">设计灵感借鉴</span>
     </div>
-    <h2 class="display text-4xl md:text-6xl font-bold mb-4">不再只看 NewEra<br>本周 17 个潮牌真扫描</h2>
-    <p class="serif text-stone-400 mb-12 max-w-3xl">上期老板批评 "为什么资料总是 NewEra 款"。本期我们扩到 <strong class="text-white">17 个品牌</strong>,严格用 created 字段筛 6/15-21 真本周新品,得出 <strong class="text-white">23 件结果</strong>。NewEra 占 15 件,但有 8 件来自其他品牌。</p>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-4">从服装看本季<br>风格走向</h2>
+    <p class="serif text-stone-400 mb-12 max-w-3xl">不是叫我们做衣服,是看本季视觉语言、配色、贴标位置等元素,**反推到帽子上怎么用**。</p>
 
-    <!-- 品牌真扫描表 -->
-    <div class="grid md:grid-cols-2 gap-px bg-stone-800 mb-12">
+    <div class="grid md:grid-cols-2 gap-px bg-stone-800">
 
+      <!-- Inspiration 1: Supreme × La Martina jacket -->
       <div class="bg-black p-6">
-        <div class="flex items-baseline justify-between mb-3">
-          <h3 class="display text-2xl">扫描成功 17 家</h3>
-          <span class="text-xs accent-c">6/19 凌晨</span>
+        <a href="https://hypebeast.com/2026/6/la-martina-supreme-jacob-co-spring-2026-collaboration" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden mb-4">
+          <img src="images/supreme-005.jpg" class="w-full h-full object-cover" alt="Supreme × La Martina jacket">
+        </a>
+        <h3 class="display text-2xl mb-2">SUPREME × LA MARTINA</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">三品牌联名连帽夹克</div>
+        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
+          多品牌 logo 同时上身、罗马数字"MMXXVI"、红色数字"3"作主图。**色彩组合启发**:黑底 + 红 + 白 + 牛仔蓝。
+        </p>
+        <div class="border-l-2 accent-c pl-4 text-sm text-stone-300">
+          <strong class="text-white">→ 帽子怎么用:</strong><br>
+          可在 6-panel 帽前面板做"多 logo 拼贴刺绣"+ 罗马数字侧绣 + 这套色组合。客户拿样率会高。
         </div>
-        <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-stone-300">
-          <div>· NewEra <span class="text-stone-500">(238 帽)</span></div>
-          <div>· Ebbets Field <span class="text-stone-500">(154)</span></div>
-          <div>· 47 Brand <span class="text-stone-500">(78)</span></div>
-          <div>· Malbon Golf <span class="text-stone-500">(55)</span></div>
-          <div>· Reigning Champ <span class="text-stone-500">(26)</span></div>
-          <div>· Noah <span class="text-stone-500">(23)</span></div>
-          <div>· WTAPS <span class="text-stone-500">(22)</span></div>
-          <div>· DSM (CDG) <span class="text-stone-500">(20)</span></div>
-          <div>· Brain Dead <span class="text-stone-500">(17)</span></div>
-          <div>· ALD <span class="text-stone-500">(16)</span></div>
-          <div>· Maharishi <span class="text-stone-500">(15)</span></div>
-          <div>· Dime MTL <span class="text-stone-500">(15)</span></div>
-          <div>· BAPE US <span class="text-stone-500">(13)</span></div>
-          <div>· Patta <span class="text-stone-500">(5)</span></div>
-          <div>· Kith <span class="text-stone-500">(2)</span></div>
-          <div>· Real Bad Man <span class="text-stone-500">(2)</span></div>
-        </div>
-        <div class="text-xs text-stone-500 mt-3">总样本 701 件</div>
       </div>
 
+      <!-- Inspiration 2: Palace × Nike -->
       <div class="bg-black p-6">
-        <div class="flex items-baseline justify-between mb-3">
-          <h3 class="display text-2xl">扫描失败 13 家</h3>
-          <span class="text-xs text-red-500">SSL / 404 / 反爬</span>
+        <a href="https://hypebeast.com/2026/6/palace-skateboards-nike-england-x2-collaboration-collection-release-info" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden mb-4">
+          <img src="images/palace-3.jpg" class="w-full h-full object-cover" alt="Palace × Nike Three Lions">
+        </a>
+        <h3 class="display text-2xl mb-2">PALACE × NIKE "THREE LIONS"</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">英格兰国家队致敬系列</div>
+        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
+          St. George 红十字 + 银色科技感面料 + 复古球衣字体。**视觉手法启发**:单色科技感 + 大面积国旗符号。
+        </p>
+        <div class="border-l-2 accent-c pl-4 text-sm text-stone-300">
+          <strong class="text-white">→ 帽子怎么用:</strong><br>
+          配合上面世界杯主题帽款,用**银色 / 高科技反光面料 + 国旗符号**做高端版本,适合运动品牌世界杯限量款推客户。
         </div>
-        <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-stone-400">
-          <div>· Awake NY <span class="text-stone-500">(空)</span></div>
-          <div>· Carhartt WIP <span class="text-stone-500">(404)</span></div>
-          <div>· Stussy <span class="text-stone-500">(SSL)</span></div>
-          <div>· Palace SK <span class="text-stone-500">(404)</span></div>
-          <div>· Supreme JP <span class="text-stone-500">(空)</span></div>
-          <div>· Wacko Maria <span class="text-stone-500">(SSL)</span></div>
-          <div>· Human Made <span class="text-stone-500">(空)</span></div>
-          <div>· NEIGHBORHOOD <span class="text-stone-500">(SSL)</span></div>
-          <div>· Verdy <span class="text-stone-500">(SSL)</span></div>
-          <div>· Cav Empt <span class="text-stone-500">(SSL)</span></div>
-          <div>· Online Ceramics <span class="text-stone-500">(429)</span></div>
-          <div>· Salomon <span class="text-stone-500">(404)</span></div>
-          <div>· Manors Golf <span class="text-stone-500">(空)</span></div>
+      </div>
+
+      <!-- Inspiration 3: Supreme × Jordan Spring 2026 -->
+      <div class="bg-black p-6">
+        <a href="https://www.finallyoffline.com/article/supreme-x-jordan-drops-six-pieces-june-4-mpvp6g6b" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden mb-4">
+          <img src="images/sup-jordan-1.jpg" class="w-full h-full object-cover" alt="Supreme × Jordan Spring 2026">
+        </a>
+        <h3 class="display text-2xl mb-2">SUPREME × JORDAN</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">Spring 2026 · 6/4 上架· 奖牌不需鞋</div>
+        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
+          二品牌本周刚发,隐藏商业信号:$698 连帽皮外套 + Jumpman 大 logo · 三色配色(黑红 / 蓝白 / 粉红)· 超大"23"数字 + 袖侧 Supreme 字样 + mesh 面料。**走卖点**:运动 + 奇侈 + 主主牌 logo 双推。
+        </p>
+        <div class="border-l-2 accent-c pl-4 text-sm text-stone-300">
+          <strong class="text-white">→ 帽子怎么用:</strong><br>
+          做高端"双 logo 联名帽":6-panel 前板主品牌大 logo + 侧面副品牌字样 + 3-5 克奇侈手感面料(PU 伪皮 / 复合面料)。三色配色是"一款打 3 个市场"的成熟公式。
         </div>
-        <div class="text-xs text-stone-500 mt-3">下期补抓清单</div>
+      </div>
+
+      <!-- Inspiration 4: Justin Bieber SKYLRK -->
+      <div class="bg-black p-6">
+        <a href="https://hypebeast.com/2026/6/justin-bieber-skylrk-new-june-2026-drop-beanies-hoodie-sneakers-release-info" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden mb-4">
+          <img src="images/skylrk-8.jpg" class="w-full h-full object-cover" alt="SKYLRK Skull Cap pink">
+        </a>
+        <h3 class="display text-2xl mb-2">JUSTIN BIEBER × SKYLRK</h3>
+        <div class="text-xs tracking-widest text-stone-500 uppercase mb-3">6/11 上架 · 7 件全 Made in USA · 含 Skull Cap</div>
+        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
+          贾斯汀·比伯个人品牌本周刚发 7 件入门款:罗纹针织 Skull Cap + 反间挥撞套头卫衣 + 华夫格面料中帽套装。**主明色**:亮粉 / 黑 / 裸色。**工艺重点**:原始边缘 + 罗纹伸展 + 手绘点缀。
+        </p>
+        <div class="border-l-2 accent-c pl-4 text-sm text-stone-300">
+          <strong class="text-white">→ 帽子怎么用:</strong><br>
+          如果做针织冷帽,**亮粉/荧光色 + 同色 logo 压印 + 原生边缘不收口**是本季黑马。独立品牌走"品质极简"走势明显,适合推给理念品牌客户。
+        </div>
       </div>
 
     </div>
-
-    <!-- 真本周 23 件分布 -->
-    <div class="mb-12">
-      <h3 class="display text-2xl mb-4">真本周 6/15-21 created 真新品分布</h3>
-      <div class="bg-stone-950 border border-stone-800 p-6">
-        <div class="space-y-4">
-          <!-- NewEra 15 -->
-          <div>
-            <div class="flex justify-between items-baseline mb-1">
-              <span class="text-sm text-white">NewEra (Premium Multi Logo · MLB 主流队 + 墨西哥联赛)</span>
-              <span class="text-xs accent-c">15 件 · 65%</span>
-            </div>
-            <div class="bg-stone-900 h-2 rounded">
-              <div class="accent-bg h-2 rounded" style="width: 65%"></div>
-            </div>
-            <div class="text-[10px] text-stone-500 mt-1">含 Sultanes de Monterrey / Diablos Rojos / Charros de Jalisco 拓展拉丁市场</div>
-          </div>
-
-          <!-- Pluto × DSM 6 -->
-          <div>
-            <div class="flex justify-between items-baseline mb-1">
-              <span class="text-sm text-white">Pluto of Saint Andrews × Dover Street Market</span>
-              <span class="text-xs text-purple-400">6 件 · 26%</span>
-            </div>
-            <div class="bg-stone-900 h-2 rounded">
-              <div class="bg-purple-400 h-2 rounded" style="width: 26%"></div>
-            </div>
-            <div class="text-[10px] text-stone-500 mt-1">苏格兰小独立品牌 AW26 系列 · 4 款式 6 色</div>
-          </div>
-
-          <!-- Kith 2 -->
-          <div>
-            <div class="flex justify-between items-baseline mb-1">
-              <span class="text-sm text-white">Kith (Trucker Jacket Essentials)</span>
-              <span class="text-xs text-blue-400">2 件 · 9%</span>
-            </div>
-            <div class="bg-stone-900 h-2 rounded">
-              <div class="bg-blue-400 h-2 rounded" style="width: 9%"></div>
-            </div>
-            <div class="text-[10px] text-stone-500 mt-1">不是帽是 Trucker Jacket / Capri,关注 Kith 6 月以基础款为主</div>
-          </div>
-        </div>
-
-        <div class="mt-6 border-l-2 accent-c pl-4 text-sm text-stone-300">
-          <strong class="text-white">→ 给我们工厂的提示：</strong><br>
-          NewEra 在墨西哥联赛上的 Sultanes / Diablos / Charros 是个新角度。<br>
-          DSM 这条路线证明 "苏格兰 / 北欧 / 东欧" 等小国独立潮牌也能卖到 $44。<br>
-          下期补充：把 Stussy / Wacko Maria / Awake NY 等 13 家失败品牌补抓 (用代理或换 UA)。
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
 <!-- ═══════════ COLOR PALETTE ═══════════ -->
-<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+<section class="border-t border-stone-800 py-24 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
-    <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500" id="palette">07 / 本期色卡</div>
-      <span class="badge-ref">3 主角抽 5 色</span>
-    </div>
-    <h2 class="display text-4xl md:text-6xl font-bold mb-12">本周色调 ·<br>"羊毛棕 + 总冠军白 + 水晶透明"</h2>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-stone-800">
-
-      <div class="aspect-square p-4 flex flex-col justify-end" style="background:#5C3D2E;color:#E8D5B5;">
-        <div class="text-[10px] tracking-widest opacity-80 mb-1">Pluto Saddle Brown</div>
-        <div class="display text-base">羊毛棕</div>
-        <div class="text-xs opacity-80 mt-1">独立潮牌路线 · DSM Pluto Rampant 主色</div>
+    <div class="grid md:grid-cols-12 gap-12 mb-16">
+      <div class="md:col-span-4">
+        <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4" id="color">07 / 本周色彩</div>
+        <h2 class="display text-6xl md:text-8xl font-bold leading-none">2026<br>色彩</h2>
       </div>
-
-      <div class="aspect-square p-4 flex flex-col justify-end" style="background:#1B4878;color:#FFFFFF;">
-        <div class="text-[10px] tracking-widest opacity-90 mb-1">Saint Andrews Blue</div>
-        <div class="display text-base">学院蓝</div>
-        <div class="text-xs opacity-90 mt-1">复古高尔夫风 · Pluto Club Hat Blue</div>
-      </div>
-
-      <div class="aspect-square p-4 flex flex-col justify-end" style="background:#FFFFFF;color:#003E7E;">
-        <div class="text-[10px] tracking-widest opacity-90 mb-1">Knicks Champions White</div>
-        <div class="display text-base">总冠军白</div>
-        <div class="text-xs opacity-90 mt-1">体育即时纪念 · NBA Champions 主色</div>
-      </div>
-
-      <div class="aspect-square p-4 flex flex-col justify-end" style="background:#003E7E;color:#FF7700;">
-        <div class="text-[10px] tracking-widest opacity-90 mb-1">Knicks Royal Blue</div>
-        <div class="display text-base">皇家蓝</div>
-        <div class="text-xs opacity-90 mt-1">NBA 球队官方色 · 9TWENTY Adjustable</div>
-      </div>
-
-      <div class="aspect-square p-4 flex flex-col justify-end relative" style="background:linear-gradient(135deg,#E0E0E0 0%,#FFFFFF 50%,#A8C5D6 100%);color:#333;">
-        <div class="text-[10px] tracking-widest opacity-80 mb-1">Swarovski Crystal Clear</div>
-        <div class="display text-base">水晶透明</div>
-        <div class="text-xs opacity-80 mt-1">奢侈品水晶刺绣 · Yankees NY logo</div>
-      </div>
-
-    </div>
-
-    <div class="mt-8 grid md:grid-cols-2 gap-6">
-      <div class="bg-stone-950 border border-stone-800 p-6">
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">本期最热配色组合</div>
-        <p class="serif text-stone-300 text-sm leading-relaxed">
-          <strong class="text-white">羊毛棕 + 学院蓝 + 缎带内衬</strong> = 复古英伦学院风的核心。<br>
-          <strong class="text-white">总冠军白 + 皇家蓝 + 烫金 logo</strong> = 体育即时纪念的标准配方。<br>
-          客户可以根据品牌定位 选不同色路线。
+      <div class="md:col-span-8 serif text-lg leading-relaxed text-stone-300">
+        <p class="mb-4">
+          <strong class="text-white">Pantone 2026 年度色:Cloud Dancer (PANTONE 11-4201)</strong>
+          -- 一种漂浮的纯白,象征当下重新发掘静谧反思价值的"安抚之色"。
+        </p>
+        <p class="text-stone-500 text-base mb-4">
+          整体趋势:大地色系 + 纯净中性色 + 高饱和点睛色并行。
+        </p>
+        <p class="text-stone-300 text-base">
+          <strong class="text-white">→ 用在帽子上怎么操作:</strong>
+          建议先做 5 款 Cloud Dancer 全白基础帽(棒球帽 / 渔夫帽 / 老爹帽 / Trucker / 5-panel),
+          搭同色调织唛或超低饱和点缀。客户 sample 接受率会很高。
         </p>
       </div>
-      <div class="bg-stone-950 border border-stone-800 p-6">
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">推荐给设计部尝试</div>
-        <p class="serif text-stone-300 text-sm leading-relaxed">
-          做 "Pluto 风格" 的复古英伦帽：<br>
-          <strong class="text-white">羊毛棕底 + 皮革 D-Ring + 复古织唛 + 学院风刺绣</strong>。<br>
-          这个配方对欧洲精品店 / 高尔夫俱乐部 / 大学社团都是高匹配。
-        </p>
+    </div>
+
+    <a href="https://www.pantone.com/color-of-the-year/2026" target="_blank" class="block mb-12 group">
+      <div class="bg-[#F4F2ED] aspect-[3/1] rounded-sm p-12 md:p-16 flex flex-col md:flex-row items-start md:items-end justify-between text-black relative overflow-hidden">
+        <div>
+          <div class="text-xs tracking-[0.4em] uppercase text-stone-600 mb-4">PANTONE COLOR OF THE YEAR 2026</div>
+          <div class="display text-6xl md:text-9xl font-bold leading-none">CLOUD<br>DANCER</div>
+        </div>
+        <div class="mt-8 md:mt-0 text-right">
+          <div class="display text-3xl">11-4201</div>
+          <div class="text-xs tracking-widest uppercase text-stone-600 mt-2">→ PANTONE.COM</div>
+        </div>
+      </div>
+    </a>
+
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-px bg-stone-800">
+      <div class="p-6 bg-[#F4F2ED] text-black aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">CLOUD DANCER</div>
+        <div>
+          <div class="display text-2xl">11-4201</div>
+          <div class="text-xs">主色 · 全白基础</div>
+        </div>
+      </div>
+      <div class="p-6 bg-[#3F6F6E] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">TRANSFORMATIVE TEAL</div>
+        <div>
+          <div class="display text-2xl">深青绿</div>
+          <div class="text-xs opacity-70">WGSN 年度</div>
+        </div>
+      </div>
+      <div class="p-6 bg-[#9CAF88] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">SAGE GREEN</div>
+        <div>
+          <div class="display text-2xl">鼠尾草绿</div>
+          <div class="text-xs opacity-70">户外/运动帽</div>
+        </div>
+      </div>
+      <div class="p-6 bg-[#9C7C5E] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">COCOA POWDER</div>
+        <div>
+          <div class="display text-2xl">可可粉</div>
+          <div class="text-xs opacity-70">老爹帽主色</div>
+        </div>
+      </div>
+      <div class="p-6 bg-[#D4A574] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">ANGORA</div>
+        <div>
+          <div class="display text-2xl">驼色</div>
+          <div class="text-xs opacity-70">渔夫帽主色</div>
+        </div>
+      </div>
+      <div class="p-6 bg-[#C8553D] text-white aspect-square flex flex-col justify-between">
+        <div class="text-xs tracking-widest font-bold">LAVA FALLS</div>
+        <div>
+          <div class="display text-2xl">熔岩红</div>
+          <div class="text-xs opacity-70">点睛色 / 刺绣</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════ LOGO CRAFT OF THE WEEK ═══════════ -->
-<section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500" id="logo">08 / 本期 logo 工艺</div>
-      <span class="badge-ref">3 工艺研究 · 难度递增</span>
-    </div>
-    <h2 class="display text-4xl md:text-6xl font-bold mb-4">复古织唛 · Side Patch · Swarovski 水钻</h2>
-    <p class="serif text-stone-400 mb-12 max-w-3xl">本周 3 帽款用了 3 种 <strong class="text-white">完全不同价位的 logo 工艺</strong>。从 $44 平价到 $175 奢侈,工艺成本递增 4 倍,但都各有市场。</p>
-
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <div class="bg-black border border-stone-800">
-        <a href="https://shop.doverstreetmarket.com/products/pluto-of-saint-andrews-mens-pluto-rampant-hat-brown-aw26-posa2h008" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden">
-          <img src="images/pluto-4.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Pluto Rampant 复古织唛">
-        </a>
-        <div class="p-5">
-          <div class="text-xs accent-c tracking-widest uppercase mb-1">工艺 A · Pluto × DSM ($44)</div>
-          <h3 class="display text-xl mb-2">复古平绣 + 缎带内衬</h3>
-          <p class="text-sm text-stone-400 leading-relaxed mb-3">
-            前面板：单色平绣狮子图腾 + 内嵌锁边描边<br>
-            内里：缎带织带印 "Pluto of Saint Andrews"<br>
-            难度 ★★★ · 立体高度 1mm (低饱和)
-          </p>
-          <div class="border-l-2 accent-c pl-3 text-xs text-stone-300">
-            HF 车间 OK：先平绣底色,再叠绣线条加锁边,即可还原 90% 视觉。<br>
-            字高 4cm × 缎带宽 2cm。
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-black border border-stone-800">
-        <a href="https://www.neweracap.com/products/new-york-knicks-2026-champions-sidepatch-59fifty-fitted" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden">
-          <img src="images/knicks-1-59fifty.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Knicks 2026 Champions Side Patch">
-        </a>
-        <div class="p-5">
-          <div class="text-xs accent-c tracking-widest uppercase mb-1">工艺 B · NewEra × Knicks ($53)</div>
-          <h3 class="display text-xl mb-2">Side Patch 织唛 + 立体队徽</h3>
-          <p class="text-sm text-stone-400 leading-relaxed mb-3">
-            前面板：3D 立体绣 Knicks logo + 描边<br>
-            右侧：定织 "2026 Champions" 织唛 patch (锁边缝固)<br>
-            后面：Larry O'Brien 奖杯立体绣<br>
-            难度 ★★★★ · 立体高度 3mm
-          </p>
-          <div class="border-l-2 accent-c pl-3 text-xs text-stone-300">
-            注意点：Side Patch 是核心识别元素,定织唛比转印质感高 3 个档次。
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-black border border-stone-800">
-        <a href="https://hypebeast.com/2026/6/swarovski-creators-lab-47-new-era-mlb-collaboration-collection-release-info" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden">
-          <img src="images/swar47-1.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Swarovski 水晶 Yankees logo">
-        </a>
-        <div class="p-5">
-          <div class="text-xs accent-c tracking-widest uppercase mb-1">工艺 C · Swarovski × 47 ($175)</div>
-          <h3 class="display text-xl mb-2">Swarovski 水晶手工镶嵌</h3>
-          <p class="text-sm text-stone-400 leading-relaxed mb-3">
-            前面板：Yankees NY logo 镶嵌 baguette + round 切割水晶<br>
-            手工逐颗 100+ 颗 (推估 $5-8/帽 BOM)<br>
-            难度 ★★★★★ · 必须特种镶嵌设备 + 手工技师
-          </p>
-          <div class="border-l-2 accent-c pl-3 text-xs text-stone-300">
-            HF 车间没设备,建议外协广州番禺水钻贴标厂 (有专做奢侈品代工)。<br>
-            国产水钻 + 烫钻贴标可降到 BOM $1.5-2,客单仍可定 $50。
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ AI SOFTWARE / DESIGN TOOL ═══════════ -->
 <section class="border-t border-stone-800 py-16 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500" id="software">09 / 本期 AI 软件</div>
-      <span class="badge-ref">设计部立刻可用 · 试 1 周看效果</span>
+      <div class="display text-3xl text-stone-500" id="craft">08 / 本周特别 logo 工艺</div>
+      <span class="badge-yes">可复刻· 帬打样参考</span>
     </div>
-    <h2 class="display text-4xl md:text-6xl font-bold mb-4">3 个 AI 软件 · 给设计部本周尝鲜</h2>
-    <p class="serif text-stone-400 mb-12 max-w-3xl">本期挑了 3 个 <strong class="text-white">能立刻用得上</strong> 的 AI 软件 / 设计工具,均有免费档可先试。设计部本周用一个月,跑出 3-5 张帽款渲染图给客户看。</p>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-2 leading-none">3D EMBOSSED</h2>
+    <div class="text-sm tracking-widest text-stone-400 uppercase mb-8">压胶工艺 · SS26 高端品牌新宠</div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <!-- A · Khroma 配色 -->
-      <div class="bg-stone-950 border border-stone-800 hover:border-stone-600 transition">
-        <div class="aspect-[4/3] bg-gradient-to-br from-orange-500 via-pink-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
-          <div class="display text-6xl text-white tracking-wider">Khroma</div>
-          <div class="absolute bottom-2 right-2 text-[10px] text-white/80">khroma.co</div>
+    <!-- 工艺特写 3 联图 -->
+    <div class="grid md:grid-cols-3 gap-1 mb-8">
+      <a href="https://www.neweracap.com/products/harry-potter-hogwarts-chrome-white-9fifty-snapback" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden relative group">
+        <img src="images/hp-2.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Harry Potter Hogwarts × NewEra · 立体刺绣校徽特写">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/60 to-transparent p-3">
+          <div class="text-[10px] tracking-widest text-stone-300 uppercase">立体高度 3-4mm</div>
+          <div class="text-xs text-white">NEW ERA × HP × New Era</div>
         </div>
-        <div class="p-5">
-          <div class="text-xs accent-c tracking-widest uppercase mb-1">软件 A · 配色 AI</div>
-          <h3 class="display text-2xl mb-3">Khroma · 配色 AI 工具</h3>
-          <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
-            训练你自己的 AI 配色模型。先选 50 个你喜欢的颜色,Khroma 会学习你的口味,然后无限生成专属配色方案。
+      </a>
+      <a href="https://www.neweracap.com/products/harry-potter-hogwarts-chrome-white-9fifty-snapback" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden relative group">
+        <img src="images/hp-3.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="3D puff "Paradise" 柔软字体· 带白色描边">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/60 to-transparent p-3">
+          <div class="text-[10px] tracking-widest text-stone-300 uppercase">柔体 + 描边</div>
+          <div class="text-xs text-white">"Paradise" 走手写体</div>
+        </div>
+      </a>
+      <a href="https://www.neweracap.com/products/harry-potter-hogwarts-chrome-white-9fifty-snapback" target="_blank" class="block bg-stone-900 aspect-[4/3] overflow-hidden relative group">
+        <img src="images/hp-5.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-700" alt="Hogwarts 校徽工艺细节 · 可看针距与立体高度">
+        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/60 to-transparent p-3">
+          <div class="text-[10px] tracking-widest text-stone-300 uppercase">哥特体 + 黑底</div>
+          <div class="text-xs text-white">针距 & 表面质感特写</div>
+        </div>
+      </a>
+    </div>
+    <div class="text-[10px] text-stone-500 italic mb-8">↑ 以上三张 NEW ERA × HP × New Era SS26 实拍 · 能看到立体高度、针距、表面质感。如需看产品原图点击跳转 hypebeast 原文。</div>
+
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-7">
+        <div class="bg-stone-950 border border-stone-800 p-8 mb-4">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">什么是 3D Embossed 压胶</div>
+          <p class="serif text-stone-200 text-base leading-relaxed mb-4">
+            先在面料表面贴合一层 PVC 或 TPU 压胶膜(厚 0.3-0.8mm),用金属模具在压胶膜上加热压制出立体字样或 logo。冷却后脱模,得到表面平滑、有光泽感、触感如橡胶的立体图案。不绣线,纯靠压胶成型。
           </p>
-          <div class="bg-black border border-stone-800 p-3 mb-3">
-            <div class="grid grid-cols-2 gap-2 text-xs text-stone-400">
-              <div><strong class="text-white">价格:</strong> 免费</div>
-              <div><strong class="text-white">学习:</strong> 5 分钟</div>
-              <div><strong class="text-white">输出:</strong> 配色方案</div>
-              <div><strong class="text-white">中文:</strong> 不需要</div>
-            </div>
-          </div>
-          <div class="border-l-2 accent-c pl-3 text-xs text-stone-300">
-            <strong class="text-white">本周用法:</strong><br>
-            给设计部 50 个 W25 三主角色（羊毛棕 / 学院蓝 / 总冠军白等）训练,然后 1 分钟生成 30 套帽款配色方案给客户备选。
-          </div>
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">为什么这个季抢手</div>
+          <ul class="text-sm text-stone-300 space-y-2">
+            <li>✅ <strong>Swarovski × '47 × MLB</strong>(6 月日本发售)水晶 NY 帽用压胶做底 + 水晶镶嵌,高端感极强。</li>
+            <li>✅ 高端品牌如 Supreme、Off-White 近年大量用压胶做 logo 替代刺绣。</li>
+            <li>✅ 不需要绣花,本厂只需备压胶膜 + 模具就能做,成本比 puff 更低。</li>
+            <li>✅ 加价 USD 0.3-0.5/顶,客户接受度高(看起来比 puff 更高级)。</li>
+          </ul>
         </div>
-        <a href="https://www.khroma.co/" target="_blank" class="block text-center text-xs tracking-widest text-stone-400 hover:accent-c uppercase border-t border-stone-800 py-3">→ khroma.co 立即试用</a>
+        <div class="bg-stone-950 border border-stone-800 p-8 mb-4">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">设计部设计 logo 时要记住</div>
+          <ul class="text-sm text-stone-300 space-y-2">
+            <li>⚡ <strong>适合简单字样</strong>:压胶对复杂图案不友好,越简单越高级。适合品牌名/首字母/数字。</li>
+            <li>⚡ <strong>表面光滑</strong>:压胶完成后表面是光滑的,不像刺绣有线纹。适合追求「极简高级感」的品牌。</li>
+            <li>⚡ <strong>颜色选择</strong>:压胶颜色 = 膜颜色 + 颜料,可以做出金属色、珠光色(比刺绣容易得多)。</li>
+            <li>⚡ <strong>模具费用</strong>:一套铝制模具约 USD 50-100(一次性),适合 500+ 订单分摊。</li>
+            <li>⚡ <strong>不适合</strong>:超细线、渐变、复杂图案。刺绣做不了的东西,压胶更做不了。</li>
+          </ul>
+        </div>
       </div>
 
-      <!-- B · Vizcom 渲染 -->
-      <div class="bg-stone-950 border border-stone-800 hover:border-stone-600 transition">
-        <div class="aspect-[4/3] bg-gradient-to-br from-cyan-500 via-blue-600 to-indigo-700 flex items-center justify-center relative overflow-hidden">
-          <div class="display text-6xl text-white tracking-wider">Vizcom</div>
-          <div class="absolute bottom-2 right-2 text-[10px] text-white/80">vizcom.ai</div>
+      <div class="md:col-span-5">
+        <div class="bg-stone-950 border border-stone-800 p-6 mb-4">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">备选工艺(下期会介绍其中一个)</div>
+          <ul class="text-sm text-stone-300 space-y-3">
+            <li><strong class="text-white">3D Puff</strong>· 立体发泡刺绣· 街头潮牌首选</li>
+            <li><strong class="text-white">平绣 (Flat)</strong>· 传统单层线迹· 适合复杂 logo / 照片化设计</li>
+            <li><strong class="text-white">PVC 补贴</strong>· 橡胶塑肶套· 适合运动 / 奇侈 / 愿望限量款</li>
+            <li><strong class="text-white">反光烫印</strong>· 哧量夜光· 适合户外 / 安全 / 走高科技路线</li>
+            <li><strong class="text-white">金紣绣 / 色丝绣 / 金纸绣</strong>· 金属反光· 适合动愿表达 / 奇侈品牌</li>
+          </ul>
         </div>
-        <div class="p-5">
-          <div class="text-xs accent-c tracking-widest uppercase mb-1">软件 B · 草图 AI 渲染</div>
-          <h3 class="display text-2xl mb-3">Vizcom · 草图秒变成品图</h3>
-          <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
-            手绘帽款草图 → 上传 Vizcom → 秒生成质感渲染图（材质、灯光、环境一套全有）。设计师用 1 张草图能输出 5 个变体给客户。
+        <div class="bg-stone-950 border border-stone-800 p-6">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">主推客户</div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            适合 puff 的客户画像:街头品牌、运动品牌、限量联名、 hypebeast 象征型派对 brand。不适合 luxury 底调、女性优雅、商务礼品。
           </p>
-          <div class="bg-black border border-stone-800 p-3 mb-3">
-            <div class="grid grid-cols-2 gap-2 text-xs text-stone-400">
-              <div><strong class="text-white">价格:</strong> 免费 30/月</div>
-              <div><strong class="text-white">付费:</strong> $20/月无限</div>
-              <div><strong class="text-white">输出:</strong> PNG 渲染图</div>
-              <div><strong class="text-white">中文:</strong> 提示需英文</div>
-            </div>
-          </div>
-          <div class="border-l-2 accent-c pl-3 text-xs text-stone-300">
-            <strong class="text-white">本周用法:</strong><br>
-            设计部画 W26 帽款草图 (5 个款) 上传 Vizcom,2 小时内输出 25 张成品图给业务部用。客户提案不再是 "设计稿" 而是 "成品图"。
-          </div>
         </div>
-        <a href="https://www.vizcom.ai/" target="_blank" class="block text-center text-xs tracking-widest text-stone-400 hover:accent-c uppercase border-t border-stone-800 py-3">→ vizcom.ai 注册免费</a>
-      </div>
-
-      <!-- C · Coolors 调色板 -->
-      <div class="bg-stone-950 border border-stone-800 hover:border-stone-600 transition">
-        <div class="aspect-[4/3] bg-gradient-to-br from-emerald-500 via-teal-500 to-blue-500 flex items-center justify-center relative overflow-hidden">
-          <div class="display text-6xl text-white tracking-wider">Coolors</div>
-          <div class="absolute bottom-2 right-2 text-[10px] text-white/80">coolors.co</div>
-        </div>
-        <div class="p-5">
-          <div class="text-xs accent-c tracking-widest uppercase mb-1">软件 C · 调色板生成</div>
-          <h3 class="display text-2xl mb-3">Coolors · 一键 5 色板</h3>
-          <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
-            按空格键随机生成 5 色调色板。可锁定喜欢的颜色,然后继续随机其他位置。还能从图片提取调色板（比如把 Pluto × DSM 帽款图丢进去自动出 5 色）。
-          </p>
-          <div class="bg-black border border-stone-800 p-3 mb-3">
-            <div class="grid grid-cols-2 gap-2 text-xs text-stone-400">
-              <div><strong class="text-white">价格:</strong> 免费</div>
-              <div><strong class="text-white">学习:</strong> 1 分钟</div>
-              <div><strong class="text-white">输出:</strong> 色板 + HEX</div>
-              <div><strong class="text-white">中文:</strong> 不需要</div>
-            </div>
-          </div>
-          <div class="border-l-2 accent-c pl-3 text-xs text-stone-300">
-            <strong class="text-white">本周用法:</strong><br>
-            把竞品帽款图（如 Pluto / Knicks / Swarovski 帽）上传 Coolors,自动提取 5 色板 → 直接抄配色给打样部。比设计师猜色快 10 倍。
-          </div>
-        </div>
-        <a href="https://coolors.co/" target="_blank" class="block text-center text-xs tracking-widest text-stone-400 hover:accent-c uppercase border-t border-stone-800 py-3">→ coolors.co 立即试用</a>
       </div>
 
     </div>
 
-    <div class="mt-8 bg-stone-950 border-l-2 accent-c p-6">
-      <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">本周必须做的事</div>
-      <p class="serif text-stone-300 text-sm leading-relaxed">
-        <strong class="text-white">设计部 1 周内完成 3 个软件试用</strong>:<br>
-        ① Khroma 训练自己的配色 AI (5 分钟) → 生成 W26 三色板备选<br>
-        ② Vizcom 注册免费档 → 拿 W25 三主角中的 1 款画草图试渲染<br>
-        ③ Coolors 提取竞品帽款色板 → 给客户提案直接用<br>
-        下周一前给 Kin: 试用感受 + 3-5 张实际输出图。
-      </p>
-    </div>
+    <p class="serif text-stone-500 text-xs mt-8 italic">
+      每期一款工艺 · 下期 W26 介绍 3D Puff 立体发泡刺绣。设计部有实验需求可告诉 Kin。
+    </p>
   </div>
 </section>
 
 <!-- ═══════════ DESIGN TOOL OF THE WEEK ═══════════ -->
-<section class="border-t border-stone-800 py-16 px-6 md:px-12">
+<section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
     <div class="flex items-baseline gap-4 mb-8">
-      <div class="display text-3xl text-stone-500" id="tool">10 / 外协 · 水钻贴标</div>
-      <span class="badge-ref">业务部立刻可联系</span>
+      <div class="display text-3xl text-stone-500" id="tool">09 / 本周设计工具推荐</div>
+      <span class="badge-yes">设计部可以上手试</span>
     </div>
-    <h2 class="display text-4xl md:text-6xl font-bold mb-4">水钻烫钻贴标 · 国产替代 Swarovski 资源池</h2>
-    <p class="serif text-stone-400 mb-12 max-w-3xl">Swarovski × 47 帽 $175 是奢侈品价位,我们工厂没有专门设备。但<strong class="text-white">国产水钻 + 烫钻贴标</strong> 完全可做出客单 $50-80 替代版。下面是我们应该排查的 3 类外协资源。</p>
+    <h2 class="display text-4xl md:text-6xl font-bold mb-2 leading-none">LOOK AI</h2>
+    <div class="text-sm tracking-widest text-stone-400 uppercase mb-8">服装/饰品 AI 渲染 · 含虚拟试穿 · 设计部新宠</div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-stone-950 border border-stone-800 p-6">
-        <div class="text-xs accent-c tracking-widest uppercase mb-2">A · 广州番禺水钻贴标</div>
-        <h3 class="display text-xl mb-3">奢侈品代工型</h3>
-        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
-          番禺有十几家专门做奢侈品代工的水钻贴标厂。手工镶嵌技师,客户多是国内高端服装品牌。
-        </p>
-        <div class="text-xs text-stone-400 leading-relaxed">
-          · MOQ 100 起 / 工价 ¥10-25/件<br>
-          · 设备：手工镶嵌 + 真空贴标机<br>
-          · 推荐询：番禺市桥镇水钻协会
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-7">
+        <a href="https://vizcom.com" target="_blank" class="block bg-stone-900 aspect-[16/9] overflow-hidden mb-4">
+          <img src="images/vizcom-2.jpg" class="w-full h-full object-cover" alt="Vizcom 工具作品示例 · 从草图到拟真渲染">
+        </a>
+        <div class="text-[10px] text-stone-500 italic mb-6">↑ Vizcom 官方作品 · 草图输入后出的拟真质感渲染,能看到材质、灯光、环境这些细节</div>
+
+        <div class="bg-black border border-stone-800 p-8">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">一句话介绍</div>
+          <p class="serif text-stone-200 text-lg leading-relaxed mb-4">
+            Look AI(lookfashion.ai)是专为服装和饰品设计师打造的 AI 渲染平台。设计师上传 2D 设计图或草图,AI 自动识别款式结构,输出带面料纹理、垂感、缝线的拟真效果图。特色功能:虚拟试穿 - 把帽子/配饰「穿」在模特身上看实际效果。
+          </p>
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">我们设计部怎么用</div>
+          <ul class="text-sm text-stone-300 space-y-2 mb-4">
+            <li>✅ <strong>帽子 2D → 拟真图</strong>:上传帽子平面图,AI 自动生成带面料纹理和缝线的立体效果图</li>
+            <li>✅ <strong>虚拟试戴</strong>:把帽子效果放到模特头上,看客户实际佩戴效果 - 比平铺图说服力高 3 倍</li>
+            <li>✅ <strong>多色多面料快速出图</strong>:一个款一键生成 5+ 配色方案,省掉打样成本</li>
+            <li>✅ <strong>客户沟通利器</strong>:把效果图和实物对比发客户,降低「打样后不满意」的概率</li>
+          </ul>
         </div>
       </div>
 
-      <div class="bg-stone-950 border border-stone-800 p-6">
-        <div class="text-xs accent-c tracking-widest uppercase mb-2">B · 义乌水钻 + 印花</div>
-        <h3 class="display text-xl mb-3">中档量产型</h3>
-        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
-          义乌国际商贸城 4 区是水钻批发集散地。从原料到代工一条龙,价格比番禺便宜 30%。
-        </p>
-        <div class="text-xs text-stone-400 leading-relaxed">
-          · MOQ 500 起 / 工价 ¥3-8/件<br>
-          · 设备：自动烫钻机 + 半手工<br>
-          · 推荐询：义乌国际商贸城 4 区水钻区
+      <div class="md:col-span-5">
+        <a href="https://vizcom.com" target="_blank" class="block bg-stone-900 aspect-square overflow-hidden mb-4">
+          <img src="images/vizcom-1.jpg" class="w-full h-full object-cover" alt="Vizcom 作品 · 设计与材质探索">
+        </a>
+        <div class="text-[10px] text-stone-500 italic mb-6">↑ 同一个产品 · 不同材质与结构拆解示例</div>
+
+        <div class="bg-black border border-stone-800 p-6 mb-4">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">同类其他工具可选</div>
+          <ul class="text-sm text-stone-300 space-y-2">
+            <li><strong class="text-white">Vizcom</strong> · vizcom.com - 产品渲染,草图→效果图</li>
+            <li><strong class="text-white">Refabric</strong> · refabric.com - 服装设计 / 面料代码生成</li>
+            <li><strong class="text-white">NewArc</strong> · newarc.ai - 鞋品/服装 AI 渲染</li>
+            <li><strong class="text-white">Stable Diffusion</strong>· 开源方案,需配 LoRA 训练帽类模型</li>
+          </ul>
         </div>
+        <div class="bg-black border border-stone-800 p-6 mb-4">
+          <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">入门提示</div>
+          <p class="text-sm text-stone-300 leading-relaxed">
+            官网 lookfashion.ai 有免费试用。上手路径:注册 → 上传帽子设计图 → 选择款式类型(帽类) → 生成。5 分钟能出 3-5 张拟真图 + 虚拟试戴效果。建议设计部先拿一个旧款测试,反馈给 Kin 再集体推广。
+          </p>
+        </div>
+        <a href="https://lookfashion.ai" target="_blank" class="inline-block accent-bg text-black px-6 py-3 display text-sm tracking-widest hover:bg-stone-200 transition">去官网 →</a>
       </div>
 
-      <div class="bg-stone-950 border border-stone-800 p-6">
-        <div class="text-xs accent-c tracking-widest uppercase mb-2">C · 中山小榄烫钻贴标</div>
-        <h3 class="display text-xl mb-3">大批量低价型</h3>
-        <p class="serif text-stone-300 text-sm leading-relaxed mb-4">
-          中山小榄镇集中了一批做服装烫钻贴标的工厂,适合 1000+ 大量订单。
-        </p>
-        <div class="text-xs text-stone-400 leading-relaxed">
-          · MOQ 1000 起 / 工价 ¥1.5-3/件<br>
-          · 设备：全自动烫钻机<br>
-          · 推荐询：小榄镇服装辅料协会
-        </div>
-      </div>
     </div>
 
-    <div class="mt-8 bg-stone-950 border-l-2 accent-c p-6">
-      <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">本周必须做的事</div>
-      <p class="serif text-stone-300 text-sm leading-relaxed">
-        <strong class="text-white">外协联络下周一前完成 3 家询价</strong>：广州番禺 / 义乌 / 中山小榄各 1 家。<br>
-        要求每家给：① MOQ 标准 ② 工价 ③ 打样周期 ④ 是否可做 NY logo 仿水钻 (避开 Swarovski 商标)。<br>
-        我们用此数据给客户提供 "水晶帽" 国产替代方案,客单 $50-80 完全合理。
-      </p>
-    </div>
+    <p class="serif text-stone-500 text-xs mt-8 italic">
+      本周推荐 · 下期 W26 会换回 Vizcom(对比评测)。设计部试过请告诉 Kin,下期会加上实际使用反馈。
+    </p>
   </div>
 </section>
 
 <!-- ═══════════ ACTION CHECKLIST ═══════════ -->
 <section class="border-t border-stone-800 py-24 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
-    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4" id="action">11 / 这周必做清单</div>
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4" id="action">10 / 这周必做清单</div>
     <h2 class="display text-6xl md:text-8xl font-bold mb-12">本周必做</h2>
 
     <div class="space-y-px bg-stone-800">
       <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
         <div class="md:col-span-1 display text-5xl accent-c">1</div>
         <div class="md:col-span-9">
-          <h3 class="display text-2xl mb-2">外协联络 · 水钻烫钻贴标 3 家询价</h3>
-          <p class="text-stone-400 text-sm">广州番禺 / 义乌 / 中山小榄各联系 1 家。每家给到：MOQ 标准、工价、打样周期、是否可做 NY logo 类仿水钻。下周一前完成 3 家全比价。</p>
+          <h3 class="display text-2xl mb-2">HF 车间测试 3D Embossed 压胶工艺</h3>
+          <p class="text-stone-400 text-sm">采购 PVC/TPU 压胶膜 3-5 种厚度,备铝制模具一套 (USD 50-100),在 6-panel 黑底上测试压胶字样效果。</p>
+        </div>
+        <div class="md:col-span-2 text-right">
+          <div class="text-xs tracking-widest text-stone-500">截止</div>
+          <div class="display text-xl">06 / 20</div>
+        </div>
+      </div>
+
+      <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
+        <div class="md:col-span-1 display text-5xl accent-c">2</div>
+        <div class="md:col-span-9">
+          <h3 class="display text-2xl mb-2">设计部:LOOK AI 虚拟试戴测试</h3>
+          <p class="text-stone-400 text-sm">用 LOOK AI (lookfashion.ai) 对一款现有帽子做虚拟试戴,输出拟真模特图,反馈给 Kin 评估。</p>
+        </div>
+        <div class="md:col-span-2 text-right">
+          <div class="text-xs tracking-widest text-stone-500">截止</div>
+          <div class="display text-xl">06 / 19</div>
+        </div>
+      </div>
+
+      <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
+        <div class="md:col-span-1 display text-5xl accent-c">3</div>
+        <div class="md:col-span-9">
+          <h3 class="display text-2xl mb-2">营业部:同步 Supreme × Spitfire + SASHIKO GALS × NE</h3>
+          <p class="text-stone-400 text-sm">Supreme × Spitfire (6/18 发布)含 New Era cap + 针织帽;SASHIKO GALS × NE 第2季 (6/27)含刺子绣 MLB 帽。各选 2 款推客户。</p>
         </div>
         <div class="md:col-span-2 text-right">
           <div class="text-xs tracking-widest text-stone-500">截止</div>
@@ -1196,115 +912,88 @@
       </div>
 
       <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
-        <div class="md:col-span-1 display text-5xl accent-c">2</div>
-        <div class="md:col-span-9">
-          <h3 class="display text-2xl mb-2">HF 车间 · 复古英伦学院风样品 2 顶</h3>
-          <p class="text-stone-400 text-sm">参照 Pluto of Saint Andrews × DSM 路线：羊毛棕底料 + 皮革 D-Ring 调节带 + 复古缎带内衬 + 平绣狮子图腾。1 顶 5-Panel + 1 顶 6-Panel,准备给欧洲精品店类客户拿样。</p>
-        </div>
-        <div class="md:col-span-2 text-right">
-          <div class="text-xs tracking-widest text-stone-500">截止</div>
-          <div class="display text-xl">06 / 25</div>
-        </div>
-      </div>
-
-      <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
-        <div class="md:col-span-1 display text-5xl accent-c">3</div>
-        <div class="md:col-span-9">
-          <h3 class="display text-2xl mb-2">设计部 · "总冠军即时纪念" 矩阵设计稿</h3>
-          <p class="text-stone-400 text-sm">参照 NewEra × Knicks NBA Champions 9 款全档线打法。给设计部出 "假想中国某 CBA 球队夺冠" 的 9 帽款矩阵 (4 帽型 + Side Patch 织唛 + 4 价位)。下周三前完成可演示稿。</p>
-        </div>
-        <div class="md:col-span-2 text-right">
-          <div class="text-xs tracking-widest text-stone-500">截止</div>
-          <div class="display text-xl">06 / 24</div>
-        </div>
-      </div>
-
-      <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
         <div class="md:col-span-1 display text-5xl accent-c">4</div>
         <div class="md:col-span-9">
-          <h3 class="display text-2xl mb-2">营业部 · 三套话术分档联系 5 个新客户</h3>
-          <p class="text-stone-400 text-sm">A. 精品店买独家 (Pluto 风格 / $44 客单 / MOQ 144) → 联系欧洲买手店<br>
-          B. 体育零售买矩阵 (Knicks 风格 / $33-53 全档线 / MOQ 576) → 联系体育零售连锁<br>
-          C. 奢侈零售买工艺 (Swarovski 替代 / $50-80 客单 / 含水钻) → 联系国内奢侈品代工平台</p>
-        </div>
-        <div class="md:col-span-2 text-right">
-          <div class="text-xs tracking-widest text-stone-500">截止</div>
-          <div class="display text-xl">06 / 24</div>
-        </div>
-      </div>
-
-      <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
-        <div class="md:col-span-1 display text-5xl accent-c">5</div>
-        <div class="md:col-span-9">
-          <h3 class="display text-2xl mb-2">下期补抓 · 13 个失败品牌资源池修复</h3>
-          <p class="text-stone-400 text-sm">本周扫描失败 13 家 (Stussy / Wacko Maria / Awake NY / NEIGHBORHOOD 等)。下期前用代理 IP / 不同 UA / 直接抓商品列表 HTML 等方式补抓,扩大资源池到 25+ 品牌。</p>
+          <h3 class="display text-2xl mb-2">营业部:压胶工艺推单话术准备</h3>
+          <p class="text-stone-400 text-sm">整理压胶工艺 vs 刺绣对比表 (成本/效果/交期),准备 3 套话术推高端客户:极简 logo 款、金属色压胶、珠光压胶。</p>
         </div>
         <div class="md:col-span-2 text-right">
           <div class="text-xs tracking-widest text-stone-500">截止</div>
           <div class="display text-xl">06 / 22</div>
         </div>
       </div>
+
+      <div class="bg-black p-6 md:p-8 grid md:grid-cols-12 gap-4 items-start">
+        <div class="md:col-span-1 display text-5xl accent-c">5</div>
+        <div class="md:col-span-9">
+          <h3 class="display text-2xl mb-2">设计部:LOOK AI 训练 + 旧款测试</h3>
+          <p class="text-stone-400 text-sm">注册 LOOK AI 账号,导入 5 款旧帽子设计图,生成虚拟试戴效果。汇总报告给 Kin 评估是否纳入日常工具。</p>
+        </div>
+        <div class="md:col-span-2 text-right">
+          <div class="text-xs tracking-widest text-stone-500">截止</div>
+          <div class="display text-xl">06 / 24</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
 <!-- ═══════════ SOURCES ═══════════ -->
-<section class="border-t border-stone-800 py-16 px-6 md:px-12 bg-stone-950">
+<section class="border-t border-stone-800 py-24 px-6 md:px-12 bg-stone-950">
   <div class="max-w-7xl mx-auto">
-    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4" id="sources">12 / 资料来源 · 全部真链接</div>
-    <h2 class="display text-3xl md:text-4xl font-bold mb-8">本期资料 · 全部真链接</h2>
+    <div class="text-xs tracking-[0.4em] uppercase text-stone-500 mb-4">11 / 数据来源</div>
+    <h2 class="display text-5xl md:text-7xl font-bold mb-12">引用 & 来源</h2>
 
-    <div class="grid md:grid-cols-2 gap-x-12 gap-y-4 text-sm">
-      <div class="space-y-3">
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">3 帽款主角真链接</div>
-        <a href="https://shop.doverstreetmarket.com/products/pluto-of-saint-andrews-mens-pluto-rampant-hat-brown-aw26-posa2h008" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>DSM 官网产品页 · Pluto of Saint Andrews Pluto Rampant Hat Brown ($44 · 6/16 created)</span>
+    <details class="border border-stone-800 rounded-sm">
+      <summary class="p-6 hover:bg-stone-900 transition flex justify-between items-center">
+        <span class="display text-2xl">展开 12 个引用链接</span>
+        <span class="text-stone-500">▾</span>
+      </summary>
+      <div class="border-t border-stone-800 p-6 grid md:grid-cols-2 gap-3 text-sm">
+        <a href="https://www.pantone.com/color-of-the-year/2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">01</span><span>Pantone Color of the Year 2026 - Cloud Dancer</span>
         </a>
-        <a href="https://shop.doverstreetmarket.com/products/pluto-of-saint-andrews-mens-pin-cap-off-whit-aw26-posa2h011" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>DSM 官网产品页 · Pluto Pin Cap Off White ($44 · 6/17 created · 系列最新色)</span>
+        <a href="https://www.neweracap.com/products/harry-potter-hogwarts-chrome-white-9fifty-snapback" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">02</span><span>HYPEBEAST - NEW ERA × HP × New Era SS26</span>
         </a>
-        <a href="https://www.neweracap.com/products/new-york-knicks-2026-champions-sidepatch-59fifty-fitted" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>NewEra 官网 · NY Knicks 2026 Champions Sidepatch 59FIFTY ($52.99 · 6/15 created)</span>
+        <a href="https://www.neweracap.com/collections/mlb-2026-all-star-game" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">03</span><span>HYPEBEAST - NewEra × MLB 2026 ASG 9TWENTY</span>
         </a>
-        <a href="https://www.prnewswire.com/news-releases/decades-in-the-making-new-era-unveils-new-york-knicks-2026-nba-champions-collection-302800269.html" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>PR Newswire 6/15 · NewEra 官方发布 Knicks 2026 NBA Champions Collection</span>
+        <a href="https://hypebeast.com/2026/6/la-martina-supreme-jacob-co-spring-2026-collaboration" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">04</span><span>HYPEBEAST - Supreme × La Martina × Jacob & Co.</span>
         </a>
-        <a href="https://hypebeast.com/2026/6/swarovski-creators-lab-47-new-era-mlb-collaboration-collection-release-info" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>hypebeast 6/17 · Swarovski Creators Lab × '47 × MLB Yankees Cap (datePublished: 2026-06-17T06:02:37Z)</span>
+        <a href="https://hypebeast.com/2026/6/palace-skateboards-nike-england-x2-collaboration-collection-release-info" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">05</span><span>HYPEBEAST - Palace × Nike "Three Lions"</span>
+        </a>
+        <a href="https://patta.nl/products/patta-soundsystem-x-tom-trago-cap-black" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">06</span><span>HYPEBEAST - Patta × Tom Trago AQUAKINESIS</span>
+        </a>
+        <a href="https://www.finallyoffline.com/article/supreme-x-jordan-drops-six-pieces-june-4-mpvp6g6b" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">07</span><span>Finally Offline - Supreme × Jordan Spring 2026</span>
+        </a>
+        <a href="https://hypebeast.com/2026/6/justin-bieber-skylrk-new-june-2026-drop-beanies-hoodie-sneakers-release-info" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">08</span><span>HYPEBEAST - Justin Bieber SKYLRK June 2026</span>
+        </a>
+        <a href="https://us.carhartt-wip.com/en-us/journal/sacai-x-carhartt-wip-spring-summer-2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">09</span><span>Carhartt WIP - sacai × Carhartt WIP SS26</span>
+        </a>
+        <a href="https://newsroom.pinterest.com/news/summer-trend-report-2026" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">10</span><span>Pinterest Summer 2026 Trend Report</span>
+        </a>
+        <a href="https://shop.foremosthat.com/blogs/news/hat-trend" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">11</span><span>Foremost Hat 2026 Headwear Trends</span>
+        </a>
+        <a href="https://vizcom.com" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
+          <span class="text-stone-600">12</span><span>Vizcom - 本周设计工具推荐</span>
         </a>
       </div>
+    </details>
 
-      <div class="space-y-3">
-        <div class="text-xs tracking-widest text-stone-500 uppercase mb-2">17 品牌扫描数据</div>
-        <a href="https://shopify.dev/docs/api/storefront" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>Shopify Storefront API · 17 个品牌 /products.json 直接扫描</span>
-        </a>
-        <a href="https://www.tavily.com/" target="_blank" class="flex gap-3 hover:text-white text-stone-400">
-          <span class="accent-c">→</span><span>Tavily Search API · 用于交叉验证 hypebeast / PR Newswire 报道日期</span>
-        </a>
-        <div class="text-xs text-stone-500 mt-4 leading-relaxed">
-          <strong class="text-stone-400">本期数据采集说明：</strong><br>
-          采集时间：2026-06-19 00:00-00:30 (东莞 GMT+8)<br>
-          采集方式：直接调用 17 个品牌 Shopify /products.json + 抓 hypebeast/PR Newswire HTML<br>
-          覆盖品牌：NewEra · DSM · 47 Brand · Patta · Noah · Kith · ALD · Stussy · Maharishi · WTAPS · Brain Dead · Real Bad Man · Comme des Garcons US · Dime MTL · Malbon Golf · Reigning Champ · BAPE US<br>
-          总样本：701 件帽类<br>
-          严格筛 6/15-21 created 真本周新品 = 23 件 (NewEra 15 / DSM 6 / Kith 2)<br>
-          <strong class="text-stone-400 mt-2 block">扫描失败 13 家 (下期补)：</strong>
-          Awake NY / Carhartt WIP / Stussy / Palace / Supreme JP / Wacko Maria / Human Made / NEIGHBORHOOD / Verdy / Cav Empt / Online Ceramics / Salomon / Manors Golf
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-12 border-l-2 accent-c pl-6">
-      <p class="text-sm text-stone-300 leading-relaxed">
-        <strong class="text-white">本期数据真实性承诺 (吸取 W24/上版 W25 教训)：</strong><br>
-        ① 全部 3 帽款来源于品牌官网产品页 + 主流潮流媒体真本周报道<br>
-        ② 严格用 created 字段 (而非 updated) 筛真本周新品 — 上版 W25 误用 updated 导致全部归到 6/18<br>
-        ③ 所有图片均为品牌 Shopify CDN 原图 + hypebeast 原图,可点击产品页验证<br>
-        ④ 强制非 NewEra 占大头 (3 帽款里 2 个非 NewEra) — 上版被老板批评 "总是 NewEra"<br>
-        ⑤ 工艺参数为品牌官网描述 + 工厂经验推估,标注 (推估) 字样的需打样验证
-      </p>
-    </div>
+    <p class="text-stone-500 text-sm mt-6 leading-relaxed">
+      所有图片版权归原品牌及报道方所有,本周报仅供 Top One Hat Factory 设计部内部参考使用。
+      本期成本估算基于工厂现行报价模板,最终报价以营业部正式 quote 为准。
+    </p>
   </div>
 </section>
 
@@ -1331,9 +1020,9 @@
       <div class="text-left md:text-right">
         <div class="display text-2xl mb-2">HAT TREND RADAR</div>
         <div class="text-xs tracking-widest uppercase text-stone-500 mb-1">每周日 20:00 更新</div>
-        <div class="text-xs tracking-widest uppercase text-stone-500 mb-4">下期:2026 / 06 / 22</div>
+        <div class="text-xs tracking-widest uppercase text-stone-500 mb-4">下期:2026 / 06 / 29</div>
         <div class="text-[10px] tracking-widest uppercase text-stone-600">
-          ISSUE No.001 · WK25 · 2026
+          ISSUE No.002 · WK25 · 2026
         </div>
       </div>
     </div>
