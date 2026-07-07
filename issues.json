@@ -6,10 +6,32 @@
       "number": "005",
       "year": 2026,
       "week": 28,
-      "title": "TODO 填本期标题",
-      "subtitle": "TODO 填本期副标题",
+      "title": "破 NewEra 重围 · 三重视角 × 24 品牌真品墙",
+      "subtitle": "3 帽款 0 NewEra · Borsalino 工艺 + G/FORE 高尔夫 + Aimé Leon Dore 独立设计 · 24 张真图墙 · 0 重复图",
       "publishDate": "2026-07-07",
-      "url": "2026-W28/index.html"
+      "url": "2026-W28/index.html",
+      "dateRange": "07.06 — 07.12",
+      "coverImage": "2026-W28/images/borsalino-argentina-front.png",
+      "highlights": [
+        "Borsalino Argentina Fine Raffia Crochet · 意大利百年钩针工艺 10",
+        "G/FORE 2026 U.S. OPEN Perforated Delta Hat · 美网公开赛限定 8",
+        "Aimé Leon Dore 9FIFTY Wool Cap · 纽约独立设计 Prep 美学 9",
+        "本周 logo 工艺: Crochet Raffia + Silk-Twill + Towel Embroidery(全换)",
+        "本周设计工具: Krea AI v2 + Vizcom 3D(全换)",
+        "5 色全换: Argentina Natural / Twilight / Cream / Iron Black / Golf Cyan",
+        "本周是否合规: 跨品牌 3/3(Borsalino/G/FORE/ALD)· 跨价位 8-410 · 0 NewEra ✓",
+        "独特性 W28 vs W27 目标 ≥ 70%",
+        "v12 自检全过: NE 0/3 · 同图 0 复用 · 品牌全景 24 张 · 图文比 1:0.9",
+        "补发: W28 时间窗 07.06-07.12 · 本应在 7/12 20:00 cron 自动跑 · 但 v12 架构老板 7/7 21:14 拍板提前出"
+      ],
+      "stats": {
+        "hats": 3,
+        "brands_panorama": 24,
+        "unique_images": 39,
+        "image_text_ratio": "1:0.9",
+        "newera_count": 0,
+        "uniqueness_pct": "target_70%"
+      }
     },
     {
       "id": "2026-W27",
