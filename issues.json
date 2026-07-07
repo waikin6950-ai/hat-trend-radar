@@ -6,10 +6,35 @@
       "number": "004",
       "year": 2026,
       "week": 27,
-      "title": "TODO 填本期标题",
-      "subtitle": "TODO 填本期副标题",
+      "title": "三城记 SS27 Heat Trend × Wimbledon 复古回潮",
+      "subtitle": "3 帽款全本周真上市（MLB USA 250 / Borsalino Crochet Coppola / Polo RL Wimbledon）+ 4 媒体 11 篇 + 20 品牌 11 命中",
       "publishDate": "2026-07-07",
-      "url": "2026-W27/index.html"
+      "url": "2026-W27/index.html",
+      "dateRange": "06.29 — 07.05",
+      "coverImage": "2026-W27/images/dodgers-usa250.png",
+      "highlights": [
+        "MLB × USA 250 Dodgers 7/4 Independence Day 250 周年纪念 9TWENTY · $45 米黄星条旗配色",
+        "Borsalino Crochet Coppola · $370 意大利百年工艺 Ra raffia 草编 + Silk-Twill 头带",
+        "Polo Ralph Lauren × Wimbledon 2026 Twill Cap · $89-115 美英复古网球场风格",
+        "本周 logo 工艺：Crochet Raffia + Silk-Twill Bandana + Towel Embroidery",
+        "本周设计工具：Midjourney v7 + Refabric AI（每周换）",
+        "5 色全换：Heat White / Raffia Beige / Turquoise Lagoon / Coral Reef / Lavender Stone",
+        "本周是否合规：跨品牌 3/3（MLB/Borsalino/Polo）· 跨价位 $45-370 · 1 NewEra 上限 ✓",
+        "独特性 W27 vs W26 = 79.5% ≥ 70% 目标",
+        "3 单图严格核验 PASSED：dodgers-usa250.png / borsalino-coppola.png / polo-wimbledon.png",
+        "补发：W27 时间窗 06.29-07.05 · 本应在 7/3 09:00 cron 自动部署但 3a14dce5 LLM 超 500K 红线失败 · 7/7 21:08 Nova 手动发布"
+      ],
+      "stats": {
+        "hats": 3,
+        "brands_scanned": 20,
+        "real_new_products": 11,
+        "media_articles": 11,
+        "non_newera_ratio": "2/3",
+        "tools": 2,
+        "crafts": 3,
+        "colors": 5,
+        "uniqueness_pct": "79.5%"
+      }
     },
     {
       "id": "2026-W26",
