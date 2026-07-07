@@ -1,6 +1,16 @@
 {
-  "latest": "2026-W27",
+  "latest": "2026-W28",
   "issues": [
+    {
+      "id": "2026-W28",
+      "number": "005",
+      "year": 2026,
+      "week": 28,
+      "title": "TODO 填本期标题",
+      "subtitle": "TODO 填本期副标题",
+      "publishDate": "2026-07-07",
+      "url": "2026-W28/index.html"
+    },
     {
       "id": "2026-W27",
       "number": "004",

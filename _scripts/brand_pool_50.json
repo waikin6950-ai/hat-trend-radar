@@ -1,0 +1,86 @@
+{
+  "version": "v12-2026-07-07",
+  "philosophy": "破 NewEra 重围 + 零图复用 + 17 品牌全景真图墙 + 图为主角文为注释",
+  "total_brands": 52,
+  "categories": {
+    "街头/潮牌": {
+      "count": 10,
+      "brands": [
+        "Supreme", "Palace", "Stüssy", "BAPE", "Carhartt WIP",
+        "WACKO MARIA", "Patta", "Brain Dead", "JJJJound", "AWAKE NY"
+      ]
+    },
+    "奢侈/设计师": {
+      "count": 8,
+      "brands": [
+        "Louis Vuitton", "Gucci", "Prada", "Dior", "Borsalino",
+        "Loewe", "Jil Sander", "Kangol"
+      ]
+    },
+    "运动即时纪念": {
+      "count": 8,
+      "brands": [
+        "Adidas", "Nike ACG", "Puma", "Under Armour", "Lululemon",
+        "On Running", "Hoka", "Salomon"
+      ]
+    },
+    "独立设计/精品": {
+      "count": 10,
+      "brands": [
+        "Bode", "Aimé Leon Dore", "Rowing Blazers", "Todd Snyder",
+        "Beams Plus", "Engineered Garments", "Needles", "Porter",
+        "DESCENTE ALLTERRAIN", "Nanamica"
+      ]
+    },
+    "快时尚/高街": {
+      "count": 6,
+      "brands": [
+        "COS", "Uniqlo U", "ARKET", "& Other Stories",
+        "Massimo Dutti", "MUJI Lab"
+      ]
+    },
+    "复古/工装": {
+      "count": 6,
+      "brands": [
+        "Barbour", "Filson", "Pendleton", "Woolrich",
+        "Dakine", "Kijima Takayuki"
+      ]
+    },
+    "童装/亲子": {
+      "count": 4,
+      "brands": [
+        "Hatley", "Frugi", "Cat & Jack", "Primary"
+      ]
+    }
+  },
+  "rule_9_newera_supremacy_break": {
+    "max_newera_in_3_hats": 0,
+    "method": "选帽时 NE 不在候选池,只在数据池里可作为'第 4 备选'参考",
+    "check_script": "_scripts/check_newera_ratio.py"
+  },
+  "rule_11_brand_panorama_images": {
+    "image_per_brand": 1,
+    "minimum_total": 17,
+    "template_images_banned": true,
+    "must_be_real_this_week_or_recent": true
+  },
+  "rule_10_no_image_reuse": {
+    "max_use_per_src": 1,
+    "check_script": "_scripts/check_image_uniqueness.py"
+  },
+  "rule_12_image_vs_text_ratio": {
+    "minimum": "img_count >= text_segment_count / 2",
+    "check_script": "_scripts/check_image_text_ratio.py"
+  },
+  "rotation_policy": {
+    "W28_use_categories": ["奢侈品", "独立设计", "运动即时纪念"],
+    "W29_must_shift": "至少 3 个新品牌(从未在 W24-W28 出现)",
+    "newera_never_appear_as_3_hats_主角": true
+  },
+  "w25_w26_w27_audit": {
+    "failed_rule_9": ["W24(2/3)", "W25(3/3)", "W26(1/3)", "W27(1/3)"],
+    "failed_rule_10_reuse": ["W24(wacko)", "W25(hp/patta)", "W26(wacko)", "W27(dodgers×6, borsalino×5, polo×5)"],
+    "failed_rule_11_panorama_images_count": {"W24": 0, "W25": 0, "W26": 0, "W27": 0},
+    "failed_rule_12_image_to_text_ratio": {"W24": "1:3.9", "W25": "1:3.7", "W26": "1:3.8", "W27": "1:21"}
+  }
+}
