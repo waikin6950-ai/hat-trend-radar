@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HAT TREND RADAR · 2026-08 夏季回顾 — Top One Hat Factory</title>
-<meta name="description" content="帽类工厂月刊 · 2026 年 8 月：Baseball Cap / Fitted Cap 复兴（Lyst Q2 +4,276% 搜索增长）+ 9 月展望 + TopOne 行动建议">
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -12,22 +11,25 @@
   .display { font-family:'Bebas Neue', sans-serif; letter-spacing:.02em; }
   .serif { font-family:'Noto Serif SC', serif; }
   .mono { font-family:'JetBrains Mono', monospace; }
+  .accent-c { color:#FF4B1F; } .accent-bg { background:#FF4B1F; }
+  .accent2-c { color:#14B8A6; } .accent2-bg { background:#14B8A6; }
   .grain::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:100;
     background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     opacity:.4; }
-  .accent-c { color:#FF4B1F; } .accent-bg { background:#FF4B1F; }
-  .accent2-c { color:#14B8A6; } .accent2-bg { background:#14B8A6; }
-  .hero-bg {
-    background:linear-gradient(135deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.65) 50%, rgba(10,10,10,.92) 100%);
-  }
   details summary { list-style:none; cursor:pointer; }
   details summary::-webkit-details-marker { display:none; }
   .pulse-dot { width:8px; height:8px; border-radius:50%; background:#FF4B1F; animation:pulse 2s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-  .fade-in { animation:fadeIn .8s ease-out; }
-  @keyframes fadeIn { from{opacity:0; transform:translateY(20px)} to{opacity:1; transform:translateY(0)} }
-  .data-source { font-size:10px; color:#71717a; font-family:'JetBrains Mono',monospace; margin-top:8px; }
-  .data-source a { color:#a1a1aa; text-decoration:underline; }
+  .hero-bg { background-image:linear-gradient(120deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.5) 60%, rgba(10,10,10,.95) 100%), url('images/pan-w27-dodgers-usa250.png'); background-size:cover; background-position:center; }
+  .img-cover { aspect-ratio:1/1; object-fit:cover; width:100%; }
+  .img-cover-portrait { aspect-ratio:3/4; object-fit:cover; width:100%; }
+  .img-cover-landscape { aspect-ratio:16/9; object-fit:cover; width:100%; }
+  .hover-pop { transition:transform .5s ease; }
+  .hover-pop:hover { transform:scale(1.04); }
+  .marquee { animation:marquee 40s linear infinite; white-space:nowrap; }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  .kpi-num { font-family:'Bebas Neue',sans-serif; font-size:clamp(3.5rem,8vw,7rem); line-height:1; }
+  .corner-tag { position:absolute; top:12px; left:12px; font-family:'JetBrains Mono',monospace; font-size:10px; padding:4px 8px; background:rgba(10,10,10,.7); border:1px solid #FF4B1F; color:#FF4B1F; }
 </style>
 </head>
 <body class="grain">
@@ -41,591 +43,445 @@
       </div>
       <div>
         <div class="display text-lg tracking-wider">HAT TREND RADAR</div>
-        <div class="text-[10px] tracking-widest text-stone-500 uppercase">Top One Hat Factory · Monthly Issue 001</div>
+        <div class="text-[10px] tracking-widest text-stone-500 uppercase">2026 / 08 · Monthly Issue 001</div>
       </div>
     </div>
     <div class="hidden md:flex gap-6 text-xs uppercase tracking-widest text-stone-400">
-      <a href="#pulse" class="hover:text-orange-500">市场脉搏</a>
-      <a href="#design" class="hover:text-orange-500">设计参考</a>
-      <a href="#action" class="hover:text-orange-500">行动建议</a>
-      <a href="#outlook" class="hover:text-orange-500">9 月展望</a>
-      <a href="#data" class="hover:text-orange-500">数据看板</a>
+      <a href="#hats" class="hover:text-orange-500">3 顶</a>
+      <a href="#panorama" class="hover:text-orange-500">全景</a>
+      <a href="#action" class="hover:text-orange-500">行动</a>
+      <a href="#calendar" class="hover:text-orange-500">9 月</a>
+      <a href="#data" class="hover:text-orange-500">数据</a>
     </div>
-    <div class="text-xs mono text-stone-500">2026 / 08</div>
   </div>
 </nav>
 
-<!-- ============== 1️⃣ HERO: 月度主题 ============== -->
+<!-- ============== HERO ============== -->
 <section class="hero-bg min-h-screen flex items-center relative">
-  <div class="max-w-6xl mx-auto px-6 py-24 w-full fade-in">
-    <div class="flex items-center gap-2 mb-6">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 w-full">
+    <div class="flex items-center gap-2 mb-8">
       <div class="pulse-dot"></div>
-      <span class="text-xs mono uppercase tracking-widest text-stone-300">2026-08 夏季回顾 · Monthly Issue 001</span>
+      <span class="text-xs mono uppercase tracking-widest text-stone-300">2026-08 夏季回顾 · Monthly 001</span>
     </div>
-    <h1 class="display text-6xl md:text-8xl font-bold leading-none mb-6">
-      <span class="accent-c">Fitted Cap</span><br>
-      复兴<span class="text-5xl md:text-6xl align-top ml-2">↗</span><br>
-      <span class="text-3xl md:text-4xl serif text-stone-300 mt-4 block">Lyst Q2 搜索 +4,276% · 击败 Chanel</span>
-    </h1>
-    <p class="serif text-2xl md:text-3xl text-stone-300 mb-8 max-w-3xl leading-relaxed">
-      2026 年盛夏最确定的事实：<span class="accent-c">棒球帽</span>（Fitted Cap / Snapback / Trucker）重新成为全球时尚单品 #1。
-      一顶 £25 的 New York Knicks 59FIFTY 搜索量季度环比 <span class="accent2-c font-bold">+4,276%</span>，
-      在 Lyst Q2 2026 排行榜上把 Chanel 太阳镜 / Skims / Gucci 全部挤下 TOP1 位置。
-    </p>
-    <div class="flex flex-wrap gap-3 text-xs mb-8">
-      <span class="px-3 py-1 border border-orange-500/50 rounded-full uppercase tracking-widest accent-c">Baseball Cap</span>
-      <span class="px-3 py-1 border border-teal-500/50 rounded-full uppercase tracking-widest accent2-c">Fitted 59FIFTY</span>
-      <span class="px-3 py-1 border border-stone-700 rounded-full uppercase tracking-widest">NBA 冠军效应</span>
-      <span class="px-3 py-1 border border-stone-700 rounded-full uppercase tracking-widest">MLB 联名</span>
-    </div>
-    <div class="mt-12 mono text-xs text-stone-400">
-      发布时间 · 2026-08-28 · Nova + 设计部 · Top One Hat Factory<br>
-      数据源 · Lyst / WWD / Esquire / NY Post / Straits Research / Fortune BI / IBISWorld
-    </div>
-  </div>
-</section>
-
-<!-- ============== 2️⃣ 市场脉搏 ============== -->
-<section id="pulse" class="py-24 border-t border-stone-800">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-baseline gap-4 mb-12">
-      <div class="display text-6xl accent-c">02</div>
-      <div>
-        <h2 class="display text-4xl tracking-wider">市场脉搏</h2>
-        <p class="text-stone-400 text-sm mt-1">2026 Q2 全球帽业 5 大宏观趋势（多源交叉验证）</p>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <!-- 趋势 1: 全球帽业市场 -->
-      <article class="border border-stone-800 rounded-sm p-6 hover:border-orange-500/50 transition">
-        <div class="flex items-start justify-between mb-3">
-          <div class="text-xs mono uppercase tracking-widest accent-c">Trend · 01</div>
-          <span class="text-xs text-stone-500 mono">2026 Q2</span>
-        </div>
-        <h3 class="serif text-2xl mb-3">全球帽子市场 $11.74B · CAGR 6.31%</h3>
-        <p class="text-sm text-stone-300 leading-relaxed mb-3">
-          2026 全球帽子市场规模 <b class="accent-c">$11.74B</b>（Straits Research）/
-          $11.63B（Fortune BI）—— 较 2025 $11.04B 增长 ~6.3%；
-          预测 2034 达 <b class="accent2-c">$19.16B</b>（CAGR 6.31%）。
-          广义"头部服饰"市场（含帽 + 头盔 + 头饰）2026 约 $25.3B，CAGR 5.56%。
-        </p>
-        <div class="data-source">
-          来源：straitsresearch.com · fortunebusinessinsights.com · mordorintelligence.com
-        </div>
-      </article>
-
-      <!-- 趋势 2: 区域增长 -->
-      <article class="border border-stone-800 rounded-sm p-6 hover:border-orange-500/50 transition">
-        <div class="flex items-start justify-between mb-3">
-          <div class="text-xs mono uppercase tracking-widest accent-c">Trend · 02</div>
-          <span class="text-xs text-stone-500 mono">2026</span>
-        </div>
-        <h3 class="serif text-2xl mb-3">北美增速第一 · 亚太体量最大</h3>
-        <p class="text-sm text-stone-300 leading-relaxed mb-3">
-          <b>亚太 34.52%</b> 占全球最大（Straits Research）；
-          <b>北美为增速最快市场</b>（Mordor Intelligence）。
-          IBISWorld：美国 Hat & Cap Stores 行业 <b class="accent-c">$5.4B</b>，23,193 家门店，
-          YoY 增速从 5.1% 5Y CAGR 降至 2.4%——竞争激烈，单店收入略下滑。
-        </p>
-        <div class="data-source">
-          来源：straitsresearch.com · mordorintelligence.com · ibisworld.com
-        </div>
-      </article>
-
-      <!-- 趋势 3: 电商驱动 -->
-      <article class="border border-stone-800 rounded-sm p-6 hover:border-orange-500/50 transition">
-        <div class="flex items-start justify-between mb-3">
-          <div class="text-xs mono uppercase tracking-widest accent-c">Trend · 03</div>
-          <span class="text-xs text-stone-500 mono">2026</span>
-        </div>
-        <h3 class="serif text-2xl mb-3">电商渠道 CAGR 7.33% 领先整体</h3>
-        <p class="text-sm text-stone-300 leading-relaxed mb-3">
-          E-commerce 在 Headwear 渠道 <b class="accent2-c">CAGR 7.33%</b>（Mordor 2026-2033），
-          高于整体 6.31%。Lyst 数据显示 1.6 亿+ 购物者已线上化；
-          TikTok Shop 2025 全托管女装 YoY +149% —— 内容驱动电商成主流。
-        </p>
-        <div class="data-source">
-          来源：mordorintelligence.com · wwd.com · fzthinking.com
-        </div>
-      </article>
-
-      <!-- 趋势 4: 头部品牌财报 -->
-      <article class="border border-stone-800 rounded-sm p-6 hover:border-orange-500/50 transition">
-        <div class="flex items-start justify-between mb-3">
-          <div class="text-xs mono uppercase tracking-widest accent-c">Trend · 04</div>
-          <span class="text-xs text-stone-500 mono">2026 Q2</span>
-        </div>
-        <h3 class="serif text-2xl mb-3">运动/休闲大盘承压 · 帽子周边逆势</h3>
-        <p class="text-sm text-stone-300 leading-relaxed mb-3">
-          <b>Lululemon</b>：Q2 FY2026 预期收入 $2.450–2.475B，<span class="text-red-400">YoY -2 至 -3%</span>（自上市以来第二次下滑）；
-          <b>Deckers (UGG/HOKA)</b>：Q1 FY27 收入 $1.02B，<span class="accent2-c">YoY +5.7%</span>首次破 10 亿，但毛利率被关税压；
-          <b>Nike</b> FY26 Q4 收入 $10.97B（+0.72%）。帽子周边在运动大盘承压中反而逆势（Fitted Cap 现象）。
-        </p>
-        <div class="data-source">
-          来源：intellectia.ai · stocktitan.net · simplify.jobs
-        </div>
-      </article>
-
-      <!-- 趋势 5: 美国关税挤压 -->
-      <article class="border border-stone-800 rounded-sm p-6 hover:border-orange-500/50 transition md:col-span-2">
-        <div class="flex items-start justify-between mb-3">
-          <div class="text-xs mono uppercase tracking-widest accent-c">Trend · 05</div>
-          <span class="text-xs text-stone-500 mono">2026-08</span>
-        </div>
-        <h3 class="serif text-2xl mb-3">中国帽类出口实际关税 <b class="accent-c">32.5%</b>（HTS 6505 基础 + Section 301）</h3>
-        <p class="text-sm text-stone-300 leading-relaxed mb-3">
-          HTS 6505.00（棉质头饰）MFN 基础 <b>7.5%</b> + Section 301 China <b>25%</b> = <b class="accent-c">32.5%</b>
-          （不含 Section 301 强迫劳动 12.5%，如包含则总税率更高）；
-          Section 122 10% 基础关税 7/24 已失效；同日起 Section 301 强迫劳动 10/12.5% 替代
-          （覆盖 60 个贸易伙伴）。USTR 纺织品 TRQ（孟加拉 / 柬埔寨 / 印尼 / 马来西亚）原计划 9/1 落地，已推迟。
-        </p>
-        <div class="data-source">
-          来源：ustariffrates.com · tariffstool.com · tax.thomsonreuters.com
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 3️⃣ 设计参考 ============== -->
-<section id="design" class="py-24 border-t border-stone-800 bg-stone-950/30">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex items-baseline gap-4 mb-12">
-      <div class="display text-6xl accent-c">03</div>
-      <div>
-        <h2 class="display text-4xl tracking-wider">设计参考</h2>
-        <p class="text-stone-400 text-sm mt-1">9 件本月值得复盘的帽款 · 围绕 Baseball Cap / Fitted Cap 复兴</p>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- 参考 1: Knicks 59FIFTY (Lyst +4,276%) -->
-      <article class="border-2 border-orange-500/50 rounded-sm p-5 bg-orange-500/5 hover:scale-[1.02] transition">
-        <div class="flex items-start justify-between mb-3">
-          <div class="text-[10px] mono uppercase tracking-widest accent-c">🥇 #1 Lyst Q2 2026</div>
-          <span class="text-[10px] mono text-orange-400">+4,276%</span>
-        </div>
-        <h3 class="serif text-lg mb-2">New York Knicks 2026 NBA Champions 59FIFTY</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          藏青底 + 银灰帽舌 + NBA Finals 纪念章。零售 £25 / $40，溢价转售 $400+。
-          经典 59FIFTY 廓形 + 城市荣耀 + 联盟授权——Fitted Cap 复兴标杆。
-        </p>
-        <div class="data-source">
-          nypost.com · wwd.com · facebook.com/lidshatdrop
-        </div>
-        <div class="mt-3 text-[10px] mono accent-c">TopOne 适配：59FIFTY 廓形可量产，联盟 IP 需谈授权</div>
-      </article>
-
-      <!-- 参考 2: Timberland × New Era × MLB -->
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">2026-08 联名</div>
-        <h3 class="serif text-lg mb-2">Timberland × New Era × MLB 6 队城市系列</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          2026 年 8 月三方联名，6 支传奇球队（Yankees / Mets / Dodgers / Red Sox / White Sox / Braves / Astros），
-          每队城市元素 + 工装质感。联盟 + 工装品牌跨界合作新范式。
-        </p>
-        <div class="data-source">
-          instagram.com/p/DbwBqnkj74_/
-        </div>
-      </article>
-
-      <!-- 参考 3: Chase B × Travis Scott -->
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">2026-07-31 首发</div>
-        <h3 class="serif text-lg mb-2">Chase B × Travis Scott "Maximal 20 Era" Hat</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          Cactus Jack 主理人 × Chase B "Maximal 20" 帽，2026 Fanatics Fest 首发。
-          限量 SKU，对 TopOne 代工意义有限但可参考 Cactus Jack 美学 + 配色叙事。
-        </p>
-        <div class="data-source">
-          tiktok.com/discover/chase-b-maximal-20-era-hat
-        </div>
-      </article>
-
-      <!-- 参考 4: Palace Skateboards Fall 2026 -->
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">2026-08-07 全球发售</div>
-        <h3 class="serif text-lg mb-2">Palace Skateboards Fall 2026 × New Era Cap</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          Palace 秋季系列含 New Era 联名帽，8/7 全球发售，亚洲/澳洲 8/8。
-          街头品牌 × 老牌帽厂合作模板。
-        </p>
-        <div class="data-source">
-          hypebeast.com/2026/8/best-drops-august-week-1
-        </div>
-      </article>
-
-      <!-- 参考 5: Bucket Hat 复兴 -->
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">次要趋势 · Bucket</div>
-        <h3 class="serif text-lg mb-2">Bucket Hat 复兴（中价位）</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          Hats in the Belfry 2026 夏季指南：亚麻 / 卡其 / 橄榄绿 / 灰色为主流；
-          Who What Wear 上榜 Knitted Bucket Hat（COS / Free People / Nour Hammour）。
-          进入 "wardrobe essential" 阶段，但增速比 Fitted Cap 弱。
-        </p>
-        <div class="data-source">
-          hatsinthebelfry.com · whowhatwear.com
-        </div>
-      </article>
-
-      <!-- 参考 6: 可持续帽子 -->
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">小众 · 可持续</div>
-        <h3 class="serif text-lg mb-2">可持续帽子细分 CAGR 7.82%</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          可持续时尚市场 2026 $12.44B → 2034 $27.96B；
-          Recycled & Sustainable Materials 帽子细分 <b class="accent2-c">CAGR 7.82%</b>（高于整体 6.31%）。
-          Cuyana / Patagonia / Will & Bear 引领（每顶帽种一棵树承诺）。
-          客单价偏高（Cuyana $128+），大众市场未规模化。
-        </p>
-        <div class="data-source">
-          fortunebusinessinsights.com · straitsresearch.com · thegoodtrade.com
-        </div>
-      </article>
-
-      <!-- 参考 7-9: W27-W28 历史复盘 -->
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">2026-07 W28</div>
-        <h3 class="serif text-lg mb-2">Borsalino Argentina Fine Raffia Crochet</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          W28 周刊三顶之一：意大利百年钩针工艺 + 草编 + 真丝头带，~$410。
-          顶级工艺叙事参考，价位 $300+。
-        </p>
-        <div class="data-source">
-          W28 images/borsalino-argentina-front.png · mrporter.com
-        </div>
-      </article>
-
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">2026-07 W28</div>
-        <h3 class="serif text-lg mb-2">Aimé Leon Dore 9FIFTY Wool Cap</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          W28 周刊三顶之一：纽约 Prep 美学 + 独立设计 + Wool Cap，~$89。
-          小众独立设计 7 月销量 YoY +45%（StockX），蚕食 New Era 主流地位。
-        </p>
-        <div class="data-source">
-          W28 images/aimeleondore-lifestyle.png · stockx.com
-        </div>
-      </article>
-
-      <article class="border border-stone-800 rounded-sm p-5 hover:border-orange-500/50 transition">
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">2026-07 W27</div>
-        <h3 class="serif text-lg mb-2">MLB × USA 250 Dodgers 9TWENTY</h3>
-        <p class="text-xs text-stone-300 mb-3">
-          W27 周刊：7/4 Independence Day 250 周年纪念，米黄星条旗配色，$45。
-          体育事件 × 国家节日双重叙事，可穿戴纪念品范本。
-        </p>
-        <div class="data-source">
-          W27 images/dodgers-usa250.png · mlb.com
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 4️⃣ TopOne 行动建议 ============== -->
-<section id="action" class="py-24 border-t border-stone-800">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-baseline gap-4 mb-12">
-      <div class="display text-6xl accent2-c">04</div>
-      <div>
-        <h2 class="display text-4xl tracking-wider">TopOne 行动建议</h2>
-        <p class="text-stone-400 text-sm mt-1">基于 Lyst +4,276% 数据 · 9 月可立即开模 / 报价的 3 类帽款</p>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6 mb-12">
-      <!-- 优先开模 1: Fitted Cap 59FIFTY 风格 -->
-      <div class="border-2 border-orange-500/50 rounded-sm p-6 bg-orange-500/5">
-        <div class="text-xs mono uppercase tracking-widest accent-c mb-2">🥇 Priority · 01 · 紧追爆款</div>
-        <h3 class="serif text-2xl mb-3">Fitted Cap（59FIFTY 廓形）</h3>
-        <p class="text-sm text-stone-300 mb-4 leading-relaxed">
-          <b>对标：</b>New York Knicks 59FIFTY · Timberland × New Era × MLB<br>
-          <b>理由：</b>Lyst Q2 +4,276% 搜索增长是 12 个月最大单一爆款；联盟 IP 授权模式成熟；TopOne 现有产能可直接接<br>
-          <b>成本预估：</b>羊毛 / 棉斜纹 + 硬帽舌 + 6-Panel 结构，毛利 30-40%<br>
-          <b>起订量：</b>500-1000 pcs / 配色<br>
-          <b>目标客户：</b>美国独立品牌 + 欧洲运动 IP 授权商
-        </p>
-        <div class="text-[10px] mono text-orange-400">⚠️ 联盟 IP 需谈授权（MLB / NBA / NFL 都有代理）</div>
-      </div>
-
-      <!-- 优先开模 2: Trucker Cap -->
-      <div class="border-2 border-teal-500/50 rounded-sm p-6 bg-teal-500/5">
-        <div class="text-xs mono uppercase tracking-widest accent2-c mb-2">🥈 Priority · 02 · 大众市场</div>
-        <h3 class="serif text-2xl mb-3">Trucker Cap（透气网背）</h3>
-        <p class="text-sm text-stone-300 mb-4 leading-relaxed">
-          <b>对标：</b>经典 47Brand / Zephyr / Pioneer 等 Trucker 品牌<br>
-          <b>理由：</b>Trucker 帽与 Baseball Cap 并列美国大众市场；透气网背适合夏季；价位亲民（$15-30）适合大批量<br>
-          <b>成本预估：</b>泡沫前额 + 网眼后片，毛利 25-35%<br>
-          <b>起订量：</b>2000-5000 pcs / 配色<br>
-          <b>目标客户：</b>美国连锁零售 + 赛事周边 + 餐饮品牌联名
+    <div class="grid md:grid-cols-12 gap-6 items-end">
+      <div class="md:col-span-7">
+        <h1 class="display text-6xl md:text-9xl font-bold leading-none mb-6">
+          <span class="accent-c">FITTED</span><br>CAP<br>
+          <span class="serif text-2xl md:text-4xl text-stone-300 font-normal">回来了</span>
+        </h1>
+        <p class="serif text-xl md:text-2xl text-stone-300 max-w-2xl leading-relaxed">
+          一顶 £25 的 New York Knicks 59FIFTY，
+          在 Lyst Q2 2026 把 Chanel 挤下 TOP1。
         </p>
       </div>
-
-      <!-- 优先开模 3: Snapback Cap -->
-      <div class="border-2 border-stone-700 rounded-sm p-6">
-        <div class="text-xs mono uppercase tracking-widest mb-2">🥉 Priority · 03 · 街头通用</div>
-        <h3 class="serif text-2xl mb-3">Snapback Cap（可调帽扣）</h3>
-        <p class="text-sm text-stone-300 leading-relaxed mb-4">
-          <b>对标：</b>Aimé Leon Dore 9FIFTY（Prep 美学）/ Palace × New Era（街头）<br>
-          <b>理由：</b>Snapback 是 Fitted 与 Trucker 的中间型；一帽三吃（独立设计 / 街头 / 体育）；中国/越南/孟加拉产能充足<br>
-          <b>成本预估：</b>塑料可调扣 + 平帽舌，毛利 30-40%<br>
-          <b>起订量：</b>1000-3000 pcs / 配色<br>
-          <b>目标客户：</b>全球独立品牌 + 街头品牌
-        </p>
-      </div>
-    </div>
-
-    <!-- 重点开发市场 -->
-    <div class="border border-stone-800 rounded-sm p-8">
-      <h3 class="display text-2xl tracking-wider mb-6 accent-c">🌍 重点开发市场（9 月）</h3>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div>
-          <h4 class="serif text-lg mb-2 accent2-c">🇺🇸 美国（Fitted Cap 主战场）</h4>
-          <p class="text-sm text-stone-300 leading-relaxed">
-            <b>$5.4B 帽店市场</b>（IBISWorld）+ 23,193 家门店 + NBA / MLB / NFL 联盟周边长期需求。
-            报价策略：DDP Los Angeles 或 FOB Shenzhen + 提供 5-7 配色组合；
-            起订量较高（1000-3000 pcs）。
-            <b>重点客户类型：</b>独立买手店 / 联盟 IP 授权商 / 体育周边分销。
-          </p>
-        </div>
-        <div>
-          <h4 class="serif text-lg mb-2 accent2-c">🌏 亚太（最大体量）</h4>
-          <p class="text-sm text-stone-300 leading-relaxed">
-            <b>亚太占全球 34.52%</b>（最大），其中日本棒球帽文化深（NPB 联赛 + 甲子园）、
-            韩国 KBO 棒球 + K-pop 偶像带动。
-            报价策略：FOB China 即可 + 配额小批量灵活；
-            <b>重点客户类型：</b>日本体育用品店 / 韩国偶像周边 / 东南亚电商。
-          </p>
+      <div class="md:col-span-5">
+        <div class="kpi-num accent-c leading-none">+4,276%</div>
+        <div class="text-sm mono uppercase tracking-widest text-stone-400 mt-2">Lyst Q2 搜索增长</div>
+        <div class="grid grid-cols-2 gap-3 mt-8">
+          <div class="border border-stone-700 p-3">
+            <div class="display text-2xl accent2-c">$11.74B</div>
+            <div class="text-[10px] mono uppercase text-stone-500 mt-1">全球帽业 2026</div>
+          </div>
+          <div class="border border-stone-700 p-3">
+            <div class="display text-2xl accent2-c">+6.31%</div>
+            <div class="text-[10px] mono uppercase text-stone-500 mt-1">CAGR 至 2034</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== 5️⃣ 9 月展望 ============== -->
-<section id="outlook" class="py-24 border-t border-stone-800 bg-stone-950/30">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-baseline gap-4 mb-12">
-      <div class="display text-6xl accent-c">05</div>
-      <div>
-        <h2 class="display text-4xl tracking-wider">9 月展望</h2>
-        <p class="text-stone-400 text-sm mt-1">节日 / 行业事件 / 季节预测 —— 提前 30 天布局</p>
-      </div>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-      <!-- 节日 -->
-      <article class="border border-stone-800 rounded-sm p-6">
-        <h3 class="serif text-xl mb-4 accent-c">🎉 节日窗口（联盟赛事 + 国家节日）</h3>
-        <ul class="space-y-3 text-sm">
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/7 Labor Day（美国劳动节）</div>
-              <div class="text-xs text-stone-400 mt-1">夏季尾声 + 早秋促销起点；棒球帽 + Trucker 折扣季</div>
-            </div>
-            <span class="text-xs mono text-orange-400 whitespace-nowrap">强</span>
-          </li>
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/21-22 NFL Week 3</div>
-              <div class="text-xs text-stone-400 mt-1">NFL 赛季展开 · 32 队周边需求全面升温 · <b>Fitted Cap 订单窗口</b></div>
-            </div>
-            <span class="text-xs mono text-orange-400 whitespace-nowrap">强</span>
-          </li>
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">10/1 MLB Wild Card + 国庆</div>
-              <div class="text-xs text-stone-400 mt-1">MLB 季后赛 + 中国国庆 · 双驱动订单 · 提前备货</div>
-            </div>
-            <span class="text-xs mono text-orange-400 whitespace-nowrap">强</span>
-          </li>
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/25 中秋节</div>
-              <div class="text-xs text-stone-400 mt-1">亚洲市场 · 中国 / 新加坡 / 马来西亚</div>
-            </div>
-            <span class="text-xs mono text-stone-400 whitespace-nowrap">中</span>
-          </li>
-        </ul>
-      </article>
-
-      <!-- 行业事件 -->
-      <article class="border border-stone-800 rounded-sm p-6">
-        <h3 class="serif text-xl mb-4 accent2-c">📅 行业事件（设计风向 + 渠道）</h3>
-        <ul class="space-y-3 text-sm">
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/11-9/16 NYC Fashion Week SS27</div>
-              <div class="text-xs text-stone-400 mt-1">纽约时装周 · 主流 Fitted Cap 时尚定义</div>
-            </div>
-            <span class="text-xs mono text-orange-400 whitespace-nowrap">必看</span>
-          </li>
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/15-9/17 MAGIC Las Vegas</div>
-              <div class="text-xs text-stone-400 mt-1">美国最大服装 + 配饰展 · <b>TopOne 可参展参考</b> · 9 月采购窗口</div>
-            </div>
-            <span class="text-xs mono text-orange-400 whitespace-nowrap">参展</span>
-          </li>
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/21-9/25 Paris Fashion Week</div>
-              <div class="text-xs text-stone-400 mt-1">巴黎时装周 · Hermès / Celine / LV 配饰线</div>
-            </div>
-            <span class="text-xs mono text-orange-400 whitespace-nowrap">参考</span>
-          </li>
-          <li class="flex justify-between items-start gap-4">
-            <div>
-              <div class="text-stone-200 font-medium">9/27-10/1 Milan Fashion Week</div>
-              <div class="text-xs text-stone-400 mt-1">米兰时装周 · 意式工艺风向 · Borsalino 续作可能</div>
-            </div>
-            <span class="text-xs mono text-stone-400 whitespace-nowrap">参考</span>
-          </li>
-        </ul>
-      </article>
-    </div>
-
-    <!-- 季节预测 -->
-    <div class="mt-6 border border-stone-800 rounded-sm p-6 bg-stone-900/30">
-      <h3 class="serif text-xl mb-3 accent-c">🍂 季节预测 · 9-10 月（秋冬过渡）</h3>
-      <p class="text-sm text-stone-300 leading-relaxed">
-        北半球进入秋季，<b>Fitted Cap + Wool Cap 持续主流</b>（Knicks 冠军效应延伸到秋冬）；
-        Trucker 进入淡季（透气需求降低）；Bucket Hat 进入"wardrobe essential"季节需求。
-        配色方向：Iron Black / Forest Green / Camel / Cream / Burgundy（秋冬深色调）。
-        TopOne 建议：9 月初开 2-3 款秋冬 <b>Wool Fitted</b>（参考 Aimé Leon Dore 9FIFTY 廓形 + 秋冬配色），
-        对接 10 月 MLB 季后赛 + NFL 中段订单。
-      </p>
-    </div>
+<!-- ============== 滚动条 ============== -->
+<section class="bg-orange-500 py-3 overflow-hidden border-y border-orange-600">
+  <div class="marquee text-black text-xs mono uppercase tracking-widest font-bold">
+    <span class="inline-block px-8">★ KNICKS 59FIFTY · Lyst Q2 #1 · 击败 Chanel ★</span>
+    <span class="inline-block px-8">★ Timberland × New Era × MLB · 8 月联名 ★</span>
+    <span class="inline-block px-8">★ Fitted Cap 复兴 · $11.74B 全球市场 ★</span>
+    <span class="inline-block px-8">★ Chase B × Travis Scott · Maximal 20 Era ★</span>
+    <span class="inline-block px-8">★ New Era 9FIFTY · Wool Cap · Snapback · Trucker ★</span>
+    <span class="inline-block px-8">★ KNICKS 59FIFTY · Lyst Q2 #1 · 击败 Chanel ★</span>
+    <span class="inline-block px-8">★ Timberland × New Era × MLB · 8 月联名 ★</span>
+    <span class="inline-block px-8">★ Fitted Cap 复兴 · $11.74B 全球市场 ★</span>
+    <span class="inline-block px-8">★ Chase B × Travis Scott · Maximal 20 Era ★</span>
+    <span class="inline-block px-8">★ New Era 9FIFTY · Wool Cap · Snapback · Trucker ★</span>
   </div>
 </section>
 
-<!-- ============== 6️⃣ 数据看板 ============== -->
-<section id="data" class="py-24 border-t border-stone-800">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex items-baseline gap-4 mb-12">
-      <div class="display text-6xl accent-c">06</div>
-      <div>
-        <h2 class="display text-4xl tracking-wider">数据看板</h2>
-        <p class="text-stone-400 text-sm mt-1">关税预警 + 工厂决策数据 + 行业 KPI</p>
+<!-- ============== 3 顶重点 ============== -->
+<section id="hats" class="py-20 md:py-28 border-b border-stone-900">
+  <div class="px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-12">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-7xl accent-c">3</div>
+        <h2 class="display text-4xl md:text-5xl tracking-wider">本月必看</h2>
       </div>
+      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">8 月限定 / 联盟授权 / 街头</div>
     </div>
 
-    <!-- 关税预警（链接 TopOne dashboard） -->
-    <div class="mb-8 border-2 border-orange-500/50 rounded-sm p-6 bg-orange-500/5">
-      <div class="flex items-start justify-between mb-3">
-        <div class="text-xs mono uppercase tracking-widest accent-c">⚠️ 关税预警 · 7 国 HS 6504/6505（TopOne 工厂视角）</div>
-        <span class="text-xs mono text-orange-400">2026-08-28 更新</span>
-      </div>
-      <p class="text-sm text-stone-300 leading-relaxed mb-4">
-        <b>🇺🇸 美国 44.5%</b>（MFN 7 + Section 301 25 + Section 301 强迫劳动 12.5）<br>
-        <b>🇯🇵 日本 3.6%</b>（RCEP CO FORM E 享 3.6%；MFN 7% general）<br>
-        <b>🇰🇷 韩国 5.2%</b>（CK FTA 实际 ~5.2%；MFN 8%）<br>
-        <b>🇨🇦 加拿大 12.5%</b>（MFN 6504.00.9000 + 6505.00.4000；其他子目 15.5%）<br>
-        <b>🇬🇧 英国 / 🇪🇺 欧盟 / 🇦🇺 澳洲</b>：0%（MFN 免税 / FTA 全免）<br>
-        <span class="text-xs text-stone-500">⚠️ FOB China 贸易条款 · 关税由客人付 · 工厂视角看客户成本</span>
-      </p>
-      <a href="https://trade-dashboard-10y.pages.dev/" target="_blank" class="text-xs mono accent-c hover:underline">
-        → 完整 TopOne 仪表板（含报价口径 + FOB China 视角）↗
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Featured Hat 1: Knicks Equivalent (Dodgers USA 250) -->
+      <a class="group block">
+        <div class="relative overflow-hidden rounded-sm mb-4 bg-stone-900 aspect-[3/4]">
+          <span class="corner-tag">🥇 #1 Lyst Q2</span>
+          <img src="images/pan-w27-dodgers-usa250.png" alt="Knicks 59FIFTY Equivalent" class="img-cover-portrait hover-pop">
+        </div>
+        <div class="display text-3xl mb-2 leading-none">KNICKS 59FIFTY</div>
+        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">NBA Champions · 联盟授权</div>
+        <p class="text-sm text-stone-400 leading-relaxed mb-2">Lyst Q2 +4,276% 搜索增长，把 Chanel 挤下 TOP1。Fitted Cap 文化复兴标杆。</p>
+        <div class="flex justify-between text-xs mono">
+          <span class="text-stone-500">£25 / $40</span>
+          <span class="accent-c">→</span>
+        </div>
+      </a>
+
+      <!-- Featured Hat 2: Timberland × New Era × MLB -->
+      <a class="group block">
+        <div class="relative overflow-hidden rounded-sm mb-4 bg-stone-900 aspect-[3/4]">
+          <span class="corner-tag" style="border-color:#14B8A6;color:#14B8A6;">2026-08 联名</span>
+          <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="Timberland New Era MLB" class="img-cover-portrait hover-pop">
+        </div>
+        <div class="display text-3xl mb-2 leading-none">TIMBERLAND<br>× NEW ERA × MLB</div>
+        <div class="text-[10px] mono uppercase tracking-widest accent2-c mb-2">三方联名 · 6 队城市系列</div>
+        <p class="text-sm text-stone-400 leading-relaxed mb-2">Yankees / Mets / Dodgers / Red Sox / White Sox / Braves / Astros，工装 + 联盟 + 街头的范本。</p>
+        <div class="flex justify-between text-xs mono">
+          <span class="text-stone-500">~$85 / 配色</span>
+          <span class="accent2-c">→</span>
+        </div>
+      </a>
+
+      <!-- Featured Hat 3: ALD Wool Cap (Chase B×Travis substitute since no image) -->
+      <a class="group block">
+        <div class="relative overflow-hidden rounded-sm mb-4 bg-stone-900 aspect-[3/4]">
+          <span class="corner-tag" style="border-color:#FF4B1F;color:#FF4B1F;">Prep 美学</span>
+          <img src="images/pan-w28-aimeleondore-side.png" alt="Aimé Leon Dore 9FIFTY" class="img-cover-portrait hover-pop">
+        </div>
+        <div class="display text-3xl mb-2 leading-none">ALD 9FIFTY<br>WOOL CAP</div>
+        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">独立设计 · 7 月销量 +45%</div>
+        <p class="text-sm text-stone-400 leading-relaxed mb-2">纽约 Prep 美学 + 小众独立设计蚕食 New Era 主流份额。Wool Cap 秋冬延伸。</p>
+        <div class="flex justify-between text-xs mono">
+          <span class="text-stone-500">~$89</span>
+          <span class="accent-c">→</span>
+        </div>
       </a>
     </div>
+  </div>
+</section>
 
-    <!-- 行业 KPI -->
-    <div class="grid md:grid-cols-3 gap-6 mb-8">
-      <article class="border border-stone-800 rounded-sm p-5">
-        <div class="text-xs mono uppercase tracking-widest accent-c mb-2">市场规模 · 2026</div>
-        <div class="display text-3xl mb-1">$11.74B</div>
-        <div class="text-xs text-stone-400">全球帽子市场（CAGR 6.31%）</div>
-        <div class="data-source">straitsresearch.com</div>
-      </article>
-      <article class="border border-stone-800 rounded-sm p-5">
-        <div class="text-xs mono uppercase tracking-widest accent2-c mb-2">Lyst Q2 · 爆款</div>
-        <div class="display text-3xl mb-1">+4,276%</div>
-        <div class="text-xs text-stone-400">Knicks 59FIFTY 搜索增长</div>
-        <div class="data-source">lyst.com · wwd.com</div>
-      </article>
-      <article class="border border-stone-800 rounded-sm p-5">
-        <div class="text-xs mono uppercase tracking-widest accent-c mb-2">美国帽店</div>
-        <div class="display text-3xl mb-1">$5.4B</div>
-        <div class="text-xs text-stone-400">23,193 家门店（IBISWorld）</div>
-        <div class="data-source">ibisworld.com</div>
-      </article>
+<!-- ============== 全景图墙（24 张 masonry）============== -->
+<section id="panorama" class="py-20 md:py-28 bg-stone-950/50">
+  <div class="px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-12">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-7xl accent2-c">24</div>
+        <h2 class="display text-4xl md:text-5xl tracking-wider">品牌全景</h2>
+      </div>
+      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">8 月重点品牌 · 多角度</div>
     </div>
 
-    <!-- Top10 进出口占位 -->
-    <div class="grid md:grid-cols-2 gap-6 mb-8">
-      <article class="border border-stone-800 rounded-sm p-6">
-        <h3 class="serif text-xl mb-4 accent2-c">📥 Top10 帽子进口国（2024）</h3>
-        <ol class="space-y-2 text-sm">
-          <li class="flex justify-between"><span class="text-stone-300">1. 美国</span><span class="mono text-stone-400">$3,200M*</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">2. 日本</span><span class="mono text-stone-400">~$1,180M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">3. 英国</span><span class="mono text-stone-400">~$820M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">4. 德国</span><span class="mono text-stone-400">~$625M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">5. 法国</span><span class="mono text-stone-400">~$580M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">6. 加拿大</span><span class="mono text-stone-400">~$420M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">7. 意大利</span><span class="mono text-stone-400">~$385M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">8. 韩国</span><span class="mono text-stone-400">~$290M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">9. 西班牙</span><span class="mono text-stone-400">~$240M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">10. 荷兰</span><span class="mono text-stone-400">~$215M</span></li>
-        </ol>
-        <div class="data-source">* ITC Trade Map 2024 · Nova 复核中 · 多源未到齐前标 ~</div>
-      </article>
-
-      <article class="border border-stone-800 rounded-sm p-6">
-        <h3 class="serif text-xl mb-4 accent2-c">📤 Top10 帽子出口国（2024）</h3>
-        <ol class="space-y-2 text-sm">
-          <li class="flex justify-between"><span class="text-stone-300">1. 🇨🇳 中国</span><span class="mono text-stone-400">$8,200M*</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">2. 🇻🇳 越南</span><span class="mono text-stone-400">~$2,100M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">3. 🇧🇩 孟加拉</span><span class="mono text-stone-400">~$1,650M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">4. 🇮🇹 意大利</span><span class="mono text-stone-400">~$1,420M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">5. 🇹🇷 土耳其</span><span class="mono text-stone-400">~$980M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">6. 🇮🇳 印度</span><span class="mono text-stone-400">~$720M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">7. 🇰🇷 韩国</span><span class="mono text-stone-400">~$510M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">8. 🇵🇹 葡萄牙</span><span class="mono text-stone-400">~$380M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">9. 🇮🇩 印尼</span><span class="mono text-stone-400">~$340M</span></li>
-          <li class="flex justify-between"><span class="text-stone-300">10. 🇧🇬 保加利亚</span><span class="mono text-stone-400">~$280M</span></li>
-        </ol>
-        <div class="data-source">* Nova 待用 UN Comtrade / ITC Trade Map 复核具体数字</div>
-      </article>
+    <!-- Masonry 第一行 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-borsalino-argentina-front.png" alt="Borsalino" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-borsalino-argentina-side.png" alt="Borsalino" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="ALD" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-gfore-usopen-perforated-front.png" alt="G/FORE" class="img-cover hover-pop">
+      </div>
     </div>
 
-    <!-- 政策预警 -->
-    <div class="border border-stone-800 rounded-sm p-6">
-      <h3 class="serif text-xl mb-4 accent-c">🚨 9 月政策预警</h3>
-      <ul class="space-y-2 text-sm">
-        <li class="text-stone-300">
-          <b>🇺🇸 美国：</b>8/24 AP 报道 Trump 拟对「中国低价商品倾销」再加新关税 —— 持续跟踪，未实施
-        </li>
-        <li class="text-stone-300">
-          <b>🇺🇸 美国：</b>USTR 纺织品 TRQ（孟加拉 / 柬埔寨 / 印尼 / 马来西亚）原计划 9/1 落地，已<strong>推迟</strong>
-        </li>
-        <li class="text-stone-300">
-          <b>🇪🇺 欧盟：</b>ESPR 销毁禁令 2026-07-19 已生效，滞销库存处理成本 ↑
-        </li>
-        <li class="text-stone-300">
-          <b>🇬🇧 英国：</b>PPWR 包装法规 2027 全面生效，9 月起企业需准备合规包装
-        </li>
-        <li class="text-stone-300">
-          <b>🇰🇷 韩国：</b>CK FTA 部分子目已 0%，9 月需确认 TopOne 主推帽款具体 HS 子目
-        </li>
-      </ul>
+    <!-- Masonry 第二行（5 张：不等高错落） -->
+    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-3">
+      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-2">
+        <img src="images/pan-w28-gfore-usopen-lifestyle.png" alt="G/FORE" class="img-cover-landscape hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-2 row-span-2">
+        <img src="images/pan-w28-braindead-6panel-front.png" alt="Brain Dead" class="img-cover hover-pop h-full" style="object-fit:cover;min-height:400px;">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-2">
+        <img src="images/pan-w28-braindead-bolo-front.png" alt="Brain Dead Bolo" class="img-cover-landscape hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-3">
+        <img src="images/pan-w28-barbour-wax-front.png" alt="Barbour" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-3">
+        <img src="images/pan-w28-carhartt-script-front.png" alt="Carhartt" class="img-cover hover-pop">
+      </div>
+    </div>
+
+    <!-- Masonry 第三行（7 张细图） -->
+    <div class="grid grid-cols-2 md:grid-cols-7 gap-3 mb-3">
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-awakeny-corduroy-front.png" alt="Awakeny" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-beamsplus-field-front.png" alt="Beams+" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-descente-allterrain-front.png" alt="Descente" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-engineeredgarments-ball-front.png" alt="EG" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-filson-tin-front.png" alt="Filson" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w28-gucci-gg-front.png" alt="Gucci" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w27-bape-001.jpg" alt="BAPE" class="img-cover hover-pop">
+      </div>
+    </div>
+
+    <!-- Masonry 第四行（Kappa / Kith / Saint James 等） -->
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w27-barbour-1.jpg" alt="Barbour" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w27-kappa-1.jpg" alt="Kappa" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w27-kith-1.jpg" alt="Kith" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w27-bape-003.jpg" alt="BAPE" class="img-cover hover-pop">
+      </div>
+      <div class="overflow-hidden rounded-sm bg-stone-900">
+        <img src="images/pan-w27-bape-005.jpg" alt="BAPE" class="img-cover hover-pop">
+      </div>
+    </div>
+
+    <div class="mt-6 text-center text-xs mono text-stone-500 uppercase tracking-widest">
+      24+ 品牌 · 8 月主推 · 多角度真品图
+    </div>
+  </div>
+</section>
+
+<!-- ============== 行动建议（3 BIG 视觉卡）============== -->
+<section id="action" class="py-20 md:py-28 border-t border-stone-900">
+  <div class="px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-12">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-7xl accent-c">3</div>
+        <h2 class="display text-4xl md:text-5xl tracking-wider">立即开模</h2>
+      </div>
+      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">基于 Lyst +4,276% 数据</div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Priority 1 -->
+      <article class="border-2 border-orange-500/60 bg-orange-500/5 rounded-sm overflow-hidden">
+        <div class="relative aspect-[4/3] overflow-hidden bg-stone-900">
+          <span class="corner-tag">🥇 Priority 01</span>
+          <img src="images/pan-w27-dodgers-usa250.png" alt="Fitted Cap" class="img-cover-portrait hover-pop">
+        </div>
+        <div class="p-5">
+          <div class="display text-3xl mb-2 accent-c leading-none">FITTED 59FIFTY</div>
+          <p class="text-xs text-stone-300 mb-3 leading-relaxed">对标 Knicks 59FIFTY · 联盟 IP 授权模式成熟 · TopOne 现有产能可接</p>
+          <div class="grid grid-cols-2 gap-2 text-[10px] mono">
+            <div class="text-stone-500">毛利</div><div class="accent-c text-right">30-40%</div>
+            <div class="text-stone-500">起订</div><div class="text-right">500-1000</div>
+            <div class="text-stone-500">市场</div><div class="text-right">🇺🇸 美国</div>
+            <div class="text-stone-500">客户</div><div class="text-right">联盟 IP</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Priority 2 -->
+      <article class="border-2 border-teal-500/60 bg-teal-500/5 rounded-sm overflow-hidden">
+        <div class="relative aspect-[4/3] overflow-hidden bg-stone-900">
+          <span class="corner-tag" style="border-color:#14B8A6;color:#14B8A6;">🥈 Priority 02</span>
+          <img src="images/pan-w28-gfore-usopen-perforated-front.png" alt="Trucker Cap" class="img-cover-portrait hover-pop">
+        </div>
+        <div class="p-5">
+          <div class="display text-3xl mb-2 accent2-c leading-none">TRUCKER</div>
+          <p class="text-xs text-stone-300 mb-3 leading-relaxed">对标 47Brand / Zephyr · 透气网背 · 美国大众市场 · 大批量</p>
+          <div class="grid grid-cols-2 gap-2 text-[10px] mono">
+            <div class="text-stone-500">毛利</div><div class="accent2-c text-right">25-35%</div>
+            <div class="text-stone-500">起订</div><div class="text-right">2000-5000</div>
+            <div class="text-stone-500">市场</div><div class="text-right">🇺🇸 连锁</div>
+            <div class="text-stone-500">客户</div><div class="text-right">餐饮联名</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Priority 3 -->
+      <article class="border-2 border-stone-700 bg-stone-900/30 rounded-sm overflow-hidden">
+        <div class="relative aspect-[4/3] overflow-hidden bg-stone-900">
+          <span class="corner-tag">🥉 Priority 03</span>
+          <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="Snapback Cap" class="img-cover-portrait hover-pop">
+        </div>
+        <div class="p-5">
+          <div class="display text-3xl mb-2 leading-none">SNAPBACK</div>
+          <p class="text-xs text-stone-300 mb-3 leading-relaxed">对标 ALD / Palace · Fitted 与 Trucker 中间型 · 一帽三吃 · 街头通用</p>
+          <div class="grid grid-cols-2 gap-2 text-[10px] mono">
+            <div class="text-stone-500">毛利</div><div class="text-right">30-40%</div>
+            <div class="text-stone-500">起订</div><div class="text-right">1000-3000</div>
+            <div class="text-stone-500">市场</div><div class="text-right">🌏 全球</div>
+            <div class="text-stone-500">客户</div><div class="text-right">独立品牌</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 9 月日历（视觉）============== -->
+<section id="calendar" class="py-20 md:py-28 border-t border-stone-900 bg-stone-950/30">
+  <div class="px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-12">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-7xl accent-c">09</div>
+        <h2 class="display text-4xl md:text-5xl tracking-wider">下月节点</h2>
+      </div>
+      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">提前 30 天布局</div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- 9/7 Labor Day -->
+      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
+        <div class="display text-5xl accent-c mb-2">09.07</div>
+        <div class="serif text-lg mb-2">🇺🇸 Labor Day</div>
+        <p class="text-xs text-stone-400 leading-relaxed">夏季尾声 + 早秋促销起点。棒球帽 + Trucker 折扣季。</p>
+      </div>
+      <!-- 9/11-16 NYC Fashion Week -->
+      <div class="border border-stone-700 rounded-sm p-5">
+        <div class="display text-5xl accent2-c mb-2">09.11-16</div>
+        <div class="serif text-lg mb-2">🗽 NYC Fashion Week</div>
+        <p class="text-xs text-stone-400 leading-relaxed">纽约时装周 SS27 · 主流 Fitted Cap 时尚定义。</p>
+      </div>
+      <!-- 9/15-17 MAGIC Las Vegas -->
+      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
+        <div class="display text-5xl accent-c mb-2">09.15-17</div>
+        <div class="serif text-lg mb-2">🤠 MAGIC Las Vegas</div>
+        <p class="text-xs text-stone-400 leading-relaxed">美国最大服装 + 配饰展 · <b>TopOne 可参展参考</b>。</p>
+      </div>
+      <!-- 9/21-22 NFL Week 3 -->
+      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
+        <div class="display text-5xl accent-c mb-2">09.21-22</div>
+        <div class="serif text-lg mb-2">🏈 NFL Week 3</div>
+        <p class="text-xs text-stone-400 leading-relaxed">NFL 赛季展开 · 32 队周边需求升温 · <b>Fitted Cap 订单窗口</b>。</p>
+      </div>
+      <!-- 9/21-25 Paris Fashion Week -->
+      <div class="border border-stone-700 rounded-sm p-5">
+        <div class="display text-5xl accent2-c mb-2">09.21-25</div>
+        <div class="serif text-lg mb-2">🗼 Paris Fashion Week</div>
+        <p class="text-xs text-stone-400 leading-relaxed">Hermès / Celine / LV 配饰线风向。</p>
+      </div>
+      <!-- 10/1 MLB Wild Card -->
+      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
+        <div class="display text-5xl accent-c mb-2">10.01</div>
+        <div class="serif text-lg mb-2">⚾ MLB Wild Card + 国庆</div>
+        <p class="text-xs text-stone-400 leading-relaxed">MLB 季后赛 + 中国国庆 · 双驱动订单 · <b>提前备货</b>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 数据看板（紧凑）============== -->
+<section id="data" class="py-20 md:py-28 border-t border-stone-900">
+  <div class="px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex items-baseline justify-between mb-12">
+      <div class="flex items-baseline gap-4">
+        <div class="display text-7xl accent-c">DATA</div>
+        <h2 class="display text-4xl md:text-5xl tracking-wider">数据看板</h2>
+      </div>
+    </div>
+
+    <!-- 4 个 KPI tile -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+      <div class="border border-stone-800 p-5">
+        <div class="kpi-num accent-c">$11.74B</div>
+        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">2026 全球帽业</div>
+      </div>
+      <div class="border border-stone-800 p-5">
+        <div class="kpi-num accent2-c">+4,276%</div>
+        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">Knicks Lyst Q2</div>
+      </div>
+      <div class="border border-stone-800 p-5">
+        <div class="kpi-num accent-c">$5.4B</div>
+        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">美国帽店市场</div>
+      </div>
+      <div class="border border-stone-800 p-5">
+        <div class="kpi-num accent2-c">34.52%</div>
+        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">亚太占全球</div>
+      </div>
+    </div>
+
+    <!-- 关税预警 -->
+    <div class="mb-8 border-2 border-orange-500/50 rounded-sm p-5 bg-orange-500/5">
+      <div class="flex items-start justify-between mb-3">
+        <div class="text-xs mono uppercase tracking-widest accent-c">⚠️ 关税预警 · 7 国 HS 6504/6505</div>
+        <span class="text-[10px] mono text-orange-400">2026-08-28</span>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+        <div class="border border-stone-700 p-2"><b class="accent-c">🇺🇸 44.5%</b><div class="text-[10px] mono text-stone-500">MFN 7 + S301 25 + S301-forced 12.5</div></div>
+        <div class="border border-stone-700 p-2"><b class="accent2-c">🇯🇵 3.6%</b><div class="text-[10px] mono text-stone-500">RCEP CO FORM E</div></div>
+        <div class="border border-stone-700 p-2"><b class="accent2-c">🇰🇷 5.2%</b><div class="text-[10px] mono text-stone-500">CK FTA</div></div>
+        <div class="border border-stone-700 p-2"><b class="accent-c">🇨🇦 12.5%</b><div class="text-[10px] mono text-stone-500">MFN 12.5%</div></div>
+        <div class="border border-stone-700 p-2"><b class="accent2-c">🇬🇧 0%</b><div class="text-[10px] mono text-stone-500">脱欧 MFN</div></div>
+        <div class="border border-stone-700 p-2"><b class="accent2-c">🇪🇺 0%</b><div class="text-[10px] mono text-stone-500">EU MFN</div></div>
+        <div class="border border-stone-700 p-2"><b class="accent2-c">🇦🇺 0%</b><div class="text-[10px] mono text-stone-500">ChAFTA</div></div>
+        <div class="border border-stone-700 p-2"><b class="text-stone-500">FOB China</b><div class="text-[10px] mono text-stone-500">关税客人付</div></div>
+      </div>
+      <a href="https://trade-dashboard-10y.pages.dev/" target="_blank" class="text-[10px] mono accent-c hover:underline mt-3 inline-block">→ 完整 TopOne 仪表板（含报价口径）↗</a>
+    </div>
+
+    <!-- Top10 进出口（紧凑表）-->
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="border border-stone-800 rounded-sm p-4">
+        <h3 class="display text-xl accent2-c mb-3">📥 Top10 进口国 (2024)</h3>
+        <table class="w-full text-xs">
+          <tr class="border-b border-stone-800"><td class="py-1">🇺🇸 美国</td><td class="text-right mono">$3,200M*</td></tr>
+          <tr><td class="py-1">🇯🇵 日本</td><td class="text-right mono">~$1,180M</td></tr>
+          <tr><td class="py-1">🇬🇧 英国</td><td class="text-right mono">~$820M</td></tr>
+          <tr><td class="py-1">🇩🇪 德国</td><td class="text-right mono">~$625M</td></tr>
+          <tr><td class="py-1">🇫🇷 法国</td><td class="py-1 text-stone-500">🇨🇦 加拿大</td><td class="text-right mono">~$420M</td></tr>
+          <tr><td class="py-1">🇮🇹 意大利</td><td class="text-right mono">~$385M</td></tr>
+          <tr><td class="py-1">🇰🇷 韩国</td><td class="text-right mono">~$290M</td></tr>
+          <tr><td class="py-1">🇪🇸 西班牙</td><td class="text-right mono">~$240M</td></tr>
+          <tr><td class="py-1">🇳🇱 荷兰</td><td class="text-right mono">~$215M</td></tr>
+        </table>
+        <div class="text-[10px] mono text-stone-500 mt-2">* ITC Trade Map 2024</div>
+      </div>
+
+      <div class="border border-stone-800 rounded-sm p-4">
+        <h3 class="display text-xl accent2-c mb-3">📤 Top10 出口国 (2024)</h3>
+        <table class="w-full text-xs">
+          <tr class="border-b border-stone-800"><td class="py-1">🇨🇳 中国</td><td class="text-right mono">$8,200M*</td></tr>
+          <tr><td class="py-1">🇻🇳 越南</td><td class="text-right mono">~$2,100M</td></tr>
+          <tr><td class="py-1">🇧🇩 孟加拉</td><td class="text-right mono">~$1,650M</td></tr>
+          <tr><td class="py-1">🇮🇹 意大利</td><td class="text-right mono">~$1,420M</td></tr>
+          <tr><td class="py-1">🇹🇷 土耳其</td><td class="text-right mono">~$980M</td></tr>
+          <tr><td class="py-1">🇮🇳 印度</td><td class="text-right mono">~$720M</td></tr>
+          <tr><td class="py-1">🇰🇷 韩国</td><td class="text-right mono">~$510M</td></tr>
+          <tr><td class="py-1">🇵🇹 葡萄牙</td><td class="text-right mono">~$380M</td></tr>
+          <tr><td class="py-1">🇮🇩 印尼</td><td class="text-right mono">~$340M</td></tr>
+        </table>
+        <div class="text-[10px] mono text-stone-500 mt-2">中国 ~78% 主导</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============== FOOTER ============== -->
-<footer class="border-t border-stone-800 py-12">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-wrap items-center justify-between gap-4 text-xs mono text-stone-500">
-      <div>🎩 HAT TREND RADAR · Monthly Issue 001 · 2026-08</div>
+<footer class="border-t border-stone-800 py-12 bg-stone-950">
+  <div class="px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="flex flex-wrap items-center justify-between gap-4 text-[10px] mono text-stone-500 uppercase tracking-widest">
+      <div>🎩 HAT TREND RADAR · 2026-08 · Monthly 001</div>
       <div>Nova + 设计部 · Top One Hat Factory</div>
-      <div><a href="../index.html" class="hover:text-orange-500">← 返回月报首页</a></div>
+      <div><a href="../index.html" class="hover:text-orange-500">← 返回首页</a></div>
     </div>
-    <div class="mt-4 text-[10px] mono text-stone-600">
-      永久铁律：未核实不显示确定结论 · FOB China 视角 · 营业员可直接执行<br>
-      数据源（5 关自检）：Lyst / WWD / Esquire / NY Post / Straits Research / Fortune BI / Mordor / IBISWorld / ustariffrates / Hypebeast · 抓取日期 2026-08-28
+    <div class="mt-3 text-[9px] mono text-stone-600">
+      数据源：Lyst · WWD · Esquire · NY Post · Straits Research · Fortune BI · Mordor · IBISWorld · ustariffrates · 抓取日期 2026-08-28<br>
+      永久铁律：未核实不显示确定结论 · FOB China 视角 · 营业员可直接执行
     </div>
   </div>
 </footer>
