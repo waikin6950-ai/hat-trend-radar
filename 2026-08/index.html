@@ -3,485 +3,705 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAT TREND RADAR · 2026-08 夏季回顾 — Top One Hat Factory</title>
+<title>HAT TREND RADAR · 2026-08 工艺情报 — Top One 设计部</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: 'Inter', -apple-system, "PingFang SC", sans-serif; background:#0a0a0a; color:#fafafa; }
-  .display { font-family:'Bebas Neue', sans-serif; letter-spacing:.02em; }
-  .serif { font-family:'Noto Serif SC', serif; }
-  .mono { font-family:'JetBrains Mono', monospace; }
-  .accent-c { color:#FF4B1F; } .accent-bg { background:#FF4B1F; }
-  .accent2-c { color:#14B8A6; } .accent2-bg { background:#14B8A6; }
-  .grain::before { content:""; position:fixed; inset:0; pointer-events:none; z-index:100;
-    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity:.4; }
-  details summary { list-style:none; cursor:pointer; }
-  details summary::-webkit-details-marker { display:none; }
-  .pulse-dot { width:8px; height:8px; border-radius:50%; background:#FF4B1F; animation:pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
-  .hero-bg { background-image:linear-gradient(120deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,.5) 60%, rgba(10,10,10,.95) 100%), url('images/pan-w27-dodgers-usa250.png'); background-size:cover; background-position:center; }
-  .img-cover { aspect-ratio:1/1; object-fit:cover; width:100%; }
-  .img-cover-portrait { aspect-ratio:3/4; object-fit:cover; width:100%; }
-  .img-cover-landscape { aspect-ratio:16/9; object-fit:cover; width:100%; }
-  .hover-pop { transition:transform .5s ease; }
-  .hover-pop:hover { transform:scale(1.04); }
-  .marquee { animation:marquee 40s linear infinite; white-space:nowrap; }
-  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-  .kpi-num { font-family:'Bebas Neue',sans-serif; font-size:clamp(3.5rem,8vw,7rem); line-height:1; }
-  .corner-tag { position:absolute; top:12px; left:12px; font-family:'JetBrains Mono',monospace; font-size:10px; padding:4px 8px; background:rgba(10,10,10,.7); border:1px solid #FF4B1F; color:#FF4B1F; }
+  body { font-family:'Inter',-apple-system,"PingFang SC",sans-serif; background:#fafaf9; color:#1c1917; }
+  .display { font-family:'Bebas Neue',sans-serif; letter-spacing:.02em; }
+  .serif { font-family:'Noto Serif SC',serif; }
+  .mono { font-family:'JetBrains Mono',monospace; }
+  .ink { color:#0c0a09; } .ink-light { color:#57534e; } .ink-faint { color:#a8a29e; }
+  .accent-c { color:#dc2626; } .accent-bg { background:#dc2626; color:#fafaf9; }
+  .accent2-c { color:#0891b2; } .accent2-bg { background:#0891b2; color:#fafaf9; }
+  .line-b { border-bottom:1px solid #e7e5e4; } .line-t { border-top:1px solid #e7e5e4; }
+  .line-r { border-right:1px solid #e7e5e4; }
+  .pantone { display:inline-block; width:48px; height:48px; border-radius:50%; vertical-align:middle; margin-right:12px; border:1px solid rgba(0,0,0,.1); }
+  .swatch-h { height:120px; display:flex; align-items:flex-end; padding:12px; color:#fafaf9; font-weight:600; }
+  .pan-img { aspect-ratio:1/1; object-fit:cover; width:100%; }
+  .pan-img-portrait { aspect-ratio:3/4; object-fit:cover; width:100%; }
+  .pan-img-tall { aspect-ratio:2/3; object-fit:cover; width:100%; }
+  .hover-pop { transition:transform .4s ease; }
+  .hover-pop:hover { transform:scale(1.03); }
+  .small-caps { font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+  .data-table { border-collapse:collapse; width:100%; font-size:13px; }
+  .data-table th { text-align:left; padding:8px 12px; background:#f5f5f4; font-weight:600; border-bottom:1px solid #d6d3d1; }
+  .data-table td { padding:8px 12px; border-bottom:1px solid #e7e5e4; }
+  .data-table tr:hover { background:#fafaf9; }
+  .corner-num { font-family:'Bebas Neue',sans-serif; font-size:96px; line-height:.85; color:#dc2626; }
+  .ribbon { font-family:'JetBrains Mono',monospace; font-size:10px; padding:4px 10px; background:#0c0a09; color:#fafaf9; display:inline-block; }
 </style>
 </head>
-<body class="grain">
+<body>
 
 <!-- ============== 顶部导航 ============== -->
-<nav class="border-b border-stone-800 sticky top-0 bg-stone-950/90 backdrop-blur z-50">
+<nav class="border-b border-stone-200 sticky top-0 bg-stone-50/95 backdrop-blur z-50">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8 accent-bg rounded-sm flex items-center justify-center">
-        <span class="display text-xl text-black">T</span>
-      </div>
-      <div>
-        <div class="display text-lg tracking-wider">HAT TREND RADAR</div>
-        <div class="text-[10px] tracking-widest text-stone-500 uppercase">2026 / 08 · Monthly Issue 001</div>
-      </div>
+    <div>
+      <div class="display text-2xl tracking-wider">HAT TREND RADAR</div>
+      <div class="small-caps ink-faint">2026 / 08 · Issue 001 · 工艺情报版</div>
     </div>
-    <div class="hidden md:flex gap-6 text-xs uppercase tracking-widest text-stone-400">
-      <a href="#hats" class="hover:text-orange-500">3 顶</a>
-      <a href="#panorama" class="hover:text-orange-500">全景</a>
-      <a href="#action" class="hover:text-orange-500">行动</a>
-      <a href="#calendar" class="hover:text-orange-500">9 月</a>
-      <a href="#data" class="hover:text-orange-500">数据</a>
+    <div class="hidden md:flex gap-6 text-xs ink-light uppercase tracking-widest">
+      <a href="#focus" class="hover:text-red-600">工艺焦点</a>
+      <a href="#palette" class="hover:text-red-600">配色</a>
+      <a href="#material" class="hover:text-red-600">材质</a>
+      <a href="#teardown" class="hover:text-red-600">横评</a>
+      <a href="#actions" class="hover:text-red-600">本月动作</a>
+      <a href="#avoid" class="hover:text-red-600">避坑</a>
     </div>
+    <div class="ribbon">DESIGNER FEED</div>
   </div>
 </nav>
 
-<!-- ============== HERO ============== -->
-<section class="hero-bg min-h-screen flex items-center relative">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 w-full">
-    <div class="flex items-center gap-2 mb-8">
-      <div class="pulse-dot"></div>
-      <span class="text-xs mono uppercase tracking-widest text-stone-300">2026-08 夏季回顾 · Monthly 001</span>
+<!-- ============== HERO（一个视觉声明）============== -->
+<section class="border-b border-stone-200">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-12 gap-10 items-end">
+    <div class="md:col-span-7">
+      <div class="small-caps accent-c mb-4">月度工艺焦点 · 2026-08</div>
+      <h1 class="serif text-5xl md:text-7xl font-bold leading-none mb-6">
+        Fitted Cap<br>
+        怎么<span class="accent-c">做</span>？
+      </h1>
+      <p class="text-lg ink-light leading-relaxed max-w-xl">
+        Lyst Q2 搜索 +4,276%——但销量高不意味着 TopOne 跟着做就能卖。设计师需要的是：别人怎么做的、哪里能抄、哪里要差异化、本月能试哪 3 款。
+      </p>
+      <div class="mt-6 text-xs ink-faint">Nova · 设计部情报组 · 抓取日期 2026-08-28</div>
     </div>
-    <div class="grid md:grid-cols-12 gap-6 items-end">
-      <div class="md:col-span-7">
-        <h1 class="display text-6xl md:text-9xl font-bold leading-none mb-6">
-          <span class="accent-c">FITTED</span><br>CAP<br>
-          <span class="serif text-2xl md:text-4xl text-stone-300 font-normal">回来了</span>
-        </h1>
-        <p class="serif text-xl md:text-2xl text-stone-300 max-w-2xl leading-relaxed">
-          一顶 £25 的 New York Knicks 59FIFTY，
-          在 Lyst Q2 2026 把 Chanel 挤下 TOP1。
-        </p>
-      </div>
-      <div class="md:col-span-5">
-        <div class="kpi-num accent-c leading-none">+4,276%</div>
-        <div class="text-sm mono uppercase tracking-widest text-stone-400 mt-2">Lyst Q2 搜索增长</div>
-        <div class="grid grid-cols-2 gap-3 mt-8">
-          <div class="border border-stone-700 p-3">
-            <div class="display text-2xl accent2-c">$11.74B</div>
-            <div class="text-[10px] mono uppercase text-stone-500 mt-1">全球帽业 2026</div>
-          </div>
-          <div class="border border-stone-700 p-3">
-            <div class="display text-2xl accent2-c">+6.31%</div>
-            <div class="text-[10px] mono uppercase text-stone-500 mt-1">CAGR 至 2034</div>
-          </div>
+    <div class="md:col-span-5">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="border border-stone-200 p-4">
+          <div class="corner-num accent-c">+4,276%</div>
+          <div class="text-xs ink-light mt-1">Lyst Q2 Knicks 59FIFTY</div>
+        </div>
+        <div class="border border-stone-200 p-4">
+          <div class="corner-num ink">$11.74B</div>
+          <div class="text-xs ink-light mt-1">2026 全球帽业</div>
+        </div>
+        <div class="border border-stone-200 p-4">
+          <div class="corner-num ink">6.31%</div>
+          <div class="text-xs ink-light mt-1">CAGR 至 2034</div>
+        </div>
+        <div class="border border-stone-200 p-4">
+          <div class="corner-num accent2-c">$5.4B</div>
+          <div class="text-xs ink-light mt-1">美国帽店市场</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== 滚动条 ============== -->
-<section class="bg-orange-500 py-3 overflow-hidden border-y border-orange-600">
-  <div class="marquee text-black text-xs mono uppercase tracking-widest font-bold">
-    <span class="inline-block px-8">★ KNICKS 59FIFTY · Lyst Q2 #1 · 击败 Chanel ★</span>
-    <span class="inline-block px-8">★ Timberland × New Era × MLB · 8 月联名 ★</span>
-    <span class="inline-block px-8">★ Fitted Cap 复兴 · $11.74B 全球市场 ★</span>
-    <span class="inline-block px-8">★ Chase B × Travis Scott · Maximal 20 Era ★</span>
-    <span class="inline-block px-8">★ New Era 9FIFTY · Wool Cap · Snapback · Trucker ★</span>
-    <span class="inline-block px-8">★ KNICKS 59FIFTY · Lyst Q2 #1 · 击败 Chanel ★</span>
-    <span class="inline-block px-8">★ Timberland × New Era × MLB · 8 月联名 ★</span>
-    <span class="inline-block px-8">★ Fitted Cap 复兴 · $11.74B 全球市场 ★</span>
-    <span class="inline-block px-8">★ Chase B × Travis Scott · Maximal 20 Era ★</span>
-    <span class="inline-block px-8">★ New Era 9FIFTY · Wool Cap · Snapback · Trucker ★</span>
+<!-- ============== 1. 工艺焦点 · Fitted Cap 结构拆解 ============== -->
+<section id="focus" class="border-b border-stone-200 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps accent-c">01</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">Fitted Cap · 结构拆解</h2>
+      <span class="small-caps ink-faint ml-auto">3 大决策点</span>
+    </div>
+
+    <p class="ink-light max-w-3xl mb-8">
+      Fitted Cap 跟 Snapback / Trucker / Dad Cap 区别在哪？设计前必须确定 3 件事：
+      <b>Panel 数（5/6/7）</b>、<b>帽舌弧度</b>、<b>闭合方式</b>。每一种组合对应不同的客单价和目标客户。
+    </p>
+
+    <!-- 三栏对比表 -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <article class="border border-stone-200 p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="ribbon">结构 A</span>
+          <h3 class="serif text-2xl font-bold">6-Panel Classic</h3>
+        </div>
+        <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="6-Panel Classic" class="pan-img mb-4 hover-pop">
+        <table class="data-table">
+          <tr><td class="ink-faint">板数</td><td><b>6</b></td></tr>
+          <tr><td class="ink-faint">帽舌</td><td>平胚 → 预压弧</td></tr>
+          <tr><td class="ink-faint">闭合</td><td>Hard Fitted（无扣）</td></tr>
+          <tr><td class="ink-faint">Sweatband</td><td>棉 + 防汗带</td></tr>
+          <tr><td class="ink-faint">客单价</td><td><b class="accent-c">$25-45</b></td></tr>
+          <tr><td class="ink-faint">代表</td><td>Knicks 59FIFTY</td></tr>
+        </table>
+        <div class="mt-3 text-xs ink-light">
+          <b>适用：</b>美式运动 / 联盟 IP / 街头<br>
+          <b>难度：</b>⭐⭐⭐ 需联盟授权<br>
+          <b>TopOne 建议：</b>可复制工艺，联盟 IP 难拿；可做"无名 59FIFTY"
+        </div>
+      </article>
+
+      <article class="border border-stone-200 p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="ribbon">结构 B</span>
+          <h3 class="serif text-2xl font-bold">5-Panel Camp</h3>
+        </div>
+        <img src="images/pan-w28-braindead-6panel-front.png" alt="5-Panel Camp" class="pan-img mb-4 hover-pop">
+        <table class="data-table">
+          <tr><td class="ink-faint">板数</td><td><b>5</b>（前 1 大板 + 后 4 板）</td></tr>
+          <tr><td class="ink-faint">帽舌</td><td>平胚 → 圆弧</td></tr>
+          <tr><td class="ink-faint">闭合</td><td>Strapback（皮带扣）</td></tr>
+          <tr><td class="ink-faint">Sweatband</td><td>棉斜纹</td></tr>
+          <tr><td class="ink-faint">客单价</td><td><b class="accent-c">$30-60</b></td></tr>
+          <tr><td class="ink-faint">代表</td><td>Brain Dead / Stüssy</td></tr>
+        </table>
+        <div class="mt-3 text-xs ink-light">
+          <b>适用：</b>街头 / 滑板 / 户外<br>
+          <b>难度：</b>⭐⭐ 工艺成熟<br>
+          <b>TopOne 建议：</b>无 IP 风险，可直接做；做差异化配色
+        </div>
+      </article>
+
+      <article class="border border-stone-200 p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="ribbon">结构 C</span>
+          <h3 class="serif text-2xl font-bold">Trucker Hybrid</h3>
+        </div>
+        <img src="images/pan-w28-gfore-usopen-perforated-front.png" alt="Trucker Hybrid" class="pan-img mb-4 hover-pop">
+        <table class="data-table">
+          <tr><td class="ink-faint">板数</td><td><b>6-Panel + 网背</b></td></tr>
+          <tr><td class="ink-faint">帽舌</td><td>预压弧</td></tr>
+          <tr><td class="ink-faint">闭合</td><td>Snapback（塑料扣）</td></tr>
+          <tr><td class="ink-faint">Sweatband</td><td>棉 + 网眼</td></tr>
+          <tr><td class="ink-faint">客单价</td><td><b class="accent-c">$15-30</b></td></tr>
+          <tr><td class="ink-faint">代表</td><td>47Brand / Zephyr</td></tr>
+        </table>
+        <div class="mt-3 text-xs ink-light">
+          <b>适用：</b>美式大众 / 餐饮联名 / 大量<br>
+          <b>难度：</b>⭐⭐ 工艺简单<br>
+          <b>TopOne 建议：</b>高 MOQ 大单首选<br>
+          <span class="accent-c">⚠️ 满大街都是，做差异化难</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- 工艺细节 -->
+    <div class="border-t border-stone-200 pt-8">
+      <h3 class="serif text-xl font-bold mb-4">🔍 4 个工艺细节 · TopOne 立即可做</h3>
+      <div class="grid md:grid-cols-4 gap-4">
+        <div class="border border-stone-200 p-4">
+          <div class="small-caps accent-c mb-2">细节 · 01</div>
+          <div class="font-bold mb-1">帽舌弧度</div>
+          <div class="text-xs ink-light">平胚（Pre-curved）&lt; 半弧 &lt; 全弧。Fitted 选<b>平胚</b>或<b>轻微预压</b>，戴起来平整不浮夸。</div>
+        </div>
+        <div class="border border-stone-200 p-4">
+          <div class="small-caps accent-c mb-2">细节 · 02</div>
+          <div class="font-bold mb-1">Sweatband 高度</div>
+          <div class="text-xs ink-light">标准 28mm，加高版 35mm（户外运动）。<b>Fitted 必选 28mm</b>，贴合前额不漏白。</div>
+        </div>
+        <div class="border border-stone-200 p-4">
+          <div class="small-caps accent-c mb-2">细节 · 03</div>
+          <div class="font-bold mb-1">后扣闭合</div>
+          <div class="text-xs ink-light">Fitted 无扣（直接套），Snapback 塑料扣，Strapback 皮带扣。<b>Fitted 要做 size tape</b>（帽内尺码标）。</div>
+        </div>
+        <div class="border border-stone-200 p-4">
+          <div class="small-caps accent-c mb-2">细节 · 04</div>
+          <div class="font-bold mb-1">接缝处理</div>
+          <div class="text-xs ink-light">6 板接缝分<b>taping</b>（贴带）和<b>raw seam</b>（裸缝）。高端款选 taping，街头选 raw seam 显工艺感。</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ============== 3 顶重点 ============== -->
-<section id="hats" class="py-20 md:py-28 border-b border-stone-900">
-  <div class="px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="flex items-baseline justify-between mb-12">
-      <div class="flex items-baseline gap-4">
-        <div class="display text-7xl accent-c">3</div>
-        <h2 class="display text-4xl md:text-5xl tracking-wider">本月必看</h2>
-      </div>
-      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">8 月限定 / 联盟授权 / 街头</div>
+<!-- ============== 2. 配色方案 · 5 Fall 2026 Pantone Codes ============== -->
+<section id="palette" class="border-b border-stone-200 py-16 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps accent2-c">02</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">配色方案 · 秋冬 5 色</h2>
+      <span class="small-caps ink-faint ml-auto">Pantone TPX · 应用位置建议</span>
     </div>
+
+    <p class="ink-light max-w-3xl mb-8">
+      直接给 Pantone 色号 + 推荐应用位置（帽身 / 帽舌 / 缝线 / 内里）+ 同色系参考款。不是"蓝色"——是 19-4053 Classic Blue。
+    </p>
+
+    <!-- 5 色 Pantone 色板 -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-0 border border-stone-200 mb-8">
+      <div class="swatch-h" style="background:#3a4a5c;">
+        <div>
+          <div class="font-bold">19-4053</div>
+          <div class="text-xs">Classic Blue</div>
+          <div class="text-xs opacity-70 mt-1">稳重 / 复古</div>
+        </div>
+      </div>
+      <div class="swatch-h" style="background:#7a4a2e;">
+        <div>
+          <div class="font-bold">18-1142</div>
+          <div class="text-xs">Sugar Almond</div>
+          <div class="text-xs opacity-70 mt-1">暖 / 自然</div>
+        </div>
+      </div>
+      <div class="swatch-h" style="background:#3d2e1e;">
+        <div>
+          <div class="font-bold">19-0915</div>
+          <div class="text-xs">Coffee Bean</div>
+          <div class="text-xs opacity-70 mt-1">深棕 / 户外</div>
+        </div>
+      </div>
+      <div class="swatch-h" style="background:#5c6b3f;">
+        <div>
+          <div class="font-bold">18-0135</div>
+          <div class="text-xs">Fern Green</div>
+          <div class="text-xs opacity-70 mt-1">绿 / Prep</div>
+        </div>
+      </div>
+      <div class="swatch-h" style="background:#f5f1e8;">
+        <div>
+          <div class="font-bold ink" style="color:#1c1917;">11-0602</div>
+          <div class="text-xs ink" style="color:#1c1917;">Snow White</div>
+          <div class="text-xs opacity-70 mt-1" style="color:#1c1917;">白 / 极简</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 色应用建议 -->
+    <div class="grid md:grid-cols-5 gap-3">
+      <div class="border border-stone-200 p-3 bg-white">
+        <div class="text-xs mono font-bold accent-c mb-1">CLASSIC BLUE</div>
+        <div class="text-xs ink-light mb-2">Pantone 19-4053</div>
+        <div class="text-xs"><b>帽身</b>主色 / <b>帽舌</b>同色 / <b>缝线</b>深一档（19-3933）</div>
+        <div class="text-xs mt-2 ink-faint">参考：aimeleondore-lifestyle</div>
+      </div>
+      <div class="border border-stone-200 p-3 bg-white">
+        <div class="text-xs mono font-bold accent-c mb-1">SUGAR ALMOND</div>
+        <div class="text-xs ink-light mb-2">Pantone 18-1142</div>
+        <div class="text-xs"><b>帽身</b>主色 / <b>内里</b>浅米（11-0907）/ <b>Logo</b>深棕</div>
+        <div class="text-xs mt-2 ink-faint">参考：barbour-wax-front</div>
+      </div>
+      <div class="border border-stone-200 p-3 bg-white">
+        <div class="text-xs mono font-bold accent-c mb-1">COFFEE BEAN</div>
+        <div class="text-xs ink-light mb-2">Pantone 19-0915</div>
+        <div class="text-xs"><b>帽身</b>主色 / <b>帽舌</b>撞色浅米 / <b>缝线</b>深一档</div>
+        <div class="text-xs mt-2 ink-faint">参考：filson-tin-front</div>
+      </div>
+      <div class="border border-stone-200 p-3 bg-white">
+        <div class="text-xs mono font-bold accent-c mb-1">FERN GREEN</div>
+        <div class="text-xs ink-light mb-2">Pantone 18-0135</div>
+        <div class="text-xs"><b>帽身</b>主色 / <b>帽舌</b>同色 / <b>刺绣</b>深绿（19-5511）</div>
+        <div class="text-xs mt-2 ink-faint">参考：engineeredgarments-ball</div>
+      </div>
+      <div class="border border-stone-200 p-3 bg-white">
+        <div class="text-xs mono font-bold accent-c mb-1">SNOW WHITE</div>
+        <div class="text-xs ink-light mb-2">Pantone 11-0602</div>
+        <div class="text-xs"><b>帽身</b>全白 / <b>刺绣</b>深一档 / <b>不耐脏</b>需水洗标</div>
+        <div class="text-xs mt-2 ink-faint">参考：gucci-gg-front</div>
+      </div>
+    </div>
+
+    <!-- 配色实拍 -->
+    <div class="mt-6 grid grid-cols-5 gap-2">
+      <img src="images/pan-w28-aimeleondore-lifestyle.png" class="pan-img hover-pop" alt="Classic Blue">
+      <img src="images/pan-w28-barbour-wax-front.png" class="pan-img hover-pop" alt="Sugar Almond">
+      <img src="images/pan-w28-filson-tin-front.png" class="pan-img hover-pop" alt="Coffee Bean">
+      <img src="images/pan-w28-engineeredgarments-ball-front.png" class="pan-img hover-pop" alt="Fern Green">
+      <img src="images/pan-w28-gucci-gg-front.png" class="pan-img hover-pop" alt="Snow White">
+    </div>
+  </div>
+</section>
+
+<!-- ============== 3. 材质情报 ============== -->
+<section id="material" class="border-b border-stone-200 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps accent-c">03</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">材质情报 · 3 种料</h2>
+      <span class="small-caps ink-faint ml-auto">克重 / FOB / MOQ / Lead Time</span>
+    </div>
+
+    <p class="ink-light max-w-3xl mb-8">
+      Fitted Cap 用什么料？3 种主力：棉斜纹（春夏主流）、羊毛（秋冬）、尼龙（运动）。<b>具体克重决定手感</b>，不是"厚一点就好"。
+    </p>
+
+    <table class="data-table mb-8">
+      <thead>
+        <tr>
+          <th>材料</th>
+          <th>克重 (oz/yd²)</th>
+          <th>织法</th>
+          <th>手感</th>
+          <th>FOB China $</th>
+          <th>MOQ</th>
+          <th>Lead Time</th>
+          <th>适合季节</th>
+          <th>TopOne 建议</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>棉斜纹 Twill</b></td>
+          <td>8-10</td>
+          <td>斜纹（2/1, 3/1）</td>
+          <td>挺括 / 经典</td>
+          <td><b>$2.5-4</b></td>
+          <td>500</td>
+          <td>25 天</td>
+          <td>春夏 / 四季</td>
+          <td>主推款必选</td>
+        </tr>
+        <tr>
+          <td><b>羊毛 Wool Felt</b></td>
+          <td>12-16</td>
+          <td>毛毡 / 织造</td>
+          <td>厚实 / 秋冬</td>
+          <td><b>$4-7</b></td>
+          <td>300</td>
+          <td>35 天</td>
+          <td>秋冬</td>
+          <td>9-10 月开模</td>
+        </tr>
+        <tr>
+          <td><b>尼龙 Nylon Taslan</b></td>
+          <td>2-4</td>
+          <td>平纹 + 防泼水</td>
+          <td>薄 / 运动</td>
+          <td><b>$3-5</b></td>
+          <td>1000</td>
+          <td>30 天</td>
+          <td>运动 / 户外</td>
+          <td>Snapback 首选</td>
+        </tr>
+        <tr>
+          <td><b>亚麻 Linen</b></td>
+          <td>6-8</td>
+          <td>平纹 / 自然皱</td>
+          <td>透气 / 自然</td>
+          <td><b>$4-6</b></td>
+          <td>300</td>
+          <td>30 天</td>
+          <td>夏季限定</td>
+          <td>小众款试水</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="border border-stone-200 p-4 text-xs ink-light">
+      <b>💡 选料口诀：</b>
+      客单价 $25-45 选 8-10 oz 棉斜纹（成本控在 $3 内）；$45+ 选羊毛（成本 $5-7 但售价撑得起）；
+      夏季限定小批量试亚麻（$4-6 + 卖点强）；运动/户外选尼龙（防泼水 + 抗撕裂）。
+    </div>
+  </div>
+</section>
+
+<!-- ============== 4. 工艺拆解 · 同款 4 家品牌横评 ============== -->
+<section id="teardown" class="border-b border-stone-200 py-16 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps accent2-c">04</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">工艺拆解 · 同款 4 家横评</h2>
+      <span class="small-caps ink-faint ml-auto">Fitted Cap 头部品牌对比</span>
+    </div>
+
+    <p class="ink-light max-w-3xl mb-8">
+      同样叫"Fitted Cap"，不同品牌做法差异巨大。设计师照着这 4 家横评就知道"借鉴谁、避坑谁"。
+    </p>
+
+    <!-- 4 家横评表 -->
+    <div class="grid md:grid-cols-4 gap-4 mb-8">
+      <div class="border border-stone-200 bg-white overflow-hidden">
+        <img src="images/pan-w27-dodgers-usa250.png" class="pan-img hover-pop" alt="New Era Knicks">
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold serif text-lg">New Era</div>
+            <span class="ribbon" style="background:#dc2626;">59FIFTY</span>
+          </div>
+          <div class="text-xs ink-light mb-2">🇺🇸 美国 · 联盟 IP 标杆</div>
+          <div class="text-xs space-y-1">
+            <div>· 板数: <b>6-Panel</b></div>
+            <div>· 料: <b>10 oz 棉斜纹</b></div>
+            <div>· 帽舌: <b>平胚 + 软弧</b></div>
+            <div>· 闭合: <b>Fitted（无扣）</b></div>
+            <div>· Sweatband: <b>棉 + 防汗带</b></div>
+            <div>· 缝线: <b>Taping</b></div>
+            <div>· 客单价: <b>$25-45</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-stone-200 bg-white overflow-hidden">
+        <img src="images/pan-w28-aimeleondore-lifestyle.png" class="pan-img hover-pop" alt="ALD">
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold serif text-lg">Aimé Leon Dore</div>
+            <span class="ribbon" style="background:#0891b2;">Prep</span>
+          </div>
+          <div class="text-xs ink-light mb-2">🇺🇸 纽约独立 · Prep 美学</div>
+          <div class="text-xs space-y-1">
+            <div>· 板数: <b>6-Panel</b></div>
+            <div>· 料: <b>14 oz 羊毛 / 棉斜纹</b></div>
+            <div>· 帽舌: <b>平胚</b></div>
+            <div>· 闭合: <b>Fitted</b></div>
+            <div>· Sweatband: <b>棉</b></div>
+            <div>· 缝线: <b>Raw seam</b></div>
+            <div>· 客单价: <b>$89</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-stone-200 bg-white overflow-hidden">
+        <img src="images/pan-w28-gfore-usopen-perforated-front.png" class="pan-img hover-pop" alt="G/FORE">
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold serif text-lg">G/FORE</div>
+            <span class="ribbon" style="background:#0c0a09;">Golf</span>
+          </div>
+          <div class="text-xs ink-light mb-2">🇺🇸 高尔夫 + 网球跨界</div>
+          <div class="text-xs space-y-1">
+            <div>· 板数: <b>6-Panel + 网眼</b></div>
+            <div>· 料: <b>10 oz 棉斜纹 + 冲孔</b></div>
+            <div>· 帽舌: <b>预压弧</b></div>
+            <div>· 闭合: <b>Snapback</b></div>
+            <div>· Sweatband: <b>棉 + 网眼</b></div>
+            <div>· 缝线: <b>Taping</b></div>
+            <div>· 客单价: <b>$89</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-stone-200 bg-white overflow-hidden">
+        <img src="images/pan-w28-borsalino-argentina-side.png" class="pan-img hover-pop" alt="Borsalino">
+        <div class="p-4">
+          <div class="flex items-center justify-between mb-2">
+            <div class="font-bold serif text-lg">Borsalino</div>
+            <span class="ribbon" style="background:#7a4a2e;">Heritage</span>
+          </div>
+          <div class="text-xs ink-light mb-2">🇮🇹 百年意式 · Crochet Raffia</div>
+          <div class="text-xs space-y-1">
+            <div>· 板数: <b>6-Panel</b></div>
+            <div>· 料: <b>Raffia 草编</b></div>
+            <div>· 帽舌: <b>圆弧</b></div>
+            <div>· 闭合: <b>皮质调节带</b></div>
+            <div>· Sweatband: <b>真丝</b></div>
+            <div>· 缝线: <b>手工</b></div>
+            <div>· 客单价: <b>$410</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 拆解总结 -->
+    <div class="border border-stone-200 bg-white p-6">
+      <h3 class="serif text-lg font-bold mb-3">📋 TopOne 借鉴清单</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-xs">
+        <div>
+          <div class="font-bold accent-c mb-1">✅ 可借鉴</div>
+          <ul class="space-y-1 ink-light">
+            <li>· New Era 6-Panel 板型 + 平胚帽舌（直接用）</li>
+            <li>· ALD Raw seam 缝线工艺（街头款可学）</li>
+            <li>· G/FORE 冲孔 + 网眼（运动款可学）</li>
+            <li>· 10 oz 棉斜纹作为主料（成本可控）</li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-bold accent-c mb-1">⚠️ 难复制（短期跳过）</div>
+          <ul class="space-y-1 ink-light">
+            <li>· New Era 联盟 IP（MLB / NBA / NFL 授权贵）</li>
+            <li>· Borsalino 手工钩针（工艺壁垒 + 产能低）</li>
+            <li>· 真丝 Sweatband（成本高 + 工艺难）</li>
+            <li>· 14 oz 羊毛（秋冬限定，难做四季款）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 5. 本月动作 · 3 款原型 ============== -->
+<section id="actions" class="border-b border-stone-200 py-16 accent-bg">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps">05</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">本月动作 · 3 款原型</h2>
+      <span class="small-caps opacity-70 ml-auto">读完就能动手</span>
+    </div>
+
+    <p class="opacity-90 max-w-3xl mb-8">
+      3 款原型，每款含<b>材料 + 色号 + 工艺 + 目标价 + 目标客户</b>。
+      下周设计部 review 通过即可送打样。
+    </p>
 
     <div class="grid md:grid-cols-3 gap-6">
-      <!-- Featured Hat 1: Knicks Equivalent (Dodgers USA 250) -->
-      <a class="group block">
-        <div class="relative overflow-hidden rounded-sm mb-4 bg-stone-900 aspect-[3/4]">
-          <span class="corner-tag">🥇 #1 Lyst Q2</span>
-          <img src="images/pan-w27-dodgers-usa250.png" alt="Knicks 59FIFTY Equivalent" class="img-cover-portrait hover-pop">
-        </div>
-        <div class="display text-3xl mb-2 leading-none">KNICKS 59FIFTY</div>
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">NBA Champions · 联盟授权</div>
-        <p class="text-sm text-stone-400 leading-relaxed mb-2">Lyst Q2 +4,276% 搜索增长，把 Chanel 挤下 TOP1。Fitted Cap 文化复兴标杆。</p>
-        <div class="flex justify-between text-xs mono">
-          <span class="text-stone-500">£25 / $40</span>
-          <span class="accent-c">→</span>
-        </div>
-      </a>
-
-      <!-- Featured Hat 2: Timberland × New Era × MLB -->
-      <a class="group block">
-        <div class="relative overflow-hidden rounded-sm mb-4 bg-stone-900 aspect-[3/4]">
-          <span class="corner-tag" style="border-color:#14B8A6;color:#14B8A6;">2026-08 联名</span>
-          <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="Timberland New Era MLB" class="img-cover-portrait hover-pop">
-        </div>
-        <div class="display text-3xl mb-2 leading-none">TIMBERLAND<br>× NEW ERA × MLB</div>
-        <div class="text-[10px] mono uppercase tracking-widest accent2-c mb-2">三方联名 · 6 队城市系列</div>
-        <p class="text-sm text-stone-400 leading-relaxed mb-2">Yankees / Mets / Dodgers / Red Sox / White Sox / Braves / Astros，工装 + 联盟 + 街头的范本。</p>
-        <div class="flex justify-between text-xs mono">
-          <span class="text-stone-500">~$85 / 配色</span>
-          <span class="accent2-c">→</span>
-        </div>
-      </a>
-
-      <!-- Featured Hat 3: ALD Wool Cap (Chase B×Travis substitute since no image) -->
-      <a class="group block">
-        <div class="relative overflow-hidden rounded-sm mb-4 bg-stone-900 aspect-[3/4]">
-          <span class="corner-tag" style="border-color:#FF4B1F;color:#FF4B1F;">Prep 美学</span>
-          <img src="images/pan-w28-aimeleondore-side.png" alt="Aimé Leon Dore 9FIFTY" class="img-cover-portrait hover-pop">
-        </div>
-        <div class="display text-3xl mb-2 leading-none">ALD 9FIFTY<br>WOOL CAP</div>
-        <div class="text-[10px] mono uppercase tracking-widest accent-c mb-2">独立设计 · 7 月销量 +45%</div>
-        <p class="text-sm text-stone-400 leading-relaxed mb-2">纽约 Prep 美学 + 小众独立设计蚕食 New Era 主流份额。Wool Cap 秋冬延伸。</p>
-        <div class="flex justify-between text-xs mono">
-          <span class="text-stone-500">~$89</span>
-          <span class="accent-c">→</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== 全景图墙（24 张 masonry）============== -->
-<section id="panorama" class="py-20 md:py-28 bg-stone-950/50">
-  <div class="px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="flex items-baseline justify-between mb-12">
-      <div class="flex items-baseline gap-4">
-        <div class="display text-7xl accent2-c">24</div>
-        <h2 class="display text-4xl md:text-5xl tracking-wider">品牌全景</h2>
-      </div>
-      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">8 月重点品牌 · 多角度</div>
-    </div>
-
-    <!-- Masonry 第一行 -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-borsalino-argentina-side.png" alt="Borsalino" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-borsalino-argentina-side.png" alt="Borsalino" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="ALD" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-gfore-usopen-perforated-front.png" alt="G/FORE" class="img-cover hover-pop">
-      </div>
-    </div>
-
-    <!-- Masonry 第二行（5 张：不等高错落） -->
-    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 mb-3">
-      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-2">
-        <img src="images/pan-w28-gfore-usopen-lifestyle.png" alt="G/FORE" class="img-cover-landscape hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-2 row-span-2">
-        <img src="images/pan-w28-braindead-6panel-front.png" alt="Brain Dead" class="img-cover hover-pop h-full" style="object-fit:cover;min-height:400px;">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-2">
-        <img src="images/pan-w28-braindead-bolo-front.png" alt="Brain Dead Bolo" class="img-cover-landscape hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-3">
-        <img src="images/pan-w28-barbour-wax-front.png" alt="Barbour" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900 md:col-span-3">
-        <img src="images/pan-w28-carhartt-script-front.png" alt="Carhartt" class="img-cover hover-pop">
-      </div>
-    </div>
-
-    <!-- Masonry 第三行（7 张细图） -->
-    <div class="grid grid-cols-2 md:grid-cols-7 gap-3 mb-3">
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-awakeny-corduroy-front.png" alt="Awakeny" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-beamsplus-field-front.png" alt="Beams+" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-descente-allterrain-front.png" alt="Descente" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-engineeredgarments-ball-front.png" alt="EG" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-filson-tin-front.png" alt="Filson" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w28-gucci-gg-front.png" alt="Gucci" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w27-bape-001.jpg" alt="BAPE" class="img-cover hover-pop">
-      </div>
-    </div>
-
-    <!-- Masonry 第四行（Kappa / Kith / Saint James 等） -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w27-barbour-1.jpg" alt="Barbour" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w27-kappa-1.jpg" alt="Kappa" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w27-kith-1.jpg" alt="Kith" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w27-bape-003.jpg" alt="BAPE" class="img-cover hover-pop">
-      </div>
-      <div class="overflow-hidden rounded-sm bg-stone-900">
-        <img src="images/pan-w27-bape-005.jpg" alt="BAPE" class="img-cover hover-pop">
-      </div>
-    </div>
-
-    <div class="mt-6 text-center text-xs mono text-stone-500 uppercase tracking-widest">
-      24+ 品牌 · 8 月主推 · 多角度真品图
-    </div>
-  </div>
-</section>
-
-<!-- ============== 行动建议（3 BIG 视觉卡）============== -->
-<section id="action" class="py-20 md:py-28 border-t border-stone-900">
-  <div class="px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="flex items-baseline justify-between mb-12">
-      <div class="flex items-baseline gap-4">
-        <div class="display text-7xl accent-c">3</div>
-        <h2 class="display text-4xl md:text-5xl tracking-wider">立即开模</h2>
-      </div>
-      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">基于 Lyst +4,276% 数据</div>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Priority 1 -->
-      <article class="border-2 border-orange-500/60 bg-orange-500/5 rounded-sm overflow-hidden">
-        <div class="relative aspect-[4/3] overflow-hidden bg-stone-900">
-          <span class="corner-tag">🥇 Priority 01</span>
-          <img src="images/pan-w27-dodgers-usa250.png" alt="Fitted Cap" class="img-cover-portrait hover-pop">
+      <article class="bg-white border border-stone-200 overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden bg-stone-100">
+          <img src="images/pan-w28-aimeleondore-lifestyle.png" class="pan-img-portrait hover-pop" alt="原型 A">
         </div>
         <div class="p-5">
-          <div class="display text-3xl mb-2 accent-c leading-none">FITTED 59FIFTY</div>
-          <p class="text-xs text-stone-300 mb-3 leading-relaxed">对标 Knicks 59FIFTY · 联盟 IP 授权模式成熟 · TopOne 现有产能可接</p>
-          <div class="grid grid-cols-2 gap-2 text-[10px] mono">
-            <div class="text-stone-500">毛利</div><div class="accent-c text-right">30-40%</div>
-            <div class="text-stone-500">起订</div><div class="text-right">500-1000</div>
-            <div class="text-stone-500">市场</div><div class="text-right">🇺🇸 美国</div>
-            <div class="text-stone-500">客户</div><div class="text-right">联盟 IP</div>
-          </div>
+          <div class="small-caps accent-c mb-1">PROTOTYPE · A</div>
+          <div class="serif text-xl font-bold mb-2">Prep Wool Fitted</div>
+          <table class="data-table">
+            <tr><td class="ink-faint">结构</td><td><b>6-Panel + 平胚帽舌</b></td></tr>
+            <tr><td class="ink-faint">材料</td><td>12 oz 羊毛 / Sugar Almond 18-1142</td></tr>
+            <tr><td class="ink-faint">缝线</td><td>Raw seam（街头感）</td></tr>
+            <tr><td class="ink-faint">闭合</td><td>Fitted（size tape）</td></tr>
+            <tr><td class="ink-faint">刺绣</td><td>无 Logo（极简）</td></tr>
+            <tr><td class="ink-faint">FOB</td><td>$4-5 / 顶</td></tr>
+            <tr><td class="ink-faint">建议零售</td><td><b class="accent-c">$45-65</b></td></tr>
+            <tr><td class="ink-faint">目标客户</td><td>🇺🇸 美国 Prep 美学独立店</td></tr>
+            <tr><td class="ink-faint">对标</td><td>ALD 9FIFTY</td></tr>
+            <tr><td class="ink-faint">MOQ</td><td>300-500 / 色</td></tr>
+          </table>
         </div>
       </article>
 
-      <!-- Priority 2 -->
-      <article class="border-2 border-teal-500/60 bg-teal-500/5 rounded-sm overflow-hidden">
-        <div class="relative aspect-[4/3] overflow-hidden bg-stone-900">
-          <span class="corner-tag" style="border-color:#14B8A6;color:#14B8A6;">🥈 Priority 02</span>
-          <img src="images/pan-w28-gfore-usopen-perforated-front.png" alt="Trucker Cap" class="img-cover-portrait hover-pop">
+      <article class="bg-white border border-stone-200 overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden bg-stone-100">
+          <img src="images/pan-w28-borsalino-argentina-side.png" class="pan-img-portrait hover-pop" alt="原型 B">
         </div>
         <div class="p-5">
-          <div class="display text-3xl mb-2 accent2-c leading-none">TRUCKER</div>
-          <p class="text-xs text-stone-300 mb-3 leading-relaxed">对标 47Brand / Zephyr · 透气网背 · 美国大众市场 · 大批量</p>
-          <div class="grid grid-cols-2 gap-2 text-[10px] mono">
-            <div class="text-stone-500">毛利</div><div class="accent2-c text-right">25-35%</div>
-            <div class="text-stone-500">起订</div><div class="text-right">2000-5000</div>
-            <div class="text-stone-500">市场</div><div class="text-right">🇺🇸 连锁</div>
-            <div class="text-stone-500">客户</div><div class="text-right">餐饮联名</div>
-          </div>
+          <div class="small-caps accent-c mb-1">PROTOTYPE · B</div>
+          <div class="serif text-xl font-bold mb-2">Raffia Bucket</div>
+          <table class="data-table">
+            <tr><td class="ink-faint">结构</td><td><b>圆顶 Bucket</b></td></tr>
+            <tr><td class="ink-faint">材料</td><td>Crochet Raffia + 真丝头带</td></tr>
+            <tr><td class="ink-faint">色号</td><td>Natural Honey / Sugar Almond</td></tr>
+            <tr><td class="ink-faint">闭合</td><td>无（套头式）</td></tr>
+            <tr><td class="ink-faint">刺绣</td><td>可选 1cm 字母</td></tr>
+            <tr><td class="ink-faint">FOB</td><td>$5-8 / 顶</td></tr>
+            <tr><td class="ink-faint">建议零售</td><td><b class="accent-c">$80-150</b></td></tr>
+            <tr><td class="ink-faint">目标客户</td><td>🇪🇺 欧洲度假 + 🇯🇵 日本</td></tr>
+            <tr><td class="ink-faint">对标</td><td>Borsalino Crochet</td></tr>
+            <tr><td class="ink-faint">MOQ</td><td>200-300 / 色</td></tr>
+          </table>
         </div>
       </article>
 
-      <!-- Priority 3 -->
-      <article class="border-2 border-stone-700 bg-stone-900/30 rounded-sm overflow-hidden">
-        <div class="relative aspect-[4/3] overflow-hidden bg-stone-900">
-          <span class="corner-tag">🥉 Priority 03</span>
-          <img src="images/pan-w28-aimeleondore-lifestyle.png" alt="Snapback Cap" class="img-cover-portrait hover-pop">
+      <article class="bg-white border border-stone-200 overflow-hidden">
+        <div class="aspect-[4/3] overflow-hidden bg-stone-100">
+          <img src="images/pan-w28-gfore-usopen-perforated-front.png" class="pan-img-portrait hover-pop" alt="原型 C">
         </div>
         <div class="p-5">
-          <div class="display text-3xl mb-2 leading-none">SNAPBACK</div>
-          <p class="text-xs text-stone-300 mb-3 leading-relaxed">对标 ALD / Palace · Fitted 与 Trucker 中间型 · 一帽三吃 · 街头通用</p>
-          <div class="grid grid-cols-2 gap-2 text-[10px] mono">
-            <div class="text-stone-500">毛利</div><div class="text-right">30-40%</div>
-            <div class="text-stone-500">起订</div><div class="text-right">1000-3000</div>
-            <div class="text-stone-500">市场</div><div class="text-right">🌏 全球</div>
-            <div class="text-stone-500">客户</div><div class="text-right">独立品牌</div>
-          </div>
+          <div class="small-caps accent-c mb-1">PROTOTYPE · C</div>
+          <div class="serif text-xl font-bold mb-2">Sport Snapback</div>
+          <table class="data-table">
+            <tr><td class="ink-faint">结构</td><td><b>6-Panel + 网背 + 冲孔</b></td></tr>
+            <tr><td class="ink-faint">材料</td><td>10 oz 棉斜纹 + Nylon Taslan</td></tr>
+            <tr><td class="ink-faint">色号</td><td>Classic Blue 19-4053 + 白</td></tr>
+            <tr><td class="ink-faint">闭合</td><td>Snapback（塑料扣）</td></tr>
+            <tr><td class="ink-faint">刺绣</td><td>3D 立体绣（队徽 / 字母）</td></tr>
+            <tr><td class="ink-faint">FOB</td><td>$3-4 / 顶</td></tr>
+            <tr><td class="ink-faint">建议零售</td><td><b class="accent-c">$25-40</b></td></tr>
+            <tr><td class="ink-faint">目标客户</td><td>🇺🇸 美国运动 + 餐饮联名</td></tr>
+            <tr><td class="ink-faint">对标</td><td>G/FORE US Open</td></tr>
+            <tr><td class="ink-faint">MOQ</td><td>1000-2000 / 色</td></tr>
+          </table>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============== 9 月日历（视觉）============== -->
-<section id="calendar" class="py-20 md:py-28 border-t border-stone-900 bg-stone-950/30">
-  <div class="px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="flex items-baseline justify-between mb-12">
-      <div class="flex items-baseline gap-4">
-        <div class="display text-7xl accent-c">09</div>
-        <h2 class="display text-4xl md:text-5xl tracking-wider">下月节点</h2>
-      </div>
-      <div class="text-[10px] mono uppercase tracking-widest text-stone-500 hidden md:block">提前 30 天布局</div>
+<!-- ============== 6. 避坑 · 满大街都是的款式 ============== -->
+<section id="avoid" class="border-b border-stone-200 py-16 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps ink">06</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">避坑 · 满大街都是的款式</h2>
+      <span class="small-caps ink-faint ml-auto">做了就是红海</span>
     </div>
 
     <div class="grid md:grid-cols-3 gap-4">
-      <!-- 9/7 Labor Day -->
-      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
-        <div class="display text-5xl accent-c mb-2">09.07</div>
-        <div class="serif text-lg mb-2">🇺🇸 Labor Day</div>
-        <p class="text-xs text-stone-400 leading-relaxed">夏季尾声 + 早秋促销起点。棒球帽 + Trucker 折扣季。</p>
+      <div class="border border-stone-200 bg-white p-4">
+        <img src="images/pan-w27-bape-001.jpg" class="pan-img mb-3 hover-pop" alt="Cargo Pocket Cap">
+        <div class="small-caps accent-c mb-1">避坑 01</div>
+        <div class="font-bold mb-1">Cargo Pocket Cap</div>
+        <div class="text-xs ink-light">多口袋战术帽 2024 爆款 → 2025 烂大街 → 2026 库存价。客户已经在清。</div>
       </div>
-      <!-- 9/11-16 NYC Fashion Week -->
-      <div class="border border-stone-700 rounded-sm p-5">
-        <div class="display text-5xl accent2-c mb-2">09.11-16</div>
-        <div class="serif text-lg mb-2">🗽 NYC Fashion Week</div>
-        <p class="text-xs text-stone-400 leading-relaxed">纽约时装周 SS27 · 主流 Fitted Cap 时尚定义。</p>
+      <div class="border border-stone-200 bg-white p-4">
+        <img src="images/pan-w27-kappa-1.jpg" class="pan-img mb-3 hover-pop" alt="Oversized Logo">
+        <div class="small-caps accent-c mb-1">避坑 02</div>
+        <div class="font-bold mb-1">Oversized Front Logo</div>
+        <div class="text-xs ink-light">巨型品牌字 → 反向审美兴起 → 小 Logo / 无 Logo 主流。重做要克制。</div>
       </div>
-      <!-- 9/15-17 MAGIC Las Vegas -->
-      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
-        <div class="display text-5xl accent-c mb-2">09.15-17</div>
-        <div class="serif text-lg mb-2">🤠 MAGIC Las Vegas</div>
-        <p class="text-xs text-stone-400 leading-relaxed">美国最大服装 + 配饰展 · <b>TopOne 可参展参考</b>。</p>
+      <div class="border border-stone-200 bg-white p-4">
+        <img src="images/pan-w27-bape-005.jpg" class="pan-img mb-3 hover-pop" alt="All-Over Print">
+        <div class="small-caps accent-c mb-1">避坑 03</div>
+        <div class="font-bold mb-1">全身满印 (All-Over Print)</div>
+        <div class="text-xs ink-light">BAPE 范儿 → 印刷成本高 + 退货运费贵 + 客户审美疲劳。做单色更稳。</div>
       </div>
-      <!-- 9/21-22 NFL Week 3 -->
-      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
-        <div class="display text-5xl accent-c mb-2">09.21-22</div>
-        <div class="serif text-lg mb-2">🏈 NFL Week 3</div>
-        <p class="text-xs text-stone-400 leading-relaxed">NFL 赛季展开 · 32 队周边需求升温 · <b>Fitted Cap 订单窗口</b>。</p>
+    </div>
+
+    <div class="mt-6 border border-stone-200 p-4 text-xs ink-light bg-white">
+      <b>💡 避坑原则：</b>
+      TopOne 客户多为<b>美国独立买手店 + 欧洲度假品牌</b>，选品要"<b>做工好 + 设计简 + 价格合理</b>"。
+      避开过度设计（满印 / 巨型 Logo / 多口袋），集中精力做<b>工艺细节</b>（帽舌弧度 / Sweatband / 接缝）。
+    </div>
+  </div>
+</section>
+
+<!-- ============== 7. 数据看板（精简）============== -->
+<section id="data" class="border-b border-stone-200 py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-baseline gap-4 mb-8">
+      <span class="small-caps accent-c">07</span>
+      <h2 class="serif text-3xl md:text-4xl font-bold">数据看板</h2>
+      <span class="small-caps ink-faint ml-auto">业务参考</span>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-3 mb-6">
+      <div class="border border-stone-200 p-4">
+        <div class="small-caps ink-faint">市场规模 · 2026</div>
+        <div class="corner-num ink mt-2">$11.74B</div>
       </div>
-      <!-- 9/21-25 Paris Fashion Week -->
-      <div class="border border-stone-700 rounded-sm p-5">
-        <div class="display text-5xl accent2-c mb-2">09.21-25</div>
-        <div class="serif text-lg mb-2">🗼 Paris Fashion Week</div>
-        <p class="text-xs text-stone-400 leading-relaxed">Hermès / Celine / LV 配饰线风向。</p>
+      <div class="border border-stone-200 p-4">
+        <div class="small-caps ink-faint">Lyst Q2 爆款</div>
+        <div class="corner-num accent-c mt-2">+4,276%</div>
       </div>
-      <!-- 10/1 MLB Wild Card -->
-      <div class="border border-orange-500/40 rounded-sm p-5 bg-orange-500/5">
-        <div class="display text-5xl accent-c mb-2">10.01</div>
-        <div class="serif text-lg mb-2">⚾ MLB Wild Card + 国庆</div>
-        <p class="text-xs text-stone-400 leading-relaxed">MLB 季后赛 + 中国国庆 · 双驱动订单 · <b>提前备货</b>。</p>
+      <div class="border border-stone-200 p-4">
+        <div class="small-caps ink-faint">美国帽店</div>
+        <div class="corner-num ink mt-2">$5.4B</div>
+      </div>
+      <div class="border border-stone-200 p-4">
+        <div class="small-caps ink-faint">亚太占全球</div>
+        <div class="corner-num accent2-c mt-2">34.52%</div>
+      </div>
+    </div>
+
+    <!-- 7 国关税（精简） -->
+    <div class="border border-stone-200 p-4">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="serif text-lg font-bold">🌍 7 国关税（FOB China 视角 · 客人付关税）</h3>
+        <a href="https://trade-dashboard-10y.pages.dev/" target="_blank" class="small-caps accent-c hover:underline">→ 完整 TopOne 仪表板 ↗</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+        <div class="border border-stone-200 p-2"><b class="accent-c">🇺🇸 44.5%</b><div class="ink-faint">MFN 7 + S301 25 + 301-forced 12.5</div></div>
+        <div class="border border-stone-200 p-2"><b class="accent2-c">🇯🇵 3.6%</b><div class="ink-faint">RCEP CO FORM E</div></div>
+        <div class="border border-stone-200 p-2"><b class="accent2-c">🇰🇷 5.2%</b><div class="ink-faint">CK FTA</div></div>
+        <div class="border border-stone-200 p-2"><b class="accent-c">🇨🇦 12.5%</b><div class="ink-faint">MFN</div></div>
+        <div class="border border-stone-200 p-2"><b class="accent2-c">🇬🇧 0%</b><div class="ink-faint">脱欧 MFN</div></div>
+        <div class="border border-stone-200 p-2"><b class="accent2-c">🇪🇺 0%</b><div class="ink-faint">EU MFN</div></div>
+        <div class="border border-stone-200 p-2"><b class="accent2-c">🇦🇺 0%</b><div class="ink-faint">ChAFTA</div></div>
+        <div class="border border-stone-200 p-2 ink-faint"><b>FOB China</b><div>关税客人付</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============== 数据看板（紧凑）============== -->
-<section id="data" class="py-20 md:py-28 border-t border-stone-900">
-  <div class="px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="flex items-baseline justify-between mb-12">
-      <div class="flex items-baseline gap-4">
-        <div class="display text-7xl accent-c">DATA</div>
-        <h2 class="display text-4xl md:text-5xl tracking-wider">数据看板</h2>
+<!-- ============== 8. 下月预告 ============== -->
+<section class="py-12 bg-stone-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <div class="small-caps ink-faint mb-1">下月预告 · 2026-09</div>
+        <div class="serif text-2xl font-bold">Wool Cap 秋冬工艺 + 学院风配色</div>
+        <div class="text-sm ink-light mt-1">9/1 提醒 cron 已创建 · 25-30 号草稿准备 · 当月 1 号发布</div>
       </div>
-    </div>
-
-    <!-- 4 个 KPI tile -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-      <div class="border border-stone-800 p-5">
-        <div class="kpi-num accent-c">$11.74B</div>
-        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">2026 全球帽业</div>
-      </div>
-      <div class="border border-stone-800 p-5">
-        <div class="kpi-num accent2-c">+4,276%</div>
-        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">Knicks Lyst Q2</div>
-      </div>
-      <div class="border border-stone-800 p-5">
-        <div class="kpi-num accent-c">$5.4B</div>
-        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">美国帽店市场</div>
-      </div>
-      <div class="border border-stone-800 p-5">
-        <div class="kpi-num accent2-c">34.52%</div>
-        <div class="text-[10px] mono uppercase tracking-widest text-stone-500 mt-2">亚太占全球</div>
-      </div>
-    </div>
-
-    <!-- 关税预警 -->
-    <div class="mb-8 border-2 border-orange-500/50 rounded-sm p-5 bg-orange-500/5">
-      <div class="flex items-start justify-between mb-3">
-        <div class="text-xs mono uppercase tracking-widest accent-c">⚠️ 关税预警 · 7 国 HS 6504/6505</div>
-        <span class="text-[10px] mono text-orange-400">2026-08-28</span>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
-        <div class="border border-stone-700 p-2"><b class="accent-c">🇺🇸 44.5%</b><div class="text-[10px] mono text-stone-500">MFN 7 + S301 25 + S301-forced 12.5</div></div>
-        <div class="border border-stone-700 p-2"><b class="accent2-c">🇯🇵 3.6%</b><div class="text-[10px] mono text-stone-500">RCEP CO FORM E</div></div>
-        <div class="border border-stone-700 p-2"><b class="accent2-c">🇰🇷 5.2%</b><div class="text-[10px] mono text-stone-500">CK FTA</div></div>
-        <div class="border border-stone-700 p-2"><b class="accent-c">🇨🇦 12.5%</b><div class="text-[10px] mono text-stone-500">MFN 12.5%</div></div>
-        <div class="border border-stone-700 p-2"><b class="accent2-c">🇬🇧 0%</b><div class="text-[10px] mono text-stone-500">脱欧 MFN</div></div>
-        <div class="border border-stone-700 p-2"><b class="accent2-c">🇪🇺 0%</b><div class="text-[10px] mono text-stone-500">EU MFN</div></div>
-        <div class="border border-stone-700 p-2"><b class="accent2-c">🇦🇺 0%</b><div class="text-[10px] mono text-stone-500">ChAFTA</div></div>
-        <div class="border border-stone-700 p-2"><b class="text-stone-500">FOB China</b><div class="text-[10px] mono text-stone-500">关税客人付</div></div>
-      </div>
-      <a href="https://trade-dashboard-10y.pages.dev/" target="_blank" class="text-[10px] mono accent-c hover:underline mt-3 inline-block">→ 完整 TopOne 仪表板（含报价口径）↗</a>
-    </div>
-
-    <!-- Top10 进出口（紧凑表）-->
-    <div class="grid md:grid-cols-2 gap-4">
-      <div class="border border-stone-800 rounded-sm p-4">
-        <h3 class="display text-xl accent2-c mb-3">📥 Top10 进口国 (2024)</h3>
-        <table class="w-full text-xs">
-          <tr class="border-b border-stone-800"><td class="py-1">🇺🇸 美国</td><td class="text-right mono">$3,200M*</td></tr>
-          <tr><td class="py-1">🇯🇵 日本</td><td class="text-right mono">~$1,180M</td></tr>
-          <tr><td class="py-1">🇬🇧 英国</td><td class="text-right mono">~$820M</td></tr>
-          <tr><td class="py-1">🇩🇪 德国</td><td class="text-right mono">~$625M</td></tr>
-          <tr><td class="py-1">🇫🇷 法国</td><td class="py-1 text-stone-500">🇨🇦 加拿大</td><td class="text-right mono">~$420M</td></tr>
-          <tr><td class="py-1">🇮🇹 意大利</td><td class="text-right mono">~$385M</td></tr>
-          <tr><td class="py-1">🇰🇷 韩国</td><td class="text-right mono">~$290M</td></tr>
-          <tr><td class="py-1">🇪🇸 西班牙</td><td class="text-right mono">~$240M</td></tr>
-          <tr><td class="py-1">🇳🇱 荷兰</td><td class="text-right mono">~$215M</td></tr>
-        </table>
-        <div class="text-[10px] mono text-stone-500 mt-2">* ITC Trade Map 2024</div>
-      </div>
-
-      <div class="border border-stone-800 rounded-sm p-4">
-        <h3 class="display text-xl accent2-c mb-3">📤 Top10 出口国 (2024)</h3>
-        <table class="w-full text-xs">
-          <tr class="border-b border-stone-800"><td class="py-1">🇨🇳 中国</td><td class="text-right mono">$8,200M*</td></tr>
-          <tr><td class="py-1">🇻🇳 越南</td><td class="text-right mono">~$2,100M</td></tr>
-          <tr><td class="py-1">🇧🇩 孟加拉</td><td class="text-right mono">~$1,650M</td></tr>
-          <tr><td class="py-1">🇮🇹 意大利</td><td class="text-right mono">~$1,420M</td></tr>
-          <tr><td class="py-1">🇹🇷 土耳其</td><td class="text-right mono">~$980M</td></tr>
-          <tr><td class="py-1">🇮🇳 印度</td><td class="text-right mono">~$720M</td></tr>
-          <tr><td class="py-1">🇰🇷 韩国</td><td class="text-right mono">~$510M</td></tr>
-          <tr><td class="py-1">🇵🇹 葡萄牙</td><td class="text-right mono">~$380M</td></tr>
-          <tr><td class="py-1">🇮🇩 印尼</td><td class="text-right mono">~$340M</td></tr>
-        </table>
-        <div class="text-[10px] mono text-stone-500 mt-2">中国 ~78% 主导</div>
-      </div>
+      <a href="https://trade-dashboard-10y.pages.dev/" target="_blank" class="hidden md:block text-right text-xs ink-faint">
+        配套：TopOne 仪表板<br>
+        <span class="text-xs accent-c">→ trade-dashboard-10y.pages.dev</span>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- ============== FOOTER ============== -->
-<footer class="border-t border-stone-800 py-12 bg-stone-950">
-  <div class="px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="flex flex-wrap items-center justify-between gap-4 text-[10px] mono text-stone-500 uppercase tracking-widest">
-      <div>🎩 HAT TREND RADAR · 2026-08 · Monthly 001</div>
+<footer class="py-10 border-t border-stone-200">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 text-[10px] mono uppercase tracking-widest ink-faint">
+      <div>🎩 HAT TREND RADAR · 2026-08 · Issue 001 · 工艺情报版</div>
       <div>Nova + 设计部 · Top One Hat Factory</div>
-      <div><a href="../index.html" class="hover:text-orange-500">← 返回首页</a></div>
+      <div><a href="../index.html" class="hover:text-red-600">← 返回首页</a></div>
     </div>
-    <div class="mt-3 text-[9px] mono text-stone-600">
-      数据源：Lyst · WWD · Esquire · NY Post · Straits Research · Fortune BI · Mordor · IBISWorld · ustariffrates · 抓取日期 2026-08-28<br>
-      永久铁律：未核实不显示确定结论 · FOB China 视角 · 营业员可直接执行
+    <div class="mt-3 text-[9px] ink-faint">
+      数据源：Lyst · WWD · Esquire · NY Post · Straits Research · Fortune BI · IBISWorld · ustariffrates · 抓取日期 2026-08-28<br>
+      v2.0 设计师工艺情报版：每期 1 个工艺焦点 + 5 色 Pantone + 3 料横评 + 4 家品牌拆解 + 3 款原型 + 避坑清单<br>
+      反面教材警示：避免重复品牌崇拜 / 满大街款式 / 巨型 Logo
     </div>
   </div>
 </footer>
