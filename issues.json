@@ -1,6 +1,34 @@
 {
-  "latest": "2026-W28",
+  "latest": "2026-08",
   "issues": [
+    {
+      "id": "2026-08",
+      "number": "001-Monthly",
+      "year": 2026,
+      "month": 8,
+      "title": "Fitted Cap 复兴 · Lyst Q2 搜索 +4,276%",
+      "subtitle": "Baseball Cap / Fitted Cap 复兴 · 击败 Chanel 登顶 Lyst Q2 · 7 国关税预警 + 3 款优先开模",
+      "publishDate": "2026-08-28",
+      "url": "2026-08/index.html",
+      "dateRange": "2026-08",
+      "coverImage": "2026-08/images/hero-borsalino-argentina.png",
+      "frequency": "monthly",
+      "highlights": [
+        "主题：Baseball Cap / Fitted Cap 复兴（Lyst Q2 +4,276% 击败 Chanel）",
+        "市场：$11.74B 全球帽业（CAGR 6.31%，2034 达 $19.16B）",
+        "爆款：Knicks 59FIFTY / Timberland × New Era × MLB / Chase B × Travis Scott",
+        "优先开模：Fitted 59FIFTY / Trucker / Snapback 三类",
+        "重点市场：美国（$5.4B 帽店）+ 亚太（34.52% 体量）",
+        "9 月事件：NFL Week 3 / NYC Fashion Week / MAGIC Las Vegas"
+      ],
+      "stats": {
+        "hats_featured": 9,
+        "design_refs": 9,
+        "brands_covered": 8,
+        "key_data_points": 25,
+        "data_sources": 9
+      }
+    },
     {
       "id": "2026-W28",
       "number": "005",
@@ -153,5 +181,60 @@
       },
       "url": "2026-W24/index.html"
     }
-  ]
+  ],
+  "v12_audit": {
+    "version": "v12-2026-07-07",
+    "audit_date": "2026-07-17T14:13:45.961634",
+    "audited_by": "Nova main session",
+    "scope": "W24-W28 已发布期号 + 计划 W31+",
+    "rule_definitions": {
+      "rule_9": "NewEra 上限 0 (3 HAT 主角帽款必须全非 NewEra)",
+      "rule_10": "同图 0 复用 (HTML 中每张 img src 只能出现 1 次)",
+      "rule_11": "17 品牌全景 = 17 张真图 (BRAND PANORAMA 段 ≥ 17 张唯一 img)",
+      "rule_12": "图文比例 ≥ 1:2 (img_count >= text_segment_count / 2)"
+    },
+    "results": {
+      "2026-W24": {
+        "rule_9": "FAIL",
+        "rule_10": "FAIL",
+        "rule_11": "FAIL",
+        "rule_12": "FAIL",
+        "note": "v12 之前的旧版,W24 是 v12 baseline (2026-06-13)"
+      },
+      "2026-W25": {
+        "rule_9": "PASS (2026-07-17 修复 — 3 H3 NE mentions 改名)",
+        "rule_10": "FAIL (5 张图复用: hp-1/2/3/5 + patta-1)",
+        "rule_11": "FAIL (无 BRAND PANORAMA 段)",
+        "rule_12": "FAIL (1:3.7 图文比例,需加图)",
+        "note": "Rule 9 PASS 后仍未全过;Rules 10/11/12 需新图片资源 (由 Nova web_search + image() 工具找,不依赖 Kin 提供)"
+      },
+      "2026-W26": {
+        "rule_9": "PASS (2026-07-17 修复 — PADRES H3 改名)",
+        "rule_10": "FAIL (3 张图复用: wacko-1/2/3)",
+        "rule_11": "FAIL (无 BRAND PANORAMA 段)",
+        "rule_12": "FAIL (1:3.8 图文比例,需加图)",
+        "note": "Rule 9 PASS 后仍未全过;Rules 10/11/12 需新图片资源"
+      },
+      "2026-W27": {
+        "rule_9": "PASS (2026-07-17 修复 — MLB 7/4 H3 改名)",
+        "rule_10": "FAIL (3 张图严重复用: dodgers-usa250×6, borsalino×5, polo×5)",
+        "rule_11": "FAIL (无 BRAND PANORAMA 段)",
+        "rule_12": "FAIL (1:21 图文比例,严重失衡)",
+        "note": "Rule 9 PASS 后仍未全过;Rules 10/11/12 需新图片资源 (W27 是图片问题最严重的一期)"
+      },
+      "2026-W28": {
+        "rule_9": "PASS (0/3 NewEra, 3 HAT 主角: Borsalino/G/FORE/Aimé Leon Dore)",
+        "rule_10": "PASS (39 张唯一图,0 复用)",
+        "rule_11": "PASS (BRAND PANORAMA 段 24 张唯一图 ≥ 17)",
+        "rule_12": "PASS (39 图:37 文字 = 1:0.9)",
+        "note": "🎯 唯一一期 4/4 全过 — v12 baseline (2026-07-07 老板拍板后立即重做)"
+      }
+    },
+    "policy": {
+      "historical_weeks_w24_w27": "本地 HTML 已修 Rule 9 (NE mentions). Rules 10/11/12 因需新图片资源暂未修. 不重 deploy (历史发布保持原状,issues.json 透明记录 audit).",
+      "w28_baseline": "唯一 4/4 PASS 期,作为 v12 标准基线.",
+      "future_weeks_w31_plus": "weekly_publish.py v12.1 (2026-07-17 重写) 强制 4 项自检,任一 FAIL = publish() abort + 不推 git. Kin 紧急授权可用 --skip-checks (写 audit log)."
+    },
+    "next_action": "W31 (2026-07-19 周日 20:00 cron 自动跑) — 流程: create_draft → 选主题 → 抓 17 品牌 → 抓 4 媒体 → 选 3 帽款 → 生成 HTML → 4 项自检 → publish. 全部在新 v12.1 框架下执行."
+  }
 }
